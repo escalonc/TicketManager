@@ -14,6 +14,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="activity_event">Go to activity event</string>
+
     <string name="event_code">Event code:</string>
     <string name="event">Event</string>
 
@@ -32,8 +34,16 @@
     <string name="Save">Save</string>
 
 
-
-
     <string name="spinner">Spinner</string>
     <string name="title_activity_event_list">EventListActivity</string>
+    <string name="title_activity_manage_events">ManageEvents</string>
+
+
+    <string name="New_event">New</string>
+    <string name="Delete_event">Delete</string>
+    <string name="Edit_event">Edit</string>
+    <string name="View_event">View</string>
+    <string name="Back_menu">Main</string>
+    <string name="List_event">List_event</string>
+
 </resources>
