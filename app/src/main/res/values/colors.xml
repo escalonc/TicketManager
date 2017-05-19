@@ -3,5 +3,7 @@
     <color name="colorPrimary">#1e8597</color>
     <color name="colorPrimaryDark">#055c6a</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="blancospinner">#ECE8E7</color>
+    <color name="blanco">#ffffff</color>
 
 </resources>
