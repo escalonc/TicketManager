@@ -2,9 +2,11 @@ package com.cejteam.ticketmanager;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.support.annotation.IntDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,24 +15,45 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.support.v7.app.ActionBarActivity;
+import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class EventActivity extends AppCompatActivity {
+import static com.cejteam.ticketmanager.R.id.dateeventr;
+
+public class EventActivity extends AppCompatActivity implements View.OnClickListener {
   private Spinner spinner;
     private int año,mes,dia;
-    private EditText campofecha;
     private Button guardar;
     private static  final int tipo_dialogo=0;
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
+    ArrayList<EventActivity> items;
+
+    public EventActivity(){
+        this.items= new ArrayList<EventActivity>();
+    }
+/*ELEMENTOS DE LA PANTALLA*/
+
+
+
+    EditText event =(EditText)findViewById(R.id.eventcoder);
+    EditText tittle =(EditText)findViewById(R.id.eventtittler);
+    EditText eventdescription =(EditText)findViewById(R.id.eventdescriptionr);
+    EditText eventamount =(EditText)findViewById(R.id.eventamountr);
+    Button saved=(Button)findViewById(R.id.saved);
+    EditText campofecha= (EditText)findViewById(R.id.dateeventr);
+    /*FIN ELEMENTOS DE LA PANTALLA*/
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
-
-        campofecha=(EditText)findViewById(R.id.dateeventr);
         Calendar calendar= Calendar.getInstance();
         año= calendar.get(Calendar.YEAR);
         mes= calendar.get(Calendar.MONTH);
@@ -97,5 +120,40 @@ public class EventActivity extends AppCompatActivity {
     public void mostrarCalendar(View control){
         showDialog(tipo_dialogo);
     }
+
+    @Override
+    public void onClick(View v) {
+        int seleccion= v.getId();
+        try{
+            switch (seleccion){
+                case R.id.saved:
+                    if(spinner.equals("")||event.equals("")|| tittle.equals("")|| eventdescription.equals("")|| eventamount.equals("") ){
+                        Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }
+                    for (int i = 0; i <items.size(); i++) {
+                       Calendar fechaActual= Calendar.getInstance();
+                        if(items.get(i).campofecha.equals(campofecha)){
+                            Toast msg = Toast.makeText(this, "YA HAY UN EVENTO PARA ESA FECHA", Toast.LENGTH_SHORT);
+                            msg.show();
+                            break;
+                        }else{
+                            items.add(new EventActivity());
+                        }
+                    }
+                    break;
+            }
+
+        }catch (Exception e){
+            Toast msg = Toast.makeText(this, "ERROR!", Toast.LENGTH_SHORT);
+            msg.show();
+        };
+
+
+
+    }
+
+
+
 
 }
