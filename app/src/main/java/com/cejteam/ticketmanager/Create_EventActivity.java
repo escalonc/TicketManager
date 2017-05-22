@@ -24,24 +24,92 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
 
     private Spinner spinner;
-    EditText event,tittle,eventdescription,eventamount,campofecha;
-    Button saved;
-    ArrayList<Create_EventActivity> items;
-    public Create_EventActivity(){
+    private EditText event,tittle,eventdescription,eventamount,campofecha;
+    private Button saved;
+    private ArrayList<Create_EventActivity> items;
+
+    public Create_EventActivity(String musical, String prueba1, String mundial, String sudafrica, int i, String termino) {
+    }
+
+
+    public Spinner getSpinner() {
+        return spinner;
+    }
+
+    public void setSpinner(Spinner spinner) {
+        this.spinner = spinner;
+    }
+
+    public EditText getEvent() {
+        return event;
+    }
+
+    public void setEvent(EditText event) {
+        this.event = event;
+    }
+
+    public EditText getTittle() {
+        return tittle;
+    }
+
+    public void setTittle(EditText tittle) {
+        this.tittle = tittle;
+    }
+
+    public EditText getEventdescription() {
+        return eventdescription;
+    }
+
+    public void setEventdescription(EditText eventdescription) {
+        this.eventdescription = eventdescription;
+    }
+
+    public EditText getEventamount() {
+        return eventamount;
+    }
+
+    public void setEventamount(EditText eventamount) {
+        this.eventamount = eventamount;
+    }
+
+    public EditText getCampofecha() {
+        return campofecha;
+    }
+
+    public void setCampofecha(EditText campofecha) {
+        this.campofecha = campofecha;
+    }
+
+    public ArrayList<Create_EventActivity> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Create_EventActivity> items) {
+        this.items = items;
+    }
+
+    public Create_EventActivity(Spinner spinner, EditText event, EditText tittle, EditText eventdescription, EditText campofecha, EditText eventamount) {
+        this.spinner= spinner;
+        this.event=event;
+        this.tittle=tittle;
+        this.eventdescription=eventdescription;
+        this.campofecha=campofecha;
+        this.eventamount=eventamount;
         items=new ArrayList<Create_EventActivity>();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create__event);
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_create__event);
          event =(EditText)findViewById(R.id.eventcoder);
          tittle =(EditText)findViewById(R.id.eventtittler);
          eventdescription =(EditText)findViewById(R.id.eventdescriptionr);
          eventamount =(EditText)findViewById(R.id.eventamountr);
          saved=(Button)findViewById(R.id.saved);
-        saved.setOnClickListener(this);
+         saved.setOnClickListener(this);
          campofecha= (EditText)findViewById(R.id.dateeventr);
-        spinner= (Spinner)findViewById(R.id.event_type);
+         spinner= (Spinner)findViewById(R.id.event_type);
         List list= new ArrayList();
         list.add("Deportivo");
         list.add("Musical");
@@ -91,9 +159,6 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
                         Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
                         msg.show();
                     }
-
-
-
                     for (int i = 0; i <items.size(); i++) {
                         Calendar fechaActual= Calendar.getInstance();
                         if(items.get(i).campofecha.equals(campofecha)){
@@ -103,10 +168,11 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
                         }else{
                             Toast msg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             msg.show();
-                            items.add(new Create_EventActivity());
+                            items.add(new Create_EventActivity(spinner,event,tittle,eventdescription,campofecha,eventamount));
                         }
                     }
-
+                    Toast msg = Toast.makeText(this, items.get(0).event.toString(), Toast.LENGTH_SHORT);
+                    msg.show();
                     break;
             }
 

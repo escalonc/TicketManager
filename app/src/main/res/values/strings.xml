@@ -19,7 +19,7 @@
     <string name="event_code">Event code:</string>
     <string name="event">Event</string>
 
-    <string name="title_event">Event title:</string>
+    <string name="title_event">Event tittle:</string>
     <string name="title">Title</string>
 
     <string name="event_description">Event description:</string>
@@ -45,5 +45,6 @@
     <string name="View_event">View</string>
     <string name="Back_menu">Main</string>
     <string name="List_event">List_event</string>
+    <string name="title_activity_events">EventsActivity</string>
 
 </resources>
