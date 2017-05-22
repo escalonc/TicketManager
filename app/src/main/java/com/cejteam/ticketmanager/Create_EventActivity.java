@@ -28,13 +28,6 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
     private Button saved;
     private ArrayList<Create_EventActivity> items;
 
-    public Create_EventActivity() {
-
-    }
-
-    public Create_EventActivity(String musical, String prueba1, String mundial, String sudafrica, int i, String termino) {
-    }
-
 
     public Spinner getSpinner() {
         return spinner;
@@ -115,6 +108,9 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
          campofecha= (EditText)findViewById(R.id.dateeventr);
          spinner= (Spinner)findViewById(R.id.event_type);
         List list= new ArrayList();
+
+        String eventName = event.getText().toString();
+
         list.add("Deportivo");
         list.add("Musical");
         list.add("Religioso");
