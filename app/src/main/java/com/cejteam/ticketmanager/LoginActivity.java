@@ -47,11 +47,13 @@ public class LoginActivity extends AppCompatActivity {
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
 
+
         button=(Button)findViewById(R.id.activityevent);
+
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ListSong = new Intent(getApplicationContext(), Create_EventActivity.class);
+                Intent ListSong = new Intent(getApplicationContext(), EventsActivity.class);
                 startActivity(ListSong);
             }
         });

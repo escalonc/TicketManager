@@ -28,6 +28,10 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
     private Button saved;
     private ArrayList<Create_EventActivity> items;
 
+    public Create_EventActivity() {
+
+    }
+
     public Create_EventActivity(String musical, String prueba1, String mundial, String sudafrica, int i, String termino) {
     }
 
