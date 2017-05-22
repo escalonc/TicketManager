@@ -42,7 +42,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/blanco"
                 android:text="@string/event_code"
-                android:textColor="@drawable/ic_dashboard_black_24dp"
                 android:textSize="18dp" />
 
             <EditText
@@ -62,7 +61,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/blanco"
                 android:text="@string/title_event"
-                android:textColor="@drawable/ic_dashboard_black_24dp"
                 android:textSize="18dp" />
 
             <EditText
@@ -81,7 +79,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/blanco"
                 android:text="@string/event_description"
-                android:textColor="@drawable/ic_dashboard_black_24dp"
                 android:textSize="18dp" />
 
             <EditText
@@ -100,7 +97,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/blanco"
                 android:text="@string/date_event"
-                android:textColor="@drawable/ic_dashboard_black_24dp"
                 android:textSize="18dp" />
 
             <EditText
@@ -121,7 +117,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/blanco"
                 android:text="@string/event_amount"
-                android:textColor="@drawable/ic_dashboard_black_24dp"
                 android:textSize="18dp" />
 
             <EditText
@@ -135,7 +130,7 @@
 
             <Button
 
-                android:id="@+id/saved"
+                android:id="@+id/savesd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Button"
