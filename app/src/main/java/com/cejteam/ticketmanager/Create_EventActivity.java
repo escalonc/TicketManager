@@ -25,8 +25,11 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
     private Spinner spinner;
     private EditText event,tittle,eventdescription,eventamount,campofecha;
     private Button saved;
-    private ArrayList<Register_events> items;
+    private ArrayList<Register_events> register;
 
+    public Create_EventActivity(){
+        register= new ArrayList<Register_events>();
+    }
 
 
 
@@ -94,25 +97,25 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
                         Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
                         msg.show();
                     }
-                    for (int i = 0; i <items.size(); i++) {
-                        Calendar fechaActual= Calendar.getInstance();
-                       if(items.get(i).getDate().equals(campofecha)){
+                    /*for (int i = 0; i < register.size(); i++) {
+                        Calendar fechaActual = Calendar.getInstance();
+                        if (register.get(i).getDate().equals(campofecha)) {
                             Toast msg = Toast.makeText(this, "YA HAY UN EVENTO PARA ESA FECHA", Toast.LENGTH_SHORT);
                             msg.show();
                             break;
-                        }else{
-                           Register_events itemss=new Register_events(spinner.toString(),tittle.getText().toString(),event.getText().toString(), eventdescription.getText().toString(),campofecha.getText().toString(),eventamount.getText().toString());
-                           items.add(itemss);
-                            Toast msg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
-                            msg.show();
-
                         }
-                    }
+                    }*/
+                    Toast msg = Toast.makeText(this, "aqui voy", Toast.LENGTH_SHORT);
+                    msg.show();
+                    Register_events r=new Register_events(spinner.toString(),tittle.getText().toString(),event.getText().toString(), eventdescription.getText().toString(),campofecha.getText().toString(),eventamount.getText().toString());
+                     register.add(r);
+            Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
+            fmsg.show();
                     break;
             }
 
         }catch (Exception e){
-            Toast msg = Toast.makeText(this, "ERROR!", Toast.LENGTH_SHORT);
+            Toast msg = Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT);
             msg.show();
         };
 }

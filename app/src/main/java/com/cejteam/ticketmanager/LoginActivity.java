@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ListSong = new Intent(getApplicationContext(), Events_createdActivity.class);
+                Intent ListSong = new Intent(getApplicationContext(), Create_EventActivity.class);
                 startActivity(ListSong);
             }
         });
