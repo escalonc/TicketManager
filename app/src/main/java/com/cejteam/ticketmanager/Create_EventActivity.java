@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.support.v7.app.ActionBarActivity;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,74 +25,10 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
     private Spinner spinner;
     private EditText event,tittle,eventdescription,eventamount,campofecha;
     private Button saved;
-    private ArrayList<Create_EventActivity> items;
+    private ArrayList<Register_events> items;
 
 
-    public Spinner getSpinner() {
-        return spinner;
-    }
 
-    public void setSpinner(Spinner spinner) {
-        this.spinner = spinner;
-    }
-
-    public EditText getEvent() {
-        return event;
-    }
-
-    public void setEvent(EditText event) {
-        this.event = event;
-    }
-
-    public EditText getTittle() {
-        return tittle;
-    }
-
-    public void setTittle(EditText tittle) {
-        this.tittle = tittle;
-    }
-
-    public EditText getEventdescription() {
-        return eventdescription;
-    }
-
-    public void setEventdescription(EditText eventdescription) {
-        this.eventdescription = eventdescription;
-    }
-
-    public EditText getEventamount() {
-        return eventamount;
-    }
-
-    public void setEventamount(EditText eventamount) {
-        this.eventamount = eventamount;
-    }
-
-    public EditText getCampofecha() {
-        return campofecha;
-    }
-
-    public void setCampofecha(EditText campofecha) {
-        this.campofecha = campofecha;
-    }
-
-    public ArrayList<Create_EventActivity> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<Create_EventActivity> items) {
-        this.items = items;
-    }
-
-    public Create_EventActivity(Spinner spinner, EditText event, EditText tittle, EditText eventdescription, EditText campofecha, EditText eventamount) {
-        this.spinner= spinner;
-        this.event=event;
-        this.tittle=tittle;
-        this.eventdescription=eventdescription;
-        this.campofecha=campofecha;
-        this.eventamount=eventamount;
-        items=new ArrayList<Create_EventActivity>();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +42,7 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
          saved.setOnClickListener(this);
          campofecha= (EditText)findViewById(R.id.dateeventr);
          spinner= (Spinner)findViewById(R.id.event_type);
-        List list= new ArrayList();
+         List list= new ArrayList();
 
         String eventName = event.getText().toString();
 
@@ -161,18 +96,18 @@ public class Create_EventActivity extends AppCompatActivity implements View.OnCl
                     }
                     for (int i = 0; i <items.size(); i++) {
                         Calendar fechaActual= Calendar.getInstance();
-                        if(items.get(i).campofecha.equals(campofecha)){
+                       if(items.get(i).getDate().equals(campofecha)){
                             Toast msg = Toast.makeText(this, "YA HAY UN EVENTO PARA ESA FECHA", Toast.LENGTH_SHORT);
                             msg.show();
                             break;
                         }else{
+                           Register_events itemss=new Register_events(spinner.toString(),tittle.getText().toString(),event.getText().toString(), eventdescription.getText().toString(),campofecha.getText().toString(),eventamount.getText().toString());
+                           items.add(itemss);
                             Toast msg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             msg.show();
-                            items.add(new Create_EventActivity(spinner,event,tittle,eventdescription,campofecha,eventamount));
+
                         }
                     }
-                    Toast msg = Toast.makeText(this, items.get(0).event.toString(), Toast.LENGTH_SHORT);
-                    msg.show();
                     break;
             }
 
