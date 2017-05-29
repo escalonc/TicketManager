@@ -9,9 +9,10 @@ import java.util.ArrayList;
  */
 
 public class UserRepository implements BaseRepository<User> {
-    private ArrayList<User> users = new ArrayList<>();;
+    private static ArrayList<User> users = new ArrayList<>();
 
-    public UserRepository() {
+    public UserRepository()
+    {
         User user = new User();
         user.setUsername("admin");
         user.setPassword("supersecreto");
@@ -20,7 +21,13 @@ public class UserRepository implements BaseRepository<User> {
     }
 
     @Override
+    public ArrayList<User> getAll(){
+        return this.users;
+    }
+
+    @Override
     public void add(User user) {
+        this.users.add(user);
     }
 
     @Override
@@ -33,17 +40,14 @@ public class UserRepository implements BaseRepository<User> {
 
     }
 
-    @Override
-    public User get(User user) {
-        return null;
-    }
-
     public User get(String username){
         return search(username, this.users.size() - 1);
     }
 
-    public User search(String username, int position){
-        if (this.users.get(position).getName().equals(username)){
+    private User search(String username, int position)
+    {
+
+        if (this.users.get(position).getUsername().equals(username)){
             return  this.users.get(position);
         }else if (position > 0){
             return search(username, --position);
