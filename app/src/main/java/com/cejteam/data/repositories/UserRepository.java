@@ -46,7 +46,6 @@ public class UserRepository implements BaseRepository<User> {
 
     private User search(String username, int position)
     {
-
         if (this.users.get(position).getUsername().equals(username)){
             return  this.users.get(position);
         }else if (position > 0){

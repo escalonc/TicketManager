@@ -10,7 +10,7 @@ import javax.inject.Inject;
  * Created by Christopher Escalon on 5/21/2017.
  */
 
-public class LoginInteractor implements ILoginInteractor {
+public class LoginInteractor implements LoginInteractorContract {
 
     BaseRepository<User> userRepository;
 

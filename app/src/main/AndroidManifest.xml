@@ -27,6 +27,10 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/action_sign_in"
+            android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>

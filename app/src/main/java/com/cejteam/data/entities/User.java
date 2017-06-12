@@ -10,6 +10,8 @@ public class User {
     protected String password;
     protected int age;
     protected int id;
+    private UserType userType;
+
 
     public int getId() {
         return id;
@@ -50,5 +52,19 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public enum UserType {
+        LIMITATED,
+        ADMIN
+    }
+
 
 }

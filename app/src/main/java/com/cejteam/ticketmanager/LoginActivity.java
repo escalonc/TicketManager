@@ -1,37 +1,23 @@
 package com.cejteam.ticketmanager;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.cejteam.core.ILoginInteractor;
 import com.cejteam.core.LoginInteractor;
 import com.cejteam.data.repositories.UserRepository;
-import com.cejteam.helpers.injection.TicketManagerApplication;
 import com.cejteam.presenters.LoginPresenter;
-
-import java.util.Dictionary;
-
-import javax.inject.Inject;
 
 public class LoginActivity extends AppCompatActivity {
 
     LoginPresenter loginPresenter = new LoginPresenter(new LoginInteractor(new UserRepository()));
-    //@Inject LoginPresenter loginPresenter;
 
     private UserLoginTask mAuthTask = null;
 
@@ -45,20 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //((TicketManagerApplication)getApplicationContext()).getApplicationComponent().inject(this);
-
-        // Set up the login form.
         mUsernameView = (EditText) findViewById(R.id.username);
 
         mPasswordView = (EditText) findViewById(R.id.password);
-
-//        mPasswordView.setOnEditorActionListener((textView, id, keyEvent) -> {
-//            if (id == R.id.login || id == EditorInfo.IME_NULL) {
-//                attemptLogin();
-//                return true;
-//            }
-//            return false;
-//        });
 
         Button mSignInButton = (Button) findViewById(R.id.sign_in_button);
         mSignInButton.setOnClickListener(new OnClickListener() {
@@ -111,9 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             focusView.requestFocus();
         }
         else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-//            showProgress(true);
+
             progressDialog = new ProgressDialog(LoginActivity.this,
                     R.style.AppTheme_Dark_Dialog);
             progressDialog.setIndeterminate(true);
@@ -123,10 +96,6 @@ public class LoginActivity extends AppCompatActivity {
             mAuthTask = new UserLoginTask(username, password);
             mAuthTask.execute((Void) null);
 
-//            if (loginPresenter.login(username, password)){
-//                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//            }
-
         }
     }
 
@@ -135,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isPasswordValid(String password) {
-        return password.length() > 4;
+        return password.length() > 1;
     }
 
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {

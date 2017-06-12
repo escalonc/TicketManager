@@ -1,6 +1,6 @@
 package com.cejteam.presenters;
 
-import com.cejteam.core.ILoginInteractor;
+import com.cejteam.core.LoginInteractorContract;
 
 import javax.inject.Inject;
 
@@ -10,10 +10,9 @@ import javax.inject.Inject;
 
 public class LoginPresenter {
 
-    ILoginInteractor loginInteractor;
+    LoginInteractorContract loginInteractor;
 
-    @Inject
-    public LoginPresenter(ILoginInteractor loginInteractor) {
+    public LoginPresenter(LoginInteractorContract loginInteractor) {
         this.loginInteractor = loginInteractor;
     }
 
