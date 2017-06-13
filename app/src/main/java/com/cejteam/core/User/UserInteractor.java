@@ -1,4 +1,4 @@
-package com.cejteam.core;
+package com.cejteam.core.User;
 
 import com.cejteam.data.entities.User;
 import com.cejteam.data.repositories.BaseRepository;
