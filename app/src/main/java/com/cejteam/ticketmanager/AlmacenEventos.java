@@ -13,6 +13,10 @@ public class AlmacenEventos {
     public static ArrayList<RegistrarEventoMusical> registrarEventoMusicals = new ArrayList<>();
     public static ArrayList<RegistrarEventoReligioso> registrarEventoReligiosos = new ArrayList<>();
 
+    public static ArrayList<RegistrarEventoDeportivo> registrarEventoDeportivoseliminados = new ArrayList<>();
+    public static ArrayList<RegistrarEventoMusical> registrarEventoMusicalseliminados = new ArrayList<>();
+    public static ArrayList<RegistrarEventoReligioso> registrarEventoReligiososeliminados = new ArrayList<>();
+
 
     public void registrardeportivo(RegistrarEventoDeportivo dr) {
         registrarEventoDeportivos.add(dr);
@@ -24,26 +28,26 @@ public class AlmacenEventos {
     public void registrarreligioso(RegistrarEventoReligioso dr) {
         registrarEventoReligiosos.add(dr);
     }
-    public boolean comparardeportivo(EditText campofecha) {
+    public boolean comparardeportivo(String campofecha) {
         for (RegistrarEventoDeportivo k : registrarEventoDeportivos) {
-            if (k.getDate() == String.valueOf(campofecha.toString())) {
+            if (k.getDate().equals( String.valueOf(campofecha.toString()))) {
                 return false;
             }
         }
         return true;
     }
 
-    public boolean compararreligioso(EditText campofecha) {
+    public boolean compararreligioso(String campofecha) {
         for (RegistrarEventoReligioso j : registrarEventoReligiosos) {
-            if (j.getDate() == String.valueOf(campofecha.toString())) {
+            if (j.getDate().equals( String.valueOf(campofecha.toString())) ){
                 return false;
             }
         }
         return true;
     }
-    public boolean compararmusical(EditText campofecha) {
+    public boolean compararmusical(String campofecha) {
         for (RegistrarEventoMusical j : registrarEventoMusicals) {
-            if (j.getDate() == String.valueOf(campofecha.toString())) {
+            if (j.getDate().equals( String.valueOf(campofecha.toString())) ){
                 return false;
             }
         }
@@ -51,11 +55,26 @@ public class AlmacenEventos {
     }
 
     public  void borrarEvento(int cod) {
+        for (RegistrarEventoMusical e : registrarEventoMusicals) {
+            if (e.getEvent() == cod) {
+                registrarEventoMusicalseliminados.add(e);
+                registrarEventoMusicals.remove(e);
+            }
+        }
         for (RegistrarEventoDeportivo e : registrarEventoDeportivos) {
             if (e.getEvent() == cod) {
+                registrarEventoDeportivoseliminados.add(e);
                 registrarEventoDeportivos.remove(e);
             }
         }
+        for (RegistrarEventoReligioso e : registrarEventoReligiosos) {
+            if (e.getEvent() == cod) {
+                registrarEventoReligiososeliminados.add(e);
+                registrarEventoReligiosos.remove(e);
+            }
+        }
+
+
     }
 
     public  boolean verificarexistencia(int codigo) {
@@ -64,16 +83,82 @@ public class AlmacenEventos {
                 return true;
             }
         }
+        for (RegistrarEventoMusical e : registrarEventoMusicals) {
+            if (e.getEvent() == codigo) {
+                return true;
+            }
+        }
+        for (RegistrarEventoReligioso e : registrarEventoReligiosos) {
+            if (e.getEvent() == codigo) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public RegistrarEventoDeportivo buscarEvento(int cod) {
+    public RegistrarEventoDeportivo buscarEventodeportivo(int cod) {
         for (RegistrarEventoDeportivo e : registrarEventoDeportivos) {
             if (e.getEvent() == cod) {
                 return e;
             }
         }
+
+
         return null;
+    }
+
+    public RegistrarEventoMusical buscareventomusical(int cod) {
+        for (RegistrarEventoMusical e : registrarEventoMusicals) {
+            if (e.getEvent() == cod) {
+                return e;
+            }
+        }
+
+
+        return null;
+    }
+
+    public RegistrarEventoReligioso buscareventoreligioso(int cod) {
+        for (RegistrarEventoReligioso e : registrarEventoReligiosos) {
+            if (e.getEvent() == cod) {
+                return e;
+            }
+        }
+
+
+        return null;
+    }
+
+
+
+    public boolean buscarfechadep(String fecha, RegistrarEventoDeportivo deportivo) {
+
+        for (RegistrarEventoDeportivo e : registrarEventoDeportivos) {
+            if (e.getDate().equals(fecha) && e != deportivo) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean buscarfechamus(String fecha, RegistrarEventoMusical musical) {
+
+        for (RegistrarEventoMusical e : registrarEventoMusicals) {
+            if (e.getDate().equals(fecha) && e != musical) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean buscarfecharel(String fecha, RegistrarEventoReligioso religioso) {
+
+        for (RegistrarEventoReligioso e : registrarEventoReligiosos) {
+            if (e.getDate().equals(fecha) && e != religioso) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

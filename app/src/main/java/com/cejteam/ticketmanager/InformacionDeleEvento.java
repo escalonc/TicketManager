@@ -23,26 +23,41 @@ public class InformacionDeleEvento extends AppCompatActivity {
         codigocam=(TextView)findViewById(R.id.mostrarcodigo);
         titulo=(TextView)findViewById(R.id.mostrartitulo);
         descripcion=(TextView)findViewById(R.id.mostrardescripcion);
-        acercade=(TextView)findViewById(R.id.mostraramount);
         monto=(TextView)findViewById(R.id.mostrarmonto);
         regresar=(Button)findViewById(R.id.mostrarregresar);
         eventotipo=(ImageView) findViewById(R.id.mostrarimagen);
-        RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEvento(codigo);
 
-        fecha.setText(registrarEventoDeportivo.getDate().toString());
-        codigocam.setText(String.valueOf( registrarEventoDeportivo.getEvent()));
-        titulo.setText(String.valueOf( registrarEventoDeportivo.getTittle()));
-        descripcion.setText(String.valueOf( registrarEventoDeportivo.getDescription()));
-        acercade.setText(String.valueOf( registrarEventoDeportivo.getAmount()));
-        monto.setText(String.valueOf( registrarEventoDeportivo.getAmount()));
+        RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigo);
+        RegistrarEventoReligioso registrarEventoReligioso = almacenEventos.buscareventoreligioso(codigo);
+        RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigo);
 
-        if(registrarEventoDeportivo.getType().equals("Deportivo")){
+        if(registrarEventoDeportivo!=null){
+            fecha.setText(registrarEventoDeportivo.getDate().toString());
+            codigocam.setText(String.valueOf( registrarEventoDeportivo.getEvent()));
+            titulo.setText(String.valueOf( registrarEventoDeportivo.getTittle()));
+            descripcion.setText(String.valueOf( registrarEventoDeportivo.getDescription()));
+             monto.setText(String.valueOf( registrarEventoDeportivo.getAmount()));
             eventotipo.setImageResource(R.drawable.deportivo);
-        }else if(registrarEventoDeportivo.getType().equals("Musical")){
-            eventotipo.setImageResource(R.drawable.musicali);
-        }else if(registrarEventoDeportivo.getType().equals("Religioso")){
+
+
+        }else if(registrarEventoReligioso!=null){
+            fecha.setText(registrarEventoReligioso.getDate().toString());
+            codigocam.setText(String.valueOf( registrarEventoReligioso.getEvent()));
+            titulo.setText(String.valueOf( registrarEventoReligioso.getTittle()));
+            descripcion.setText(String.valueOf( registrarEventoReligioso.getDescription()));
+           monto.setText(String.valueOf( registrarEventoReligioso.getAmount()));
             eventotipo.setImageResource(R.drawable.religiosoi);
+
+
+        }else if(registrarEventoMusical!=null){
+            fecha.setText(registrarEventoMusical.getDate().toString());
+            codigocam.setText(String.valueOf( registrarEventoMusical.getEvent()));
+            titulo.setText(String.valueOf( registrarEventoMusical.getTittle()));
+            descripcion.setText(String.valueOf( registrarEventoMusical.getDescription()));
+            monto.setText(String.valueOf( registrarEventoMusical.getAmount()));
+            eventotipo.setImageResource(R.drawable.musicali);
         }
+
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

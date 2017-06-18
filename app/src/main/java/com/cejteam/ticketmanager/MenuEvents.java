@@ -49,7 +49,7 @@ public class MenuEvents extends AppCompatActivity implements View.OnClickListene
                     finish();
                     break;
                 case R.id.editar:
-                    Intent intents = new Intent(this,EditarEvento.class);
+                    Intent intents = new Intent(this,TipoDeEventoEditar.class);
                     startActivity(intents);
                     finish();
                     break;

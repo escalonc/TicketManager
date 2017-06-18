@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 public class TipodeEvento extends AppCompatActivity implements View.OnClickListener{
     Button deportivo,musical,religioso;
+    int nuevo=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +32,19 @@ public class TipodeEvento extends AppCompatActivity implements View.OnClickListe
             switch (seleccion) {
                 case R.id.deportivo:
                     Intent intenst = new Intent(this,CrearEventoDeportivo.class);
+                    intenst.putExtra("nuevo",nuevo);
                     startActivity(intenst);
                     finish();
                     break;
                 case R.id.musical:
                     Intent intent = new Intent(this,CrearEventoMusical.class);
+                    intent.putExtra("nuevo",nuevo);
                     startActivity(intent);
                     finish();
                     break;
                 case R.id.religioso:
                     Intent intents = new Intent(this,CrearEventoReligioso.class);
+                    intents.putExtra("nuevo",nuevo);
                     startActivity(intents);
                     finish();
                     break;

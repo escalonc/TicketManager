@@ -29,7 +29,8 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
     private Button saved;
     TextView totalapagar;
     AlmacenEventos almacenEventos=new AlmacenEventos();
-    private int codeevent=0;
+    AlmacenEventos fecha=new AlmacenEventos();
+    private int codeevent=0,nuevo=0,codigorecibido=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,24 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
 
         };
 
+        nuevo = (Integer) getIntent().getExtras().get("nuevo");
+
+
+
+
+        if(nuevo==2){
+            codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
+            almacenEventos.verificarexistencia(codigorecibido);
+            RegistrarEventoReligioso registrarEventoReligioso = almacenEventos.buscareventoreligioso(codigorecibido);
+            event.setText(String.valueOf(registrarEventoReligioso.getEvent()));
+            tittle.setText(String.valueOf(registrarEventoReligioso.getTittle()));
+            eventdescription.setText(String.valueOf(registrarEventoReligioso.getDescription()));
+            eventamount.setText(String.valueOf(registrarEventoReligioso.getAmount()));
+            campofecha.setText(String.valueOf(registrarEventoReligioso.getDate()));
+            people.setText(String.valueOf(registrarEventoReligioso.getPeople()));
+
+        }
+
     }
 
     public void onClick(View v) {
@@ -69,39 +88,101 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
         try{
             switch (seleccion) {
                 case R.id.religiososs:
+                    if (nuevo == 1) {
+                        AlmacenEventos almacen = new AlmacenEventos();
+                        Calendar calendario = Calendar.getInstance();
+                        ano2 = calendario.get(Calendar.YEAR);
+                        mes2 = calendario.get(Calendar.MONTH);
+                        dia2 = calendario.get(Calendar.DAY_OF_MONTH);
+                        if (TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(people.getText())) {
+                            Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                            msg.show();
+                        } else if (!almacenEventos.comparardeportivo(campofecha.getText().toString()) || !almacenEventos.compararreligioso(campofecha.getText().toString()) || !almacenEventos.compararmusical(campofecha.getText().toString())) {
+                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            msg.show();
+                        } else if (ano1 < ano2) {
+                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            fmsg.show();
+                        } else if (ano1 == ano2 && mes1 < mes2) {
+                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            fmsg.show();
+                        } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
+                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            fmsg.show();
+                        } else if (Integer.parseInt(people.getText().toString()) > 20000) {
+                            Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
+                            fmsg.show();
+                        } else if (almacen.verificarexistencia(Integer.parseInt(event.getText().toString()))) {
+                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            fmsg.show();
+                        } else {
+                            codeevent = Integer.parseInt(event.getText().toString());
+                            RegistrarEventoReligioso r = new RegistrarEventoReligioso(tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), people.getText().toString(), totalapagar.getText().toString(), dia, mes, año);
+                            almacenEventos.registrarreligioso(r);
+                            Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
+                            fmsg.show();
+                            Intent intent = new Intent(this, MenuEvents.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }else if(nuevo==2){
 
-                    Calendar calendario = Calendar.getInstance();
-                    ano2 = calendario.get(Calendar.YEAR);
-                    mes2 = calendario.get(Calendar.MONTH);
-                    dia2 = calendario.get(Calendar.DAY_OF_MONTH);
-                    if (TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(people.getText())) {
-                        Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
-                        msg.show();
-                    } else if (!almacenEventos.comparardeportivo(campofecha) ||!almacenEventos.compararreligioso(campofecha) ||!almacenEventos.compararmusical(campofecha)   ) {
-                        Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
-                        msg.show();
-                    } else if (ano1 < ano2) {
-                        Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
-                        fmsg.show();
-                    } else if (ano1 == ano2 && mes1 < mes2) {
-                        Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
-                        fmsg.show();
-                    } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
-                        Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
-                        fmsg.show();
-                    } else if(Integer.parseInt(people.getText().toString())>20000){
-                        Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
-                        fmsg.show();
-                    } else{
-                        codeevent = Integer.parseInt(event.getText().toString());
-                        RegistrarEventoReligioso r = new RegistrarEventoReligioso(tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), people.getText().toString(),totalapagar.getText().toString());
-                        almacenEventos.registrarreligioso(r);
-                        Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
-                        fmsg.show();
-                        Intent intent = new Intent(this, MenuEvents.class);
-                        startActivity(intent);
-                        finish();
+                            RegistrarEventoReligioso registrarEventoReligioso = almacenEventos.buscareventoreligioso(codigorecibido);
+                            AlmacenEventos almacenes = new AlmacenEventos();
+                            almacenes.verificarexistencia(Integer.parseInt(event.getText().toString()));
+                            RegistrarEventoDeportivo registrarEventoDeportivosm = almacenEventos.buscarEventodeportivo(Integer.parseInt(event.getText().toString()));
+                            RegistrarEventoMusical registrarEventoMusicalam = almacenEventos.buscareventomusical(Integer.parseInt(event.getText().toString()));
+                            RegistrarEventoReligioso registrarEventoReligiosoam = almacenEventos.buscareventoreligioso(Integer.parseInt(event.getText().toString()));
+                            if ( TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(people.getText())) {
+                                Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                                msg.show();
+                            } else if (!almacenEventos.comparardeportivo(campofecha.getText().toString()) || !almacenEventos.compararmusical(campofecha.getText().toString())) {
+                                Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                                msg.show();
+                            } else if (ano1 < ano2) {
+                                Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if (ano1 == ano2 && mes1 < mes2) {
+                                Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
+                                Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if (Integer.parseInt(people.getText().toString()) > 20000) {
+                                Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if (registrarEventoReligioso != registrarEventoReligiosoam && registrarEventoReligiosoam != null) {
+                                Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if (registrarEventoMusicalam != null && registrarEventoReligioso.getEvent() == registrarEventoMusicalam.getEvent() ) {
+                                Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if ( registrarEventoDeportivosm != null && registrarEventoReligioso.getEvent() == registrarEventoDeportivosm.getEvent() ) {
+                                Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                            } else if (fecha.buscarfecharel(String.valueOf(campofecha.getText().toString()), registrarEventoReligioso)){
+                                Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                                msg.show();
+                            } else {
+                                RegistrarEventoReligioso registrarEventoReligioso1 = almacenEventos.buscareventoreligioso(codigorecibido);
+                                registrarEventoReligioso1.setEvent((Integer.parseInt(event.getText().toString())));
+                                registrarEventoReligioso1.setTittle((String.valueOf(tittle.getText().toString())));
+                                registrarEventoReligioso1.setDescription((String.valueOf(eventdescription.getText().toString())));
+                                registrarEventoReligioso1.setAmount((String.valueOf(eventamount.getText().toString())));
+                                registrarEventoReligioso1.setDate((String.valueOf(campofecha.getText().toString())));
+                                registrarEventoReligioso1.setPeople((String.valueOf(people.getText().toString())));
+                                registrarEventoReligioso1.setDia(dia);
+                                registrarEventoReligioso1.setMes(mes);
+                                registrarEventoReligioso1.setAño(año);
+                                Toast fmsg = Toast.makeText(this, "CAMBIO REALIZADO EXITOSAMENTE", Toast.LENGTH_SHORT);
+                                fmsg.show();
+                                Intent intent = new Intent(this, MenuEvents.class);
+                                startActivity(intent);
+                                finish();
+                            }
+
                     }
+                    break;
             }
 
 

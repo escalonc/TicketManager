@@ -6,9 +6,33 @@ package com.cejteam.ticketmanager;
 
 public class RegistrarEventoMusical {
     private String type,tittle,description,date,amount,totalapagar,people;
-    int event;
+    int event, dia,mes,año;
 
 
+
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAño() {
+        return año;
+    }
+
+    public void setAño(int año) {
+        this.año = año;
+    }
 
     public String getType() {
         return type;
@@ -74,7 +98,7 @@ public class RegistrarEventoMusical {
         this.event = event;
     }
 
-    public RegistrarEventoMusical(String type, String s, int codeevent, String description, String date, String amount, String people, String totalapagar) {
+    public RegistrarEventoMusical(String type, String s, int codeevent, String description, String date, String amount, String people, String totalapagar,int dia,int mes, int año) {
         this.type = type;
         this.event = codeevent;
         this.tittle = s;
@@ -83,6 +107,9 @@ public class RegistrarEventoMusical {
         this.amount = amount;
         this.people=people;
         this.totalapagar=totalapagar;
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
     }
 
 }

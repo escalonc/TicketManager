@@ -1,15 +1,73 @@
 package com.cejteam.ticketmanager;
 
+import android.provider.ContactsContract;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 /**
  * Created by joel.caballero on 24/5/2017.
  */
 
 public class RegistrarEventoDeportivo {
 private String type,tittle,description,date,amount,team1,team2,people;
-int event;
+int event,dia,mes,año;
+    ImageView representacion;
+
+    public RegistrarEventoDeportivo() {
+
+    }
+
+    public String getTeam1() {
+        return team1;
+    }
+
+    public void setTeam1(String team1) {
+        this.team1 = team1;
+    }
+
+    public String getTeam2() {
+        return team2;
+    }
+
+    public void setTeam2(String team2) {
+        this.team2 = team2;
+    }
+
+    public String getPeople() {
+        return people;
+    }
+
+    public void setPeople(String people) {
+        this.people = people;
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAño() {
+        return año;
+    }
+
+    public void setAño(int año) {
+        this.año = año;
+    }
 
 
-    public RegistrarEventoDeportivo(String type, String s, int codeevent, String description, String date, String amount,String team1,String team2, String people) {
+
+    public RegistrarEventoDeportivo(String type, String s, int codeevent, String description, String date, String amount, String team1, String team2, String people, int año, int mes, int dia) {
         this.type = type;
         this.event = codeevent;
         this.tittle = s;
@@ -19,6 +77,10 @@ int event;
         this.team1=team1;
         this.team2=team2;
         this.people=people;
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
+
     }
 
 
