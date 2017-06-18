@@ -4,17 +4,25 @@ package com.cejteam.ticketmanager;
  * Created by joel.caballero on 24/5/2017.
  */
 
-public class Register_events {
-private String type,event,tittle,description,date,amount;
+public class RegistrarEventoDeportivo {
+private String type,tittle,description,date,amount,team1,team2,people;
+int event;
 
-    public Register_events(String type, String event, String tittle, String description, String date, String amount) {
+
+    public RegistrarEventoDeportivo(String type, String s, int codeevent, String description, String date, String amount,String team1,String team2, String people) {
         this.type = type;
-        this.event = event;
-        this.tittle = tittle;
+        this.event = codeevent;
+        this.tittle = s;
         this.description = description;
         this.date = date;
         this.amount = amount;
+        this.team1=team1;
+        this.team2=team2;
+        this.people=people;
     }
+
+
+
 
     public String getType() {
         return type;
@@ -24,11 +32,11 @@ private String type,event,tittle,description,date,amount;
         this.type = type;
     }
 
-    public String getEvent() {
+    public int getEvent() {
         return event;
     }
 
-    public void setEvent(String event) {
+    public void setEvent(int event) {
         this.event = event;
     }
 

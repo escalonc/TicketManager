@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ListSong = new Intent(getApplicationContext(), Create_EventActivity.class);
+                Intent ListSong = new Intent(getApplicationContext(), CrearEventoDeportivo.class);
                 startActivity(ListSong);
             }
         });
@@ -199,7 +199,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
-            // TODO: register the new account here.
+            // TODO: registrarEventoDeportivos the new account here.
             return true;
         }
 

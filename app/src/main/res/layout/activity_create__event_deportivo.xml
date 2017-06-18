@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical"
+    tools:context="com.cejteam.ticketmanager.CrearEventoDeportivo">
+
+
+    <Spinner
+        android:id="@+id/event_type"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"/>
+
+
+    <LinearLayout
+
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:layout_below="@id/event_type"
+        android:background="@color/blanco"
+        android:layout_marginTop="5dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/superior"
+            android:orientation="horizontal">
+            <TextView
+
+                android:id="@+id/eventcode"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blanco"
+                android:text="@string/event_code"
+                android:textColor="@color/negro"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/eventcoder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:ems="12"
+                android:hint="@string/event"
+                android:inputType="number"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/blanco"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/eventtittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blanco"
+                    android:text="@string/title_event"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/eventtittler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="10"
+                    android:hint="@string/title"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/eventdescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blanco"
+                android:text="@string/event_description"
+                android:textColor="@color/negro"
+                android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/eventdescriptionr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="10"
+                    android:hint="@string/description"
+
+                    android:inputType="textPersonName"
+                    android:textColor="@color/negro" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/dateevent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blanco"
+                android:text="@string/date_event"
+                android:textColor="@color/negro"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/dateeventr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:ems="10"
+                android:hint="@string/date"
+                android:inputType="date"
+                android:onClick="mostrarCalendar"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/team1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blanco"
+                android:text="@string/team1t"
+                android:textColor="@color/negro"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/team1s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:ems="10"
+                android:hint="@string/team1"
+                android:inputType="textPersonName"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/team2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blanco"
+                    android:text="@string/team2t"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/team2s"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="10"
+                    android:hint="@string/team2"
+                    android:inputType="textPersonName"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/people"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blanco"
+                    android:text="@string/people1"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/peoples"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="10"
+                    android:hint="@string/people"
+                    android:inputType="textPersonName"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/costo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blanco"
+                    android:text="@string/event_amount"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/costos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:ems="10"
+                    android:hint="@string/amount"
+                    android:inputType="number"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/layout1"
+        android:text="SAVED"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_centerInParent="true"
+        android:layout_height="match_parent">
+
+        <Button
+
+            android:id="@+id/saved"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="SAVED"
+            tools:layout_centerInParent="true" />
+
+    </LinearLayout>
+</RelativeLayout>
+

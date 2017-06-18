@@ -23,8 +23,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Create_EventActivity" />
-        <activity android:name=".Events_createdActivity"></activity>
+        <activity android:name=".CrearEventoDeportivo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Events_createdActivity" />
+        <activity android:name=".MenuEvents">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EliminarEvento" />
+        <activity android:name=".EditarEvento" />
+        <activity android:name=".VerEvento" />
+        <activity android:name=".InformacionDeleEvento" />
+        <activity android:name=".CrearEventoMusical" />
+        <activity android:name=".CrearEventoReligioso" />
+        <activity android:name=".TipodeEvento"></activity>
     </application>
 
 </manifest>

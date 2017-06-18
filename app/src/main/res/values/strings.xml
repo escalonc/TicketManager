@@ -28,7 +28,19 @@
     <string name="date_event">Date event:</string>
     <string name="date">Date</string>
 
+    <string name="team1">Team 1</string>
+    <string name="team2">Team 2</string>
+    <string name="team1t">Name Team 1</string>
+    <string name="team2t">Name Team 2</string>
+    <string name="people">Cuantity</string>
+    <string name="people1">Number of people</string>
+
+    <string name="costo">Total to pay</string>
+    <string name="costototal">Total</string>
+
+
     <string name="event_amount">Amount of the event:</string>
+    <string name="hola">Amount of the event:</string>
     <string name="amount">Amount</string>
 
     <string name="Save">Save</string>
@@ -46,5 +58,7 @@
     <string name="Back_menu">Main</string>
     <string name="List_event">List_event</string>
     <string name="title_activity_events">EventsActivity</string>
+
+    <string name="eventsmenu">Eventos</string>
 
 </resources>

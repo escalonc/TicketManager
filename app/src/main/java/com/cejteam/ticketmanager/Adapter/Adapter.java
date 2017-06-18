@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cejteam.ticketmanager.R;
-import com.cejteam.ticketmanager.Register_events;
+import com.cejteam.ticketmanager.RegistrarEventoDeportivo;
 
 import java.util.List;
 
@@ -17,9 +17,9 @@ import java.util.List;
  */
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Items> {
-List<Register_events>listaEvents;
+List<RegistrarEventoDeportivo>listaEvents;
 
-    public Adapter(List<Register_events> listaEvents) {
+    public Adapter(List<RegistrarEventoDeportivo> listaEvents) {
         this.listaEvents = listaEvents;
     }
 

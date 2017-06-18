@@ -22,10 +22,10 @@ public class Events_createdActivity extends AppCompatActivity {
         RecyclerView recyclerView= (RecyclerView) findViewById(R.id.lista);
         LinearLayoutManager llm= new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
-        List<Register_events> registers= Arrays.asList(new Register_events("Musical","Ilonka","Te esperamos","26 Mayo", "Gratis","Ven")   );
+//        List<RegistrarEventoDeportivo> registers= Arrays.asList(new RegistrarEventoDeportivo("Musical","Ilonka","Te esperamos","26 Mayo", "Gratis","Ven")   );
 
-        Adapter adapter= new Adapter(registers);
-        recyclerView.setAdapter(adapter);
+  //      Adapter adapter= new Adapter(registers);
+    //    recyclerView.setAdapter(adapter);
 
     }
 }
