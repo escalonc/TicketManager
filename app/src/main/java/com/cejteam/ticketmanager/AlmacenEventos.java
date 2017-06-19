@@ -18,6 +18,8 @@ public class AlmacenEventos {
     public static ArrayList<RegistrarEventoReligioso> registrarEventoReligiososeliminados = new ArrayList<>();
 
 
+
+
     public void registrardeportivo(RegistrarEventoDeportivo dr) {
         registrarEventoDeportivos.add(dr);
     }

@@ -1,38 +1,39 @@
 package com.cejteam.ticketmanager;
 
+import android.app.usage.UsageEvents;
+
+import java.util.ArrayList;
+
 /**
  * Created by joel.caballero on 17/6/2017.
  */
 
-public class RegistrarEventoMusical {
-    private String type,tittle,description,date,amount,totalapagar,people;
-    int event, dia,mes,año;
+public class RegistrarEventoMusical extends Event{
+    private String type;
+    private ArrayList<String> peopleOfSupport = new ArrayList<>();
 
+    public RegistrarEventoMusical() {
 
-
-    public int getDia() {
-        return dia;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void registrarmembers(ArrayList<String> teams1) {
+        this.peopleOfSupport = teams1;
     }
 
-    public int getMes() {
-        return mes;
+
+
+    public ArrayList<String> getPeopleOfSupport() {
+        return peopleOfSupport;
     }
 
-    public void setMes(int mes) {
-        this.mes = mes;
+    public void setPeopleOfSupport(ArrayList<String> peopleOfSupport) {
+        this.peopleOfSupport = peopleOfSupport;
     }
 
-    public int getAño() {
-        return año;
+    public void addpeoplesupport(String name){
+        peopleOfSupport.add(name);
     }
 
-    public void setAño(int año) {
-        this.año = año;
-    }
 
     public String getType() {
         return type;
@@ -41,75 +42,8 @@ public class RegistrarEventoMusical {
     public void setType(String type) {
         this.type = type;
     }
-
-    public String getTittle() {
-        return tittle;
-    }
-
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public String getTotalapagar() {
-        return totalapagar;
-    }
-
-    public void setTotalapagar(String totalapagar) {
-        this.totalapagar = totalapagar;
-    }
-
-    public String getPeople() {
-        return people;
-    }
-
-    public void setPeople(String people) {
-        this.people = people;
-    }
-
-    public int getEvent() {
-        return event;
-    }
-
-    public void setEvent(int event) {
-        this.event = event;
-    }
-
     public RegistrarEventoMusical(String type, String s, int codeevent, String description, String date, String amount, String people, String totalapagar,int dia,int mes, int año) {
-        this.type = type;
-        this.event = codeevent;
-        this.tittle = s;
-        this.description = description;
-        this.date = date;
-        this.amount = amount;
-        this.people=people;
-        this.totalapagar=totalapagar;
-        this.dia = dia;
-        this.mes = mes;
-        this.año = año;
+        super(codeevent, s, description, date, amount, people, dia, mes, año);
     }
 
 }

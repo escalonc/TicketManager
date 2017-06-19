@@ -2,6 +2,7 @@ package com.cejteam.ticketmanager;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.usage.UsageEvents;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,10 +27,12 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     int dia1,dia2,mes1,mes2,ano1,ano2;
     private Spinner spinner;
-    private EditText event,tittle,eventdescription,eventamount,campofecha,people;
-    private Button saved;
+    private EditText event,tittle,eventdescription,eventamount,campofecha,people,peopless;
+    private Button saved,addpeople,calculate;
+    double total=0;
     TextView totalapagar;
     AlmacenEventos almacenEventos=new AlmacenEventos();
+    private ArrayList<String> members = new ArrayList<>();
     AlmacenEventos fecha=new AlmacenEventos();
     private int codeevent=0,nuevo=0, codigorecibido=0;;
     @Override
@@ -44,6 +47,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
         saved=(Button)findViewById(R.id.savedmusical);
         people=(EditText)findViewById(R.id.peoplesmusical);
         saved.setOnClickListener(this);
+        peopless =(EditText)findViewById(R.id.namemembersout);
         campofecha= (EditText)findViewById(R.id.dateeventrmusical);
         spinner= (Spinner)findViewById(R.id.event_typemusical);
         List list= new ArrayList();
@@ -90,8 +94,39 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
 
         nuevo = (Integer) getIntent().getExtras().get("nuevo");
 
+        addpeople=(Button)findViewById(R.id.addmembersout);
+        addpeople.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (nuevo == 1) {
+                    if (TextUtils.isEmpty(peopless.getText().toString())) {
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    } else {
+                        members.add(peopless.getText().toString());
+                    }
+                }else if(nuevo==2){
+                    almacenEventos.verificarexistencia(codigorecibido);
+                    RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
+                    registrarEventoMusical.addpeoplesupport(peopless.getText().toString());
+                }
 
+            }
+        });
 
+        calculate=(Button)findViewById(R.id.calculatetotalmusical);
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(eventamount.getText().toString())){
+                    Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
+                    msg.show();
+                }else{
+                    total= Integer.parseInt(calculate.getText().toString()) *30/100;
+                    totalapagar.setText(String.valueOf(total));
+                }
+            }
+        });
         if(nuevo==2){
             codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
             almacenEventos.verificarexistencia(codigorecibido);
@@ -142,11 +177,12 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
-                            RegistrarEventoMusical r = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), people.getText().toString(), totalapagar.getText().toString(), dia, mes, año);
-                            almacenEventos.registrarmusical(r);
+                            Event event = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), people.getText().toString(), String.valueOf(total()), dia, mes, año);
+                            almacenEventos.registrarmusical((RegistrarEventoMusical) event);
                             Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
+                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
                         }
@@ -192,9 +228,9 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             registrarEventoMusical.setEvent((Integer.parseInt(event.getText().toString())));
                             registrarEventoMusical.setTittle((String.valueOf(tittle.getText().toString())));
                             registrarEventoMusical.setDescription((String.valueOf(eventdescription.getText().toString())));
-                            registrarEventoMusical.setAmount((String.valueOf(eventamount.getText().toString())));
+                            registrarEventoMusical.setAmount((String.valueOf(total())));
                             registrarEventoMusical.setDate((String.valueOf(campofecha.getText().toString())));
-                            registrarEventoMusical.setPeople((String.valueOf(people.getText().toString())));
+                            registrarEventoMusical.registrarmembers(members);
                             registrarEventoMusical.setType((String.valueOf(spinner.toString())));
                             registrarEventoMusical.setDia(dia);
                             registrarEventoMusical.setMes(mes);
@@ -202,6 +238,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             Toast fmsg = Toast.makeText(this, "CAMBIO REALIZADO EXITOSAMENTE", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
+                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
                         }
@@ -241,6 +278,16 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
     }
     public void mostrarCalendar(View control){
         showDialog(tipo_dialogo);
+    }
+
+    public double total() {
+        if (TextUtils.isEmpty(eventamount.getText().toString())) {
+            Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
+            msg.show();
+            return -1;
+        } else {
+           return total = Integer.parseInt(calculate.getText().toString()) * 30 / 100;
+        }
     }
 
 }

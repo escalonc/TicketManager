@@ -8,7 +8,13 @@
     tools:context="com.cejteam.ticketmanager.CrearEventoReligioso">
 
 
-
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
     <LinearLayout
 
@@ -23,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/superior"
+
             android:orientation="horizontal">
             <TextView
 
@@ -47,12 +54,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:background="@color/blanco"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/eventtittle"
@@ -76,6 +85,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
@@ -100,6 +110,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
@@ -128,6 +139,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
@@ -146,13 +158,14 @@
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="@string/people"
-                    android:inputType="textPersonName"/>
+                    android:inputType="number"/>
 
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/costo"
@@ -177,7 +190,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/costototal"
@@ -190,13 +203,22 @@
 
                 <TextView
                     android:id="@+id/costostotalreligioso"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="@string/costototal"
                     android:inputType="number"/>
+                <Button
 
+                    android:id="@+id/calculatereligioso"
+
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Calculate"
+                    tools:layout_centerInParent="true" />
 
             </LinearLayout>
 
@@ -223,9 +245,15 @@
             android:gravity="center"
             android:orientation="vertical"
             android:text="SAVED"
+            android:layout_margin="15dp"
             tools:layout_centerInParent="true" />
 
     </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
 </RelativeLayout>
 
 

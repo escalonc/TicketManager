@@ -1,21 +1,27 @@
 package com.cejteam.ticketmanager;
 
-import android.provider.ContactsContract;
-import android.widget.ImageView;
-import android.widget.TextView;
+import java.util.ArrayList;
 
 /**
  * Created by joel.caballero on 24/5/2017.
  */
 
-public class RegistrarEventoDeportivo {
-private String type,tittle,description,date,amount,team1,team2,people;
-int event,dia,mes,año;
-    ImageView representacion;
+public class RegistrarEventoDeportivo extends Event {
+    private String team1, team2;
+    private ArrayList<String> teams1 = new ArrayList<>();
+    private ArrayList<String> teams2 = new ArrayList<>();
+    private String type;
 
-    public RegistrarEventoDeportivo() {
 
+
+    public void registrarteam1(String name) {
+        teams1.add(name);
     }
+
+    public void registrarteam2(String name) {
+        teams2.add(name);
+    }
+
 
     public String getTeam1() {
         return team1;
@@ -33,58 +39,27 @@ int event,dia,mes,año;
         this.team2 = team2;
     }
 
-    public String getPeople() {
-        return people;
+
+    public ArrayList<String> getTeams1() {
+        return teams1;
     }
 
-    public void setPeople(String people) {
-        this.people = people;
+    public void setTeams1(ArrayList<String> teams1) {
+        this.teams1 = teams1;
     }
 
-    public int getDia() {
-        return dia;
+    public ArrayList<String> getTeams2() {
+        return teams2;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void setTeams2(ArrayList<String> teams2) {
+        this.teams2 = teams2;
     }
 
-    public int getMes() {
-        return mes;
-    }
-
-    public void setMes(int mes) {
-        this.mes = mes;
-    }
-
-    public int getAño() {
-        return año;
-    }
-
-    public void setAño(int año) {
-        this.año = año;
-    }
-
-
-
-    public RegistrarEventoDeportivo(String type, String s, int codeevent, String description, String date, String amount, String team1, String team2, String people, int año, int mes, int dia) {
-        this.type = type;
-        this.event = codeevent;
-        this.tittle = s;
-        this.description = description;
-        this.date = date;
-        this.amount = amount;
-        this.team1=team1;
-        this.team2=team2;
-        this.people=people;
-        this.dia = dia;
-        this.mes = mes;
-        this.año = año;
+    public RegistrarEventoDeportivo() {
+        super();
 
     }
-
-
-
 
     public String getType() {
         return type;
@@ -94,43 +69,15 @@ int event,dia,mes,año;
         this.type = type;
     }
 
-    public int getEvent() {
-        return event;
-    }
+    public RegistrarEventoDeportivo(String type, String s, int codeevent, String description, String date, String amount, String team1, String team2, String people, int año, int mes, int dia, ArrayList<String> teams1, ArrayList<String> teams2) {
+        super(codeevent, s, description, date, amount, people, dia, mes, año);
+        this.team1 = team1;
+        this.team2 = team2;
+        this.teams1=teams1;
+        this.teams2=teams2;
 
-    public void setEvent(int event) {
-        this.event = event;
-    }
-
-    public String getTittle() {
-        return tittle;
-    }
-
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
     }
 }
+
+
+

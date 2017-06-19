@@ -26,7 +26,8 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     int dia1,dia2,mes1,mes2,ano1,ano2;
     private EditText event,tittle,eventdescription,eventamount,campofecha,people;
-    private Button saved;
+    private Button saved,calculate;
+    double total=0;
     TextView totalapagar;
     AlmacenEventos almacenEventos=new AlmacenEventos();
     AlmacenEventos fecha=new AlmacenEventos();
@@ -64,7 +65,19 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
 
         nuevo = (Integer) getIntent().getExtras().get("nuevo");
 
-
+        calculate=(Button)findViewById(R.id.calculatereligioso);
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(eventamount.getText().toString())){
+                    Toast msg = Toast.makeText(CrearEventoReligioso.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
+                    msg.show();
+                }else{
+                    total= Integer.parseInt(calculate.getText().toString()) *30/100;
+                    totalapagar.setText(String.valueOf(total));
+                }
+            }
+        });
 
 
         if(nuevo==2){
@@ -117,8 +130,8 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
-                            RegistrarEventoReligioso r = new RegistrarEventoReligioso(tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), people.getText().toString(), totalapagar.getText().toString(), dia, mes, año);
-                            almacenEventos.registrarreligioso(r);
+                            Event event = new RegistrarEventoReligioso(tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), String.valueOf(total()), people.getText().toString(), totalapagar.getText().toString(), dia, mes, año);
+                            almacenEventos.registrarreligioso((RegistrarEventoReligioso) event);
                             Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
@@ -168,7 +181,7 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
                                 registrarEventoReligioso1.setEvent((Integer.parseInt(event.getText().toString())));
                                 registrarEventoReligioso1.setTittle((String.valueOf(tittle.getText().toString())));
                                 registrarEventoReligioso1.setDescription((String.valueOf(eventdescription.getText().toString())));
-                                registrarEventoReligioso1.setAmount((String.valueOf(eventamount.getText().toString())));
+                                registrarEventoReligioso1.setAmount((String.valueOf(total())));
                                 registrarEventoReligioso1.setDate((String.valueOf(campofecha.getText().toString())));
                                 registrarEventoReligioso1.setPeople((String.valueOf(people.getText().toString())));
                                 registrarEventoReligioso1.setDia(dia);
@@ -218,4 +231,13 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
         showDialog(tipo_dialogo);
     }
 
+    public double total() {
+        if (TextUtils.isEmpty(eventamount.getText().toString())) {
+            Toast msg = Toast.makeText(CrearEventoReligioso.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
+            msg.show();
+            return -1;
+        } else {
+            return total = Integer.parseInt(calculate.getText().toString()) +2000;
+        }
+    }
 }

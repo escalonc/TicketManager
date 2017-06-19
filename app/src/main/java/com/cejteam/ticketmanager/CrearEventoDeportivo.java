@@ -2,6 +2,7 @@ package com.cejteam.ticketmanager;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.usage.UsageEvents;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,9 +26,11 @@ public class CrearEventoDeportivo extends AppCompatActivity implements View.OnCl
     int dia1,dia2,mes1,mes2,ano1,ano2;
     private Spinner spinner;
     private EditText event,tittle,eventdescription,eventamount,campofecha,team1,team2,people;
-    private Button saved;
+    private Button saved,add1,add2;
     AlmacenEventos almacenEventos=new AlmacenEventos();
     AlmacenEventos fecha=new AlmacenEventos();
+    private ArrayList<String> teams1 = new ArrayList<>();
+    private ArrayList<String> teams2 = new ArrayList<>();
 private int codeevent=0, nuevo=0, codigorecibido=0;
 
 
@@ -43,9 +46,9 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
          eventdescription =(EditText)findViewById(R.id.eventdescriptionr);
          eventamount =(EditText)findViewById(R.id.costos);
          saved=(Button)findViewById(R.id.saved);
-        team1=(EditText)findViewById(R.id.team1s);
-        team2=(EditText)findViewById(R.id.team2s);
-        people=(EditText)findViewById(R.id.peoples);
+          team1=(EditText)findViewById(R.id.team1s);
+         team2=(EditText)findViewById(R.id.team2s);
+         people=(EditText)findViewById(R.id.peoples);
          saved.setOnClickListener(this);
          campofecha= (EditText)findViewById(R.id.dateeventr);
          spinner= (Spinner)findViewById(R.id.event_type);
@@ -89,7 +92,43 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
 
         nuevo = (Integer) getIntent().getExtras().get("nuevo");
 
+        add1=(Button)findViewById(R.id.addtesam1);
+        add1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (nuevo == 1) {
+                    if (TextUtils.isEmpty(team1.getText().toString())) {
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    } else {
+                        teams1.add(team1.getText().toString());
+                    }
+                }else if(nuevo==2){
+                    almacenEventos.verificarexistencia(codigorecibido);
+                    RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
+                    registrarEventoDeportivo.registrarteam1(team1.getText().toString());
+                }
 
+            }
+        });
+        add2=(Button)findViewById(R.id.addtesam2);
+        add2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(nuevo==1){
+                    if(TextUtils.isEmpty(team2.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }else{
+                        teams2.add(team2.getText().toString());
+                    }
+                }else if(nuevo==2){
+                    almacenEventos.verificarexistencia(codigorecibido);
+                    RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
+                    registrarEventoDeportivo.registrarteam2(team2.getText().toString());
+                }
+            }
+        });
 
 
         if(nuevo==2){
@@ -146,11 +185,12 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
-                            RegistrarEventoDeportivo r = new RegistrarEventoDeportivo(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), team1.getText().toString(), team2.getText().toString(), people.getText().toString(), año, mes, dia);
-                            almacenEventos.registrardeportivo(r);
+                            Event event = new RegistrarEventoDeportivo(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), team1.getText().toString(), team2.getText().toString(), people.getText().toString(), año, mes, dia,teams1,teams2);
+                            almacenEventos.registrardeportivo((RegistrarEventoDeportivo) event);
                             Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
+                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
                         }
@@ -193,7 +233,10 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                         } else if(fecha.buscarfechadep(String.valueOf(campofecha.getText().toString()), registrarEventoDeportivos)){
                             Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
                             msg.show();
-                        }  else{
+                        } else if(teams1.size()==0 || teams2.size()==0){
+                            Toast msg = Toast.makeText(this, "Registre minimo un miembro por equipo", Toast.LENGTH_SHORT);
+                            msg.show();
+                        } else{
                             RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                             registrarEventoDeportivo.setEvent((Integer.parseInt(event.getText().toString())));
                             registrarEventoDeportivo.setTittle((String.valueOf(tittle.getText().toString())));
@@ -204,12 +247,15 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                             registrarEventoDeportivo.setTeam2((String.valueOf(team2.getText().toString())));
                             registrarEventoDeportivo.setPeople((String.valueOf(people.getText().toString())));
                             registrarEventoDeportivo.setType((String.valueOf(spinner.toString())));
+                            registrarEventoDeportivo.setTeams1(teams1);
+                            registrarEventoDeportivo.setTeams2(teams2);
                             registrarEventoDeportivo.setDia(dia);
                             registrarEventoDeportivo.setMes(mes);
                             registrarEventoDeportivo.setAño(año);
                             Toast fmsg = Toast.makeText(this, "CAMBIO REALIZADO EXITOSAMENTE", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
+                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
 
