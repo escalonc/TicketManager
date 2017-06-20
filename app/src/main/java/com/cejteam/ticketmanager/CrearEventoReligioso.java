@@ -73,7 +73,7 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
                     Toast msg = Toast.makeText(CrearEventoReligioso.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
                     msg.show();
                 }else{
-                    total= Integer.parseInt(calculate.getText().toString()) *30/100;
+                    total= Integer.parseInt(eventamount.getText().toString()) *30/100;
                     totalapagar.setText(String.valueOf(total));
                 }
             }

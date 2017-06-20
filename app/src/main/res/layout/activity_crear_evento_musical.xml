@@ -188,7 +188,7 @@
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="Name"
-                    android:inputType="number"/>
+                    android:inputType="textPersonName"/>
                 <Button
 
                     android:id="@+id/addmembersout"

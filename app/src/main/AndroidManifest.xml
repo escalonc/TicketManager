@@ -44,6 +44,9 @@
         <activity android:name=".CrearEventoReligioso" />
         <activity android:name=".TipodeEvento" />
         <activity android:name=".TipoDeEventoEditar" />
+        <activity android:name=".EventosRealizadosActivity" />
+        <activity android:name=".EventosFuturosActivity" />
+        <activity android:name=".Reports"></activity>
     </application>
 
 </manifest>

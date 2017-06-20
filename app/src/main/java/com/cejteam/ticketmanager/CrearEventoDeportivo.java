@@ -25,7 +25,7 @@ public class CrearEventoDeportivo extends AppCompatActivity implements View.OnCl
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     int dia1,dia2,mes1,mes2,ano1,ano2;
     private Spinner spinner;
-    private EditText event,tittle,eventdescription,eventamount,campofecha,team1,team2,people;
+    private EditText event,tittle,eventdescription,eventamount,campofecha,team1,team2,people,member1,member2;
     private Button saved,add1,add2;
     AlmacenEventos almacenEventos=new AlmacenEventos();
     AlmacenEventos fecha=new AlmacenEventos();
@@ -46,8 +46,10 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
          eventdescription =(EditText)findViewById(R.id.eventdescriptionr);
          eventamount =(EditText)findViewById(R.id.costos);
          saved=(Button)findViewById(R.id.saved);
-          team1=(EditText)findViewById(R.id.team1s);
-         team2=(EditText)findViewById(R.id.team2s);
+        team1=(EditText)findViewById(R.id.team1s);
+        team2=(EditText)findViewById(R.id.team2s);
+        member1=(EditText)findViewById(R.id.nameteam1out);
+        member2=(EditText)findViewById(R.id.nameteam2out);
          people=(EditText)findViewById(R.id.peoples);
          saved.setOnClickListener(this);
          campofecha= (EditText)findViewById(R.id.dateeventr);
@@ -97,16 +99,19 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
             @Override
             public void onClick(View v) {
                 if (nuevo == 1) {
-                    if (TextUtils.isEmpty(team1.getText().toString())) {
+                    if (TextUtils.isEmpty(member1.getText().toString())) {
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
                         msg.show();
                     } else {
-                        teams1.add(team1.getText().toString());
+                        teams1.add(member1.getText().toString());
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
+                        msg.show();
                     }
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
-                    registrarEventoDeportivo.registrarteam1(team1.getText().toString());
+                    registrarEventoDeportivo.registrarteam1(member1.getText().toString());
+
                 }
 
             }
@@ -116,16 +121,18 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
             @Override
             public void onClick(View v) {
                 if(nuevo==1){
-                    if(TextUtils.isEmpty(team2.getText().toString())){
+                    if(TextUtils.isEmpty(member2.getText().toString())){
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
                         msg.show();
                     }else{
-                        teams2.add(team2.getText().toString());
+                        teams2.add(member2.getText().toString());
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
+                        msg.show();
                     }
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
-                    registrarEventoDeportivo.registrarteam2(team2.getText().toString());
+                    registrarEventoDeportivo.registrarteam2(member2.getText().toString());
                 }
             }
         });
@@ -247,8 +254,6 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                             registrarEventoDeportivo.setTeam2((String.valueOf(team2.getText().toString())));
                             registrarEventoDeportivo.setPeople((String.valueOf(people.getText().toString())));
                             registrarEventoDeportivo.setType((String.valueOf(spinner.toString())));
-                            registrarEventoDeportivo.setTeams1(teams1);
-                            registrarEventoDeportivo.setTeams2(teams2);
                             registrarEventoDeportivo.setDia(dia);
                             registrarEventoDeportivo.setMes(mes);
                             registrarEventoDeportivo.setAño(año);

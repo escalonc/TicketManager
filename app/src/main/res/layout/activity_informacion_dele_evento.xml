@@ -7,6 +7,18 @@
     android:background="@color/blanco"
     tools:context="com.cejteam.ticketmanager.InformacionDeleEvento">
 
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        tools:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -66,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/blanco"
                 android:text="Code:"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="45dp"
                 android:textColor="@color/negro"
                 android:textSize="18dp"/>
             <TextView
@@ -106,44 +118,57 @@
 
     </LinearLayout>
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_marginTop="18dp"
-    android:orientation="vertical"
-    android:layout_height="wrap_content"
-    android:layout_marginRight="97dp"
-    android:layout_marginEnd="97dp"
-    android:layout_below="@+id/layout1"
-    android:background="@color/blanco"
-    android:layout_alignRight="@+id/layout1"
-    android:layout_alignEnd="@+id/layout1">
-    <TextView
-        android:id="@+id/mostrarmonto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@color/blanco"
-        android:text="Monto "
-        android:textColor="@color/negro"
-        android:textSize="22dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/layout1"
+            android:layout_alignRight="@+id/layout1"
+            android:layout_below="@+id/layout1"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@color/blanco"
+            android:orientation="vertical"
+            tools:layout_centerInParent="true">
 
-    <Button
-        android:id="@+id/mostrarregresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:text="REGRESAR" />
+            <TextView
+                android:id="@+id/mostrarmontos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@color/blanco"
+                android:text="Monto "
+                android:textColor="@color/negro"
+                android:textSize="22dp"
+                android:textStyle="bold" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/mostrarmonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@color/blanco"
+                android:text="Monto "
+                android:textColor="@color/negro"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/mostrarregresar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="REGRESAR" />
+        </LinearLayout>
 
 
-
-
-
+    </LinearLayout>
+</ScrollView>
 </RelativeLayout>
 

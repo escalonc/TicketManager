@@ -104,6 +104,8 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         msg.show();
                     } else {
                         members.add(peopless.getText().toString());
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "Add", Toast.LENGTH_SHORT);
+                        msg.show();
                     }
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
@@ -122,7 +124,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                     Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
                     msg.show();
                 }else{
-                    total= Integer.parseInt(calculate.getText().toString()) *30/100;
+                    total= Integer.parseInt(eventamount.getText().toString()) *30/100;
                     totalapagar.setText(String.valueOf(total));
                 }
             }
@@ -230,7 +232,6 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             registrarEventoMusical.setDescription((String.valueOf(eventdescription.getText().toString())));
                             registrarEventoMusical.setAmount((String.valueOf(total())));
                             registrarEventoMusical.setDate((String.valueOf(campofecha.getText().toString())));
-                            registrarEventoMusical.registrarmembers(members);
                             registrarEventoMusical.setType((String.valueOf(spinner.toString())));
                             registrarEventoMusical.setDia(dia);
                             registrarEventoMusical.setMes(mes);

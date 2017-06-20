@@ -44,8 +44,11 @@ public class MenuEvents extends AppCompatActivity implements View.OnClickListene
                     finish();
                     break;
                 case R.id.eliminar:
-                    Intent intent = new Intent(this,EliminarEvento.class);
+                    /*Intent intent = new Intent(this,EliminarEvento.class);
                     startActivity(intent);
+                    finish();*/
+                    Intent intensst = new Intent(MenuEvents.this,Reports.class);
+                    startActivity(intensst);
                     finish();
                     break;
                 case R.id.editar:
