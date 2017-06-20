@@ -124,7 +124,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                     Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
                     msg.show();
                 }else{
-                    total= Integer.parseInt(eventamount.getText().toString()) *30/100;
+                    total= Integer.parseInt(eventamount.getText().toString())+(Integer.parseInt(eventamount.getText().toString()) * 30 / 100);
                     totalapagar.setText(String.valueOf(total));
                 }
             }
@@ -179,7 +179,8 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
-                            Event event = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), people.getText().toString(), String.valueOf(total()), dia, mes, año);
+                            String costo= String.valueOf(Integer.parseInt(eventamount.getText().toString())+ (Integer.parseInt(eventamount.getText().toString())*30/100)) ;
+                            Event event = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), costo, people.getText().toString(), dia, mes, año);
                             almacenEventos.registrarmusical((RegistrarEventoMusical) event);
                             Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             fmsg.show();
@@ -250,7 +251,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
 
 
         }catch (Exception e){
-
+            System.out.println(e.getMessage());
         }
     }
 
@@ -287,7 +288,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
             msg.show();
             return -1;
         } else {
-           return total = Integer.parseInt(calculate.getText().toString()) * 30 / 100;
+           return total = Integer.parseInt(eventamount.getText().toString())+(Integer.parseInt(eventamount.getText().toString()) * 30 / 100);
         }
     }
 

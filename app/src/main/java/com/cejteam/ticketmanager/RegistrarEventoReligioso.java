@@ -7,7 +7,7 @@ package com.cejteam.ticketmanager;
 public class RegistrarEventoReligioso extends Event {
 
 
-    public RegistrarEventoReligioso(String s, int codeevent, String description, String date, String amount, String people, String totalapagar,int dia, int mes, int año) {
+    public RegistrarEventoReligioso(String s, int codeevent, String description, String date, String amount, String people,int dia,int mes, int año){
         super(codeevent, s, description, date, amount, people, dia, mes, año);
     }
 

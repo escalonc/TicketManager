@@ -73,7 +73,7 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
                     Toast msg = Toast.makeText(CrearEventoReligioso.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
                     msg.show();
                 }else{
-                    total= Integer.parseInt(eventamount.getText().toString()) *30/100;
+                    total= Integer.parseInt(eventamount.getText().toString()) +2000;
                     totalapagar.setText(String.valueOf(total));
                 }
             }
@@ -130,7 +130,8 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
-                            Event event = new RegistrarEventoReligioso(tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), String.valueOf(total()), people.getText().toString(), totalapagar.getText().toString(), dia, mes, año);
+                            String costo= String.valueOf(Integer.parseInt(eventamount.getText().toString())+ 2000) ;
+                            Event event = new RegistrarEventoReligioso(tittle.getText().toString(),codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), costo, people.getText().toString(), dia, mes, año);
                             almacenEventos.registrarreligioso((RegistrarEventoReligioso) event);
                             Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             fmsg.show();
@@ -237,7 +238,7 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
             msg.show();
             return -1;
         } else {
-            return total = Integer.parseInt(calculate.getText().toString()) +2000;
+            return total = Integer.parseInt(eventamount.getText().toString()) + 2000;
         }
     }
 }
