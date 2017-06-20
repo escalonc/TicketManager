@@ -59,6 +59,6 @@
     <string name="List_event">List_event</string>
     <string name="title_activity_events">EventsActivity</string>
 
-    <string name="eventsmenu">Eventos</string>
+    <string name="eventsmenu">Events</string>
 
 </resources>
