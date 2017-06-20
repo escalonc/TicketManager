@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cejteam.ticketmanager.EventosEntreDosFechas">
+
+
+    <ListView
+        android:id="@+id/List_eventos_betwenn"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/textViewDeportivoscalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/List_eventos_betwenn"
+        android:layout_marginTop="31dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewReligiososcalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:layout_below="@+id/textViewDeportivoscalc"
+        />
+
+    <TextView
+        android:id="@+id/textViewMusicalescalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:layout_below="@+id/textViewReligiososcalc" />
+
+    <TextView
+        android:id="@+id/textViewMontoTotalcalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewMusicalescalc"
+        android:layout_marginTop="19dp"
+        android:text="TextView" />
+</RelativeLayout>
+
+
