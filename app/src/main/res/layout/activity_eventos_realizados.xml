@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
+
     tools:context="com.cejteam.ticketmanager.EventosRealizadosActivity">
 
 
@@ -11,12 +14,16 @@
         android:id="@+id/List_eventos_realizados"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:textStyle="italic"
+
         android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/textViewDeportivosp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+
         android:layout_below="@+id/List_eventos_realizados"
         android:layout_marginTop="31dp"
         android:text="TextView" />
@@ -24,6 +31,8 @@
     <TextView
         android:id="@+id/textViewReligiososp"
         android:layout_width="wrap_content"
+        android:textStyle="italic"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="TextView"
@@ -33,6 +42,8 @@
         android:id="@+id/textViewMusicalesp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+
         android:layout_marginTop="20dp"
         android:text="TextView"
         android:layout_below="@+id/textViewReligiososp"/>
@@ -41,6 +52,8 @@
         android:id="@+id/textViewMontoTotalp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+
         android:layout_below="@+id/textViewMusicalesp"
         android:layout_marginTop="19dp"
         android:text="TextView" />

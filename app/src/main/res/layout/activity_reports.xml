@@ -2,8 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:textStyle="italic"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
+
     tools:context="com.cejteam.ticketmanager.Reports">&lt;LinearLayout
 
 
@@ -13,14 +17,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Reports"
+
         android:textAlignment="center"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:textSize="32dp"
         android:textColor="@color/colorPrimary"/>
     <LinearLayout
         android:padding="30dp"
         android:id="@+id/linearprincipal"
         android:layout_marginTop="15dp"
+        android:textStyle="italic"
+
         android:layout_below="@id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +42,10 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
+
             android:textStyle="italic"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
             android:textSize="20dp"
             android:text="@string/eventoRealizado"
             />
@@ -45,6 +55,10 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
+            android:textStyle="italic"
+
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
             android:textSize="20dp"
             android:text="@string/eventoFuturo" />
 
@@ -52,8 +66,13 @@
 
             android:layout_width="300dp"
             android:layout_height="60dp"
+            android:textStyle="italic"
+
             android:textSize="20dp"
+
             android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
             android:text="@string/muyPronto"
             android:id="@+id/more"
             />

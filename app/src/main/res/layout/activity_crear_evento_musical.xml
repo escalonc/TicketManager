@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
     tools:context="com.cejteam.ticketmanager.CrearEventoMusical">
 <ScrollView
     android:layout_width="wrap_content"
@@ -17,6 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
+        android:background="@color/blanco"
+        android:textStyle="italic"
         android:orientation="vertical"/>
 
 
@@ -27,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:orientation="vertical"
+        android:textStyle="italic"
         android:layout_below="@id/event_typemusical"
         android:background="@color/blanco"
         android:layout_marginTop="5dp">
@@ -37,17 +42,18 @@
             android:id="@+id/superior"
             android:orientation="horizontal">
             <TextView
-
+                android:textStyle="italic"
                 android:id="@+id/eventcode"
                 android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/blanco"
                 android:text="@string/event_code"
-                android:textColor="@color/negro"
+                android:textColor="@color/blanco"
                 android:textSize="18dp" />
 
             <EditText
+                android:textStyle="italic"
                 android:id="@+id/eventcodermusical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,26 +66,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/blanco"
+            android:textStyle="italic"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:textStyle="italic"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/eventtittle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="italic"
                     android:background="@color/blanco"
                     android:text="@string/title_event"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <EditText
                     android:id="@+id/eventtittlermusical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="italic"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="@string/title"
@@ -90,6 +100,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="italic"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
@@ -97,24 +108,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
+                    android:textStyle="italic"
                     android:text="@string/event_description"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <EditText
                     android:id="@+id/eventdescriptionrmusical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="italic"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="@string/description"
 
                     android:inputType="textPersonName"
-                    android:textColor="@color/negro" />
+                    android:textColor="@color/blanco" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="italic"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
@@ -122,14 +136,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
+                    android:textStyle="italic"
                     android:text="@string/date_event"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <EditText
                     android:id="@+id/dateeventrmusical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="italic"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="@string/date"
@@ -144,6 +160,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="italic"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
@@ -151,8 +168,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
+                    android:textStyle="italic"
                     android:text="@string/people1"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <EditText
@@ -160,6 +178,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:textStyle="italic"
                     android:ems="10"
                     android:hint="@string/people"
                     android:inputType="number"/>
@@ -169,6 +188,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_marginTop="15dp"
+                android:textStyle="italic"
                 android:layout_height="wrap_content"
 
                 android:orientation="horizontal">
@@ -176,15 +196,17 @@
                     android:id="@+id/nameteam1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="italic"
                     android:background="@color/blanco"
                     android:text="@string/members"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <EditText
                     android:id="@+id/namemembersout"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:textStyle="italic"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
                     android:hint="@string/name"
@@ -194,24 +216,29 @@
                     android:id="@+id/addmembersout"
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:background="@color/colorPrimaryDark"
                     android:text="@string/add"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
+                android:textStyle="italic"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/costo"
                     android:layout_width="match_parent"
+                    android:textStyle="italic"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
                     android:text="@string/event_amount"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <EditText
@@ -219,6 +246,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:textStyle="italic"
                     android:ems="10"
                     android:hint="@string/amount"
                     android:inputType="number"/>
@@ -228,6 +256,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="italic"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
                 <TextView
@@ -236,7 +265,8 @@
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
                     android:text="@string/costo"
-                    android:textColor="@color/negro"
+                    android:textStyle="italic"
+                    android:textColor="@color/blanco"
                     android:textSize="18dp" />
 
                 <TextView
@@ -244,6 +274,7 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:textStyle="italic"
                     android:ems="10"
                     android:hint="@string/costototal"
                     android:inputType="number"/>
@@ -252,8 +283,11 @@
                     android:id="@+id/calculatetotalmusical"
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:background="@color/colorPrimaryDark"
                     android:text="@string/calculate"
                     tools:layout_centerInParent="true" />
 
@@ -271,6 +305,7 @@
         android:layout_below="@+id/layout1"
         android:text="SAVED"
         android:gravity="center"
+        android:textStyle="italic"
         android:orientation="vertical"
         tools:layout_centerInParent="true"
         android:layout_height="match_parent">
@@ -279,6 +314,7 @@
 
             android:id="@+id/savedmusical"
             android:layout_width="200dp"
+            android:textStyle="italic"
             android:layout_height="50dp"
             android:gravity="center"
             android:orientation="vertical"

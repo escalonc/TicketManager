@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
     tools:context="com.cejteam.ticketmanager.EventosCancelados">
 
 
@@ -11,6 +13,8 @@
         android:id="@+id/List_eventos_cancelados"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:textStyle="italic"
+
         android:layout_alignParentTop="true"
         />
 
@@ -18,6 +22,8 @@
         android:id="@+id/textViewDeportivosc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+
         android:layout_below="@+id/List_eventos_cancelados"
         android:layout_marginTop="31dp"
         android:text="TextView" />
@@ -27,6 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:textStyle="italic"
+
         android:text="TextView"
         android:layout_below="@+id/textViewDeportivosc"
         />
@@ -35,6 +43,8 @@
         android:id="@+id/textViewMusicalesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+
         android:layout_marginTop="20dp"
         android:text="TextView"
         android:layout_below="@+id/textViewReligiososc" />
@@ -42,6 +52,8 @@
     <TextView
         android:id="@+id/textViewMontoTotalc"
         android:layout_width="wrap_content"
+        android:textStyle="italic"
+
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewMusicalesc"
         android:layout_marginTop="19dp"

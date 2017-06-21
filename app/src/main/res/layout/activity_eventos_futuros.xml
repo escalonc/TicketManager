@@ -4,18 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textStyle="italic"
+
+    android:background="@color/blanco"
+
     tools:context="com.cejteam.ticketmanager.EventosFuturosActivity">
 
     <ListView
         android:id="@+id/List_eventos_futuros"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:textStyle="italic"
+
         android:layout_alignParentTop="true"
          />
 
     <TextView
         android:id="@+id/textViewDeportivosF"
         android:layout_width="wrap_content"
+        android:textStyle="italic"
+
         android:layout_height="wrap_content"
 
         android:layout_below="@+id/List_eventos_futuros"
@@ -26,6 +34,8 @@
         android:id="@+id/textViewReligiososF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+
         android:layout_marginTop="24dp"
         android:text="TextView"
         android:layout_below="@+id/textViewDeportivosF"
@@ -34,6 +44,8 @@
     <TextView
         android:id="@+id/textViewMusicalesF"
         android:layout_width="wrap_content"
+        android:textStyle="italic"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="TextView"
@@ -42,6 +54,8 @@
     <TextView
         android:id="@+id/textViewMontoTotalF"
         android:layout_width="wrap_content"
+        android:textStyle="italic"
+
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewMusicalesF"
         android:layout_marginTop="19dp"
