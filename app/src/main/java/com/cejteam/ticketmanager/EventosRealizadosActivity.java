@@ -23,10 +23,10 @@ public class EventosRealizadosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_realizados);
-        depRea = (TextView) findViewById(R.id.textViewDeportivosp);
-        relRea = (TextView) findViewById(R.id.textViewReligiososp);
-        musRea = (TextView) findViewById(R.id.textViewMusicalesp);
-        TotalAPagar = (TextView) findViewById(R.id.textViewMontoTotalp);
+        depRea = (TextView) findViewById(R.id.realizadoDeporte);
+        relRea = (TextView) findViewById(R.id.realizadoReligion);
+        musRea = (TextView) findViewById(R.id.realizadoMusical);
+        TotalAPagar = (TextView) findViewById(R.id.realizadoMonto);
 try {
     eventReal = new ArrayList<>();
     for (Event e : AlmacenEventos.registrarEventoDeportivos) {
@@ -51,7 +51,7 @@ try {
         }
     }
     ListAdapter ListaDelAdaptador = new AdaptadorDeVistaDeEventos(getApplicationContext(), eventReal);
-    ListView ListaDeLosEventos = (ListView) findViewById(R.id.List_eventos_realizados);
+    ListView ListaDeLosEventos = (ListView) findViewById(R.id.eventoRealizado);
     ListaDeLosEventos.setAdapter(ListaDelAdaptador);
     depRea.setText("Sports events: " + String.valueOf(depCont));
     relRea.setText("Religious events: " + String.valueOf(relCont));

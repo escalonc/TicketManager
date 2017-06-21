@@ -11,53 +11,49 @@
 
 
     <ListView
-        android:id="@+id/List_eventos_realizados"
+        android:id="@+id/eventoRealizado"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:textStyle="italic"
         android:layout_alignParentTop="true" />
 
     <TextView
-        android:id="@+id/textViewDeportivosp"
+        android:id="@+id/realizadoDeporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
-        android:layout_below="@+id/List_eventos_realizados"
+        android:layout_below="@+id/eventoRealizado"
         android:layout_marginTop="31dp"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textViewReligiososp"
+        android:id="@+id/realizadoReligion"
         android:layout_width="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="TextView"
-        android:layout_below="@+id/textViewDeportivosp"/>
+        android:layout_below="@+id/realizadoDeporte"/>
 
     <TextView
-        android:id="@+id/textViewMusicalesp"
+        android:id="@+id/realizadoMusical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:layout_below="@+id/textViewReligiososp"/>
+        android:layout_below="@+id/realizadoReligion"/>
 
     <TextView
-        android:id="@+id/textViewMontoTotalp"
+        android:id="@+id/realizadoMonto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
-        android:layout_below="@+id/textViewMusicalesp"
+        android:layout_below="@+id/realizadoMusical"
         android:layout_marginTop="19dp"
         android:text="TextView" />
 </RelativeLayout>

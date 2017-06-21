@@ -11,7 +11,7 @@
 
 
     <ListView
-        android:id="@+id/List_eventos_betwenn"
+        android:id="@+id/eventoEntreDosFechas"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:textStyle="italic"
@@ -19,51 +19,43 @@
         />
 
     <TextView
-        android:id="@+id/textViewDeportivoscalc"
+        android:id="@+id/dosFechasDeporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-
         android:textStyle="italic"
-
-        android:layout_below="@+id/List_eventos_betwenn"
+        android:layout_below="@+id/eventoEntreDosFechas"
         android:layout_marginTop="31dp"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textViewReligiososcalc"
+        android:id="@+id/dosFechasReligioso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-
         android:textStyle="italic"
-
         android:layout_marginTop="24dp"
         android:text="TextView"
-        android:layout_below="@+id/textViewDeportivoscalc"
+        android:layout_below="@+id/dosFechasDeporte"
         />
 
     <TextView
-        android:id="@+id/textViewMusicalescalc"
+        android:id="@+id/dosFechasMusical"
         android:layout_width="wrap_content"
         android:textColor="@color/colorPrimary"
-
         android:textStyle="italic"
-
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-
         android:text="TextView"
-        android:layout_below="@+id/textViewReligiososcalc" />
+        android:layout_below="@+id/dosFechasReligioso" />
 
     <TextView
-        android:id="@+id/textViewMontoTotalcalc"
+        android:id="@+id/dosFechasMonto"
         android:layout_width="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewMusicalescalc"
+        android:layout_below="@+id/dosFechasMusical"
         android:layout_marginTop="19dp"
         android:text="TextView" />
 </RelativeLayout>

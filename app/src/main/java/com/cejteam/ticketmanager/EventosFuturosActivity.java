@@ -18,10 +18,10 @@ public class EventosFuturosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_futuros);
-        depFut = (TextView) findViewById(R.id.textViewDeportivosF);
-        relFut = (TextView) findViewById(R.id.textViewReligiososF);
-        musFut = (TextView) findViewById(R.id.textViewMusicalesF);
-        MontoAPagar = (TextView) findViewById(R.id.textViewMontoTotalF);
+        depFut = (TextView) findViewById(R.id.futuroDeporte);
+        relFut = (TextView) findViewById(R.id.futuroReligion);
+        musFut = (TextView) findViewById(R.id.futuroMusica);
+        MontoAPagar = (TextView) findViewById(R.id.futuroMonto);
         try {
             EventosAPasar = new ArrayList<>();
             for (Event e : AlmacenEventos.registrarEventoDeportivos) {
@@ -46,7 +46,7 @@ public class EventosFuturosActivity extends AppCompatActivity {
                 }
             }
             ListAdapter ListaDelAdaptador = new AdaptadorDeVistaDeEventos(getApplicationContext(), EventosAPasar);
-            ListView ListaFinal = (ListView) findViewById(R.id.List_eventos_futuros);
+            ListView ListaFinal = (ListView) findViewById(R.id.eventosFuturo);
             ListaFinal.setAdapter(ListaDelAdaptador);
             depFut.setText("Sports events: " + String.valueOf(depCont));
             relFut.setText("Religious events: " + String.valueOf(relCont));

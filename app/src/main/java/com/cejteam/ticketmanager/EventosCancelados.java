@@ -17,10 +17,10 @@ public class EventosCancelados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_cancelados);
-        depCancelados = (TextView) findViewById(R.id.textViewDeportivosc);
-        relCancelados = (TextView) findViewById(R.id.textViewReligiososc);
-        musCancelados = (TextView) findViewById(R.id.textViewMusicalesc);
-        TotalAPagarAll = (TextView) findViewById(R.id.textViewMontoTotalc);
+        depCancelados = (TextView) findViewById(R.id.deportivosCancelados);
+        relCancelados = (TextView) findViewById(R.id.religiosoCancelado);
+        musCancelados = (TextView) findViewById(R.id.musicalCancelado);
+        TotalAPagarAll = (TextView) findViewById(R.id.montoCancelado);
         try {
             EventosCancelados = new ArrayList<>();
             for (Event e : AlmacenEventos.registrarEventoDeportivoseliminados) {

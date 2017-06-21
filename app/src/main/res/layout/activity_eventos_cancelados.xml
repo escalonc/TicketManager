@@ -17,47 +17,43 @@
         android:layout_alignParentTop="true" />
 
     <TextView
-        android:id="@+id/textViewDeportivosc"
+        android:id="@+id/deportivosCancelados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:layout_below="@+id/List_eventos_cancelados"
         android:layout_marginTop="31dp"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textViewReligiososc"
+        android:id="@+id/religiosoCancelado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:text="TextView"
-        android:layout_below="@+id/textViewDeportivosc"
+        android:layout_below="@+id/deportivosCancelados"
         />
 
     <TextView
-        android:id="@+id/textViewMusicalesc"
+        android:id="@+id/musicalCancelado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:layout_below="@+id/textViewReligiososc" />
+        android:layout_below="@+id/religiosoCancelado" />
 
     <TextView
-        android:id="@+id/textViewMontoTotalc"
+        android:id="@+id/montoCancelado"
         android:layout_width="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
-
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewMusicalesc"
+        android:layout_below="@+id/musicalCancelado"
         android:layout_marginTop="19dp"
         android:text="TextView" />
 </RelativeLayout>

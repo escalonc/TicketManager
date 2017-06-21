@@ -11,7 +11,7 @@
     tools:context="com.cejteam.ticketmanager.EventosFuturosActivity">
 
     <ListView
-        android:id="@+id/List_eventos_futuros"
+        android:id="@+id/eventosFuturo"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:textStyle="italic"
@@ -20,17 +20,17 @@
          />
 
     <TextView
-        android:id="@+id/textViewDeportivosF"
+        android:id="@+id/futuroDeporte"
         android:layout_width="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/List_eventos_futuros"
+        android:layout_below="@+id/eventosFuturo"
         android:layout_marginTop="31dp"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textViewReligiososF"
+        android:id="@+id/futuroReligion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
@@ -38,11 +38,11 @@
 
         android:layout_marginTop="24dp"
         android:text="TextView"
-        android:layout_below="@+id/textViewDeportivosF"
+        android:layout_below="@+id/futuroDeporte"
          />
 
     <TextView
-        android:id="@+id/textViewMusicalesF"
+        android:id="@+id/futuroMusica"
         android:layout_width="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
@@ -50,16 +50,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:layout_below="@+id/textViewReligiososF" />
+        android:layout_below="@+id/futuroReligion" />
 
     <TextView
-        android:id="@+id/textViewMontoTotalF"
+        android:id="@+id/futuroMonto"
         android:layout_width="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
 
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewMusicalesF"
+        android:layout_below="@+id/futuroMusica"
         android:layout_marginTop="19dp"
         android:text="TextView" />
 </RelativeLayout>

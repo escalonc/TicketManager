@@ -27,10 +27,10 @@ public class EventosEntreDosFechas extends AppCompatActivity {
             dia1 = (Integer) getIntent().getExtras().get("dia1");
             dia2 = (Integer) getIntent().getExtras().get("dia2");
         }catch (Exception e){}
-        depEntreFechas = (TextView) findViewById(R.id.textViewDeportivoscalc);
-        relEntreFechas = (TextView) findViewById(R.id.textViewReligiososcalc);
-        musEntreFechas = (TextView) findViewById(R.id.textViewMusicalescalc);
-        TotalAPagar = (TextView) findViewById(R.id.textViewMontoTotalcalc);
+        depEntreFechas = (TextView) findViewById(R.id.dosFechasDeporte);
+        relEntreFechas = (TextView) findViewById(R.id.dosFechasReligioso);
+        musEntreFechas = (TextView) findViewById(R.id.dosFechasMusical);
+        TotalAPagar = (TextView) findViewById(R.id.dosFechasMonto);
                 try {
 
                     EntreFechas = new ArrayList<>();
@@ -77,7 +77,7 @@ public class EventosEntreDosFechas extends AppCompatActivity {
                         }
                     }
                     ListAdapter ListaDeAdaptador = new AdaptadorDeVistaDeEventos(getApplicationContext(), EntreFechas);
-                    ListView ListaAMostrar = (ListView) findViewById(R.id.List_eventos_betwenn);
+                    ListView ListaAMostrar = (ListView) findViewById(R.id.eventoEntreDosFechas);
                     ListaAMostrar.setAdapter(ListaDeAdaptador);
                     depEntreFechas.setText("Sports events: " + String.valueOf(depCont));
                     relEntreFechas.setText("Religious events: " + String.valueOf(relCont));
