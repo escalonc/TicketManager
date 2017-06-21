@@ -102,6 +102,13 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else {
+                        for (String e : teams1) {
+                            if (e.equals(member1.getText().toString())) {
+                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                                msg.show();
+                                return;
+                            }
+                        }
                         teams1.add(member1.getText().toString());
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
                         msg.show();
@@ -110,8 +117,16 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
+                    if(registrarEventoDeportivo.comprobarname1(member1.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                        msg.show();
+                        return;
+                    }else{
                     registrarEventoDeportivo.registrarteam1(member1.getText().toString());
+                    Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
+                    msg.show();
                     member1.setText("");
+                    }
                 }
 
             }
@@ -126,6 +141,14 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                         msg.show();
 
                     }else{
+                        for (String e : teams2) {
+                            if (e.equals(member2.getText().toString())) {
+                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                                msg.show();
+                                return;
+                            }
+                        }
+
                         teams2.add(member2.getText().toString());
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
                         msg.show();
@@ -134,8 +157,17 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
-                    registrarEventoDeportivo.registrarteam2(member2.getText().toString());
-                    member2.setText("");
+                    if(registrarEventoDeportivo.comprobarname2(member2.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                        msg.show();
+                        return;
+                    }else {
+
+                        registrarEventoDeportivo.registrarteam2(member2.getText().toString());
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
+                        msg.show();
+                        member2.setText("");
+                    }
                 }
             }
         });
@@ -170,6 +202,7 @@ try {
             for (String e : teams1) {
                 if (e.equals(member1.getText().toString())) {
                     teams1.remove(e);
+                    member1.setText("");
                     Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
                     msg.show();
                     return;
@@ -189,6 +222,7 @@ try {
             almacenEventos.verificarexistencia(codigorecibido);
             RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
             if (registrarEventoDeportivo.deleteteam1(member1.getText().toString())) {
+                member1.setText("");
                 Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
                 msg.show();
             } else {
@@ -216,6 +250,7 @@ try {
                         for(String  e:teams2){
                             if(e.equals(member2.getText().toString())){
                                 teams2.remove(e);
+                                member2.setText("");
                                 Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
                                 msg.show();
                                 return;
@@ -233,6 +268,7 @@ try {
                         almacenEventos.verificarexistencia(codigorecibido);
                         RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                         if(registrarEventoDeportivo.deleteteam2(member2.getText().toString())){
+                            member2.setText("");
                             Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
                             msg.show();
                         }else{

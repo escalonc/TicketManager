@@ -12,6 +12,16 @@ public class RegistrarEventoMusical extends Event{
     private String type;
     private ArrayList<String> peopleOfSupport = new ArrayList<>();
 
+    public  boolean deletemembers(String name) {
+        for (String e : peopleOfSupport) {
+            if (e.equals(name)) {
+                peopleOfSupport.remove(e);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public RegistrarEventoMusical() {
 
     }
@@ -42,9 +52,10 @@ public class RegistrarEventoMusical extends Event{
     public void setType(String type) {
         this.type = type;
     }
-    public RegistrarEventoMusical(String type, String s, int codeevent, String description, String date, String amount, String people,int dia,int mes, int año) {
+    public RegistrarEventoMusical(String type, String s, int codeevent, String description, String date, String amount, String people,int dia,int mes, int año, ArrayList<String> members) {
         super(codeevent, s, description, date, amount, people, dia, mes, año);
         this.type=type;
+        this.peopleOfSupport=members;
     }
 
 }

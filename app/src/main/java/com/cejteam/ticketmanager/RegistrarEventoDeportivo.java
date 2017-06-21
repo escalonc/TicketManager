@@ -12,6 +12,24 @@ public class RegistrarEventoDeportivo extends Event {
     private ArrayList<String> teams2 = new ArrayList<>();
     private String type;
 
+    public boolean comprobarname1(String name){
+        for (String e : teams1) {
+            if (e.equals(name)) {
+                return true;
+            }
+         }
+        return false;
+    }
+
+    public boolean comprobarname2(String name){
+        for (String e : teams2) {
+            if (e.equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public  boolean deleteteam1(String name) {
         for (String e : teams1) {
