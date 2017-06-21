@@ -244,7 +244,7 @@ try {
             public void onClick(View v) {
                 if(nuevo==1){
                     if(TextUtils.isEmpty(member2.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD.", Toast.LENGTH_SHORT);
                         msg.show();
                     } else{
                         for(String  e:teams2){
