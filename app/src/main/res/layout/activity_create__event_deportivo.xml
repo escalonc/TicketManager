@@ -134,7 +134,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
-
                     android:hint="@string/description"
 
                     android:inputType="textPersonName"
@@ -230,6 +229,16 @@
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
                 <Button
 
                     android:id="@+id/addtesam1"
@@ -240,12 +249,23 @@
                     android:gravity="center"
                     android:background="@color/colorPrimaryDark"
                     android:textColor="@color/blanco"
-
                     android:text="@string/add"
+                    tools:layout_centerInParent="true" />
+                <Button
+
+                    android:id="@+id/deleteteam1"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/blanco"
+
+                    android:text="Delete"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -303,18 +323,40 @@
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
                 <Button
 
                     android:id="@+id/addtesam2"
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textStyle="italic"
-
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:background="@color/colorPrimaryDark"
                     android:textColor="@color/blanco"
                     android:text="@string/add"
+                    tools:layout_centerInParent="true" />
+
+
+                <Button
+
+                    android:id="@+id/deleteteam2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/blanco"
+                    android:text="Delete"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>
