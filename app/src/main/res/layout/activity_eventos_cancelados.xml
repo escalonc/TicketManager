@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_below="@+id/List_eventos_cancelados"
         android:layout_marginTop="31dp"
@@ -34,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:text="TextView"
         android:layout_below="@+id/textViewDeportivosc"
@@ -44,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_marginTop="20dp"
         android:text="TextView"
@@ -53,6 +56,7 @@
         android:id="@+id/textViewMontoTotalc"
         android:layout_width="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewMusicalesc"
