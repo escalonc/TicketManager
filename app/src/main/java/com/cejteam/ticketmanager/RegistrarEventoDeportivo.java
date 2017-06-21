@@ -13,6 +13,25 @@ public class RegistrarEventoDeportivo extends Event {
     private String type;
 
 
+    public  boolean deleteteam1(String name) {
+        for (String e : teams1) {
+            if (e.equals(name)) {
+                teams1.remove(e);
+                return true;
+            }
+        }
+        return false;
+    }
+    public  boolean deleteteam2(String name) {
+        for (String e : teams2) {
+            if (e.equals(name)) {
+                teams2.remove(e);
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public void registrarteam1(String name) {
         teams1.add(name);

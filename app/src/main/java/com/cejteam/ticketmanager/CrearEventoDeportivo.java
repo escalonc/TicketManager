@@ -26,7 +26,7 @@ public class CrearEventoDeportivo extends AppCompatActivity implements View.OnCl
     int dia1,dia2,mes1,mes2,ano1,ano2;
     private Spinner spinner;
     private EditText event,tittle,eventdescription,eventamount,campofecha,team1,team2,people,member1,member2;
-    private Button saved,add1,add2;
+    private Button saved,add1,add2,eliminar1,eliminar2;
     AlmacenEventos almacenEventos=new AlmacenEventos();
     AlmacenEventos fecha=new AlmacenEventos();
     private ArrayList<String> teams1 = new ArrayList<>();
@@ -38,6 +38,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
+
          setContentView(R.layout.activity_create__event_deportivo);
          event =(EditText)findViewById(R.id.eventcoder);
          tittle =(EditText)findViewById(R.id.eventtittler);
@@ -104,12 +105,13 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                         teams1.add(member1.getText().toString());
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
                         msg.show();
+                        member1.setText("");
                     }
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                     registrarEventoDeportivo.registrarteam1(member1.getText().toString());
-
+                    member1.setText("");
                 }
 
             }
@@ -122,15 +124,18 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                     if(TextUtils.isEmpty(member2.getText().toString())){
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
                         msg.show();
+
                     }else{
                         teams2.add(member2.getText().toString());
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
                         msg.show();
+                        member2.setText("");
                     }
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                     registrarEventoDeportivo.registrarteam2(member2.getText().toString());
+                    member2.setText("");
                 }
             }
         });
@@ -151,6 +156,94 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
             codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
         }
 
+
+        eliminar1=(Button)findViewById(R.id.deleteteam1);
+        eliminar1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+try {
+    if (nuevo == 1) {
+        if (TextUtils.isEmpty(member1.getText().toString())) {
+            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+            msg.show();
+        } else {
+            for (String e : teams1) {
+                if (e.equals(member1.getText().toString())) {
+                    teams1.remove(e);
+                    Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
+                    msg.show();
+                    return;
+                }
+            }
+            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro el nombre", Toast.LENGTH_SHORT);
+            msg.show();
+
+        }
+    } else if (nuevo == 2) {
+        if (TextUtils.isEmpty(member1.getText().toString())) {
+            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+            msg.show();
+
+        } else {
+            codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
+            almacenEventos.verificarexistencia(codigorecibido);
+            RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
+            if (registrarEventoDeportivo.deleteteam1(member1.getText().toString())) {
+                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
+                msg.show();
+            } else {
+                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro ese nombre", Toast.LENGTH_SHORT);
+                msg.show();
+            }
+
+        }
+    }
+}catch (Exception e){
+    System.out.println(e.getMessage());
+}
+            }
+        });
+
+        eliminar2=(Button)findViewById(R.id.deleteteam2);
+        eliminar2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(nuevo==1){
+                    if(TextUtils.isEmpty(member2.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    } else{
+                        for(String  e:teams2){
+                            if(e.equals(member2.getText().toString())){
+                                teams2.remove(e);
+                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
+                                msg.show();
+                                return;
+                            }
+                        }
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro el nombre", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }
+                }else if(nuevo==2){
+                    if(TextUtils.isEmpty(member2.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    } else{
+                        codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
+                        almacenEventos.verificarexistencia(codigorecibido);
+                        RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
+                        if(registrarEventoDeportivo.deleteteam2(member2.getText().toString())){
+                            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
+                            msg.show();
+                        }else{
+                            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro ese nombre", Toast.LENGTH_SHORT);
+                            msg.show();
+                        }
+
+                    }
+                }
+            }
+        });
 
 
     }
