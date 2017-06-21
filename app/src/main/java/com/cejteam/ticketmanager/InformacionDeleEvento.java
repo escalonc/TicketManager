@@ -8,10 +8,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class InformacionDeleEvento extends AppCompatActivity {
     int codigo=0;
     TextView fecha,codigocam,titulo,descripcion,acercade,monto;
-    Button regresar;
+    Button regresar,listado;
     ImageView eventotipo;
     AlmacenEventos almacenEventos=new AlmacenEventos();
     @Override
@@ -38,7 +40,7 @@ public class InformacionDeleEvento extends AppCompatActivity {
             descripcion.setText(String.valueOf( registrarEventoDeportivo.getDescription()));
              monto.setText(String.valueOf( registrarEventoDeportivo.getAmount()));
             eventotipo.setImageResource(R.drawable.deportivo);
-            registrarEventoDeportivo.getTeam1();
+
 
 
         }else if(registrarEventoReligioso!=null){
@@ -59,6 +61,24 @@ public class InformacionDeleEvento extends AppCompatActivity {
             eventotipo.setImageResource(R.drawable.musicali);
         }
 
+        listado=(Button)findViewById(R.id.listado);
+        listado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RegistrarEventoDeportivo registrarEventoDeportivos = almacenEventos.buscarEventodeportivo(codigo);
+                if(registrarEventoDeportivos!=null){
+
+                    ArrayList<String> array= registrarEventoDeportivos.getTeams1();
+                    ArrayList<String> array2= registrarEventoDeportivos.getTeams2();
+                    Intent intenst = new Intent(InformacionDeleEvento.this , ListaJugadoresPorEquipo.class);
+                    intenst.putExtra("teams1",array);
+                    intenst.putExtra("teams2",array2);
+                    startActivity(intenst);
+                    finish();
+                }
+            }
+        });
+
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +87,8 @@ public class InformacionDeleEvento extends AppCompatActivity {
                 finish();
             }
         });
+
+
 
     }
 }
