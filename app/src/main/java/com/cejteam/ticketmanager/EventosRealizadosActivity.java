@@ -10,63 +10,58 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class EventosRealizadosActivity extends AppCompatActivity {
-    ArrayList<Event> EventosRealizados;
-    int contadorDeportivos = 0;
-    int contadorReligiosos = 0;
-    int contadorMusicales = 0;
-    double montoTotal = 0;
-    TextView DeportivosR;
-    TextView ReligiososR;
-    TextView MusicalesR;
-    TextView MontoTotalR;
+    ArrayList<Event> eventReal;
+    int depCont = 0;
+    int relCont = 0;
+    int musCont = 0;
+    double TotaldePago = 0;
+    TextView depRea;
+    TextView relRea;
+    TextView musRea;
+    TextView TotalAPagar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_realizados);
-        DeportivosR = (TextView) findViewById(R.id.textViewDeportivosp);
-        ReligiososR = (TextView) findViewById(R.id.textViewReligiososp);
-        MusicalesR = (TextView) findViewById(R.id.textViewMusicalesp);
-        MontoTotalR = (TextView) findViewById(R.id.textViewMontoTotalp);
+        depRea = (TextView) findViewById(R.id.textViewDeportivosp);
+        relRea = (TextView) findViewById(R.id.textViewReligiososp);
+        musRea = (TextView) findViewById(R.id.textViewMusicalesp);
+        TotalAPagar = (TextView) findViewById(R.id.textViewMontoTotalp);
 try {
-    EventosRealizados = new ArrayList<>();
+    eventReal = new ArrayList<>();
     for (Event e : AlmacenEventos.registrarEventoDeportivos) {
         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-            EventosRealizados.add(e);
-            montoTotal += Integer.parseInt(e.getAmount());
-            contadorDeportivos++;
+            eventReal.add(e);
+            TotaldePago += Integer.parseInt(e.getAmount());
+            depCont++;
         }
     }
     for (Event e : AlmacenEventos.registrarEventoMusicals) {
         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-            EventosRealizados.add(e);
-            montoTotal += Integer.parseInt(e.getAmount());
-            contadorMusicales++;
+            eventReal.add(e);
+            TotaldePago += Integer.parseInt(e.getAmount());
+            musCont++;
         }
     }
     for (Event e : AlmacenEventos.registrarEventoReligiosos) {
         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-            EventosRealizados.add(e);
-            montoTotal += Integer.parseInt(e.getAmount());
-            contadorReligiosos++;
+            eventReal.add(e);
+            TotaldePago += Integer.parseInt(e.getAmount());
+            relCont++;
         }
     }
-
-    ListAdapter pambisitoAdapter = new CustomAdapter(getApplicationContext(), EventosRealizados);
-    ListView ListEventosRealizados = (ListView) findViewById(R.id.List_eventos_realizados);
-    ListEventosRealizados.setAdapter(pambisitoAdapter);
-
-    DeportivosR.setText("Sports events: " + String.valueOf(contadorDeportivos));
-    ReligiososR.setText("Religious events: " + String.valueOf(contadorReligiosos));
-    MusicalesR.setText("Musical events: " + String.valueOf(contadorMusicales));
-    MontoTotalR.setText("Total amount: " + String.valueOf(montoTotal));
-
+    ListAdapter ListaDelAdaptador = new AdaptadorDeVistaDeEventos(getApplicationContext(), eventReal);
+    ListView ListaDeLosEventos = (ListView) findViewById(R.id.List_eventos_realizados);
+    ListaDeLosEventos.setAdapter(ListaDelAdaptador);
+    depRea.setText("Sports events: " + String.valueOf(depCont));
+    relRea.setText("Religious events: " + String.valueOf(relCont));
+    musRea.setText("Musical events: " + String.valueOf(musCont));
+    TotalAPagar.setText("Total amount: " + String.valueOf(TotaldePago));
 }catch (Exception e){}
-
     }
 
     public boolean comparar(int ano,int mes, int dia){
        Calendar calendar=  Calendar.getInstance();
-
         int anoa= calendar.get(Calendar.YEAR);
         int mesa= calendar.get(Calendar.MONTH);
         int diaa= calendar.get(Calendar.DAY_OF_MONTH);

@@ -5,71 +5,56 @@ import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class EventosFuturosActivity extends AppCompatActivity {
-    ArrayList<Event> EventosFuturos;
-    int contadorDeportivos = 0;
-    int contadorReligiosos = 0;
-    int contadorMusicales = 0;
-    double montoTotal = 0;
-    TextView DeportivosF;
-    TextView ReligiososF;
-    TextView MusicalesF;
-    TextView MontoTotalF;
+    ArrayList<Event> EventosAPasar;
+    int depCont = 0, relCont = 0, musCont = 0;
+    double TotalAPagar = 0;
+    TextView depFut, relFut, musFut, MontoAPagar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_futuros);
-
-        DeportivosF = (TextView) findViewById(R.id.textViewDeportivosF);
-        ReligiososF = (TextView) findViewById(R.id.textViewReligiososF);
-        MusicalesF = (TextView) findViewById(R.id.textViewMusicalesF);
-        MontoTotalF = (TextView) findViewById(R.id.textViewMontoTotalF);
+        depFut = (TextView) findViewById(R.id.textViewDeportivosF);
+        relFut = (TextView) findViewById(R.id.textViewReligiososF);
+        musFut = (TextView) findViewById(R.id.textViewMusicalesF);
+        MontoAPagar = (TextView) findViewById(R.id.textViewMontoTotalF);
         try {
-        /*/lo que voy a hacer es que voy a crear otro arrayList que contenga los eventos ya
-        realizados, extrayendo la info del arrayList que esta en el MainClass, para asi no alterar
-        la info que hay en el arraylist original
-        */
-            EventosFuturos = new ArrayList<>();
+            EventosAPasar = new ArrayList<>();
             for (Event e : AlmacenEventos.registrarEventoDeportivos) {
                 if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                    EventosFuturos.add(e);
-                    montoTotal += Integer.parseInt(e.getAmount());
-                    contadorDeportivos++;
+                    EventosAPasar.add(e);
+                    TotalAPagar += Integer.parseInt(e.getAmount());
+                    depCont++;
                 }
             }
             for (Event e : AlmacenEventos.registrarEventoMusicals) {
                 if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                    EventosFuturos.add(e);
-                    montoTotal += Integer.parseInt(e.getAmount());
-                    contadorMusicales++;
+                    EventosAPasar.add(e);
+                    TotalAPagar += Integer.parseInt(e.getAmount());
+                    musCont++;
                 }
             }
             for (Event e : AlmacenEventos.registrarEventoReligiosos) {
                 if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                    EventosFuturos.add(e);
-                    montoTotal += Integer.parseInt(e.getAmount());
-                    contadorReligiosos++;
+                    EventosAPasar.add(e);
+                    TotalAPagar += Integer.parseInt(e.getAmount());
+                    relCont++;
                 }
             }
-            ListAdapter pambisitoAdapter = new CustomAdapter(getApplicationContext(), EventosFuturos);
-            ListView ListEventosFuturos = (ListView) findViewById(R.id.List_eventos_futuros);
-            ListEventosFuturos.setAdapter(pambisitoAdapter);
-
-
-                //Poner los contadores en los textViews
-            DeportivosF.setText("Sports events: " + String.valueOf(contadorDeportivos));
-            ReligiososF.setText("Religious events: " + String.valueOf(contadorReligiosos));
-            MusicalesF.setText("Musical events: " + String.valueOf(contadorMusicales));
-            MontoTotalF.setText("Total amount: " + String.valueOf(montoTotal));
-        }catch (Exception e){
-
-        }
+            ListAdapter ListaDelAdaptador = new AdaptadorDeVistaDeEventos(getApplicationContext(), EventosAPasar);
+            ListView ListaFinal = (ListView) findViewById(R.id.List_eventos_futuros);
+            ListaFinal.setAdapter(ListaDelAdaptador);
+            depFut.setText("Sports events: " + String.valueOf(depCont));
+            relFut.setText("Religious events: " + String.valueOf(relCont));
+            musFut.setText("Musical events: " + String.valueOf(musCont));
+            MontoAPagar.setText("Total amount: " + String.valueOf(TotalAPagar));
+        }catch (Exception e){}
     }
+
     public boolean comparar(int ano,int mes, int dia){
         Calendar calendar=  Calendar.getInstance();
         int anoa= calendar.get(Calendar.YEAR);

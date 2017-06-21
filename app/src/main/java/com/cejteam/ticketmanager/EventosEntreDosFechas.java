@@ -1,32 +1,18 @@
 package com.cejteam.ticketmanager;
 
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class EventosEntreDosFechas extends AppCompatActivity {
-    ArrayList<Event> EventosFuturos;
-    int contadorDeportivos = 0;
-    int contadorReligiosos = 0;
-    int contadorMusicales = 0;
-    double montoTotal = 0;
-    TextView DeportivosF;
-    TextView ReligiososF;
-    TextView MusicalesF;
-    TextView MontoTotalF;
-    Button calcular;
+    ArrayList<Event> EntreFechas;
+    int depCont = 0,relCont = 0,musCont = 0;
+    double TotalDePago = 0;
+    TextView depEntreFechas, relEntreFechas, musEntreFechas, TotalAPagar;
     int ano1=0,ano2=0,mes1=0,mes2=0,dia1=0,dia2=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,82 +27,65 @@ public class EventosEntreDosFechas extends AppCompatActivity {
             dia1 = (Integer) getIntent().getExtras().get("dia1");
             dia2 = (Integer) getIntent().getExtras().get("dia2");
         }catch (Exception e){}
-
-
-        DeportivosF = (TextView) findViewById(R.id.textViewDeportivoscalc);
-        ReligiososF = (TextView) findViewById(R.id.textViewReligiososcalc);
-        MusicalesF = (TextView) findViewById(R.id.textViewMusicalescalc);
-        MontoTotalF = (TextView) findViewById(R.id.textViewMontoTotalcalc);
-
-
-
+        depEntreFechas = (TextView) findViewById(R.id.textViewDeportivoscalc);
+        relEntreFechas = (TextView) findViewById(R.id.textViewReligiososcalc);
+        musEntreFechas = (TextView) findViewById(R.id.textViewMusicalescalc);
+        TotalAPagar = (TextView) findViewById(R.id.textViewMontoTotalcalc);
                 try {
 
-                    EventosFuturos = new ArrayList<>();
+                    EntreFechas = new ArrayList<>();
                     for (Event e : AlmacenEventos.registrarEventoDeportivos) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                            EventosFuturos.add(e);
-                            montoTotal += Integer.parseInt(e.getAmount());
-                            contadorDeportivos++;
+                            EntreFechas.add(e);
+                            TotalDePago += Integer.parseInt(e.getAmount());
+                            depCont++;
                         }
                     }
                     for (Event e : AlmacenEventos.registrarEventoMusicals) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                            EventosFuturos.add(e);
-                            montoTotal += Integer.parseInt(e.getAmount());
-                            contadorMusicales++;
+                            EntreFechas.add(e);
+                            TotalDePago += Integer.parseInt(e.getAmount());
+                            musCont++;
                         }
                     }
-
                     for (Event e : AlmacenEventos.registrarEventoReligiosos) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                            EventosFuturos.add(e);
-                            montoTotal += Integer.parseInt(e.getAmount());
-                            contadorReligiosos++;
+                            EntreFechas.add(e);
+                            TotalDePago += Integer.parseInt(e.getAmount());
+                            relCont++;
                         }
                     }
                     for (Event e : AlmacenEventos.registrarEventoDeportivoseliminados) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                            EventosFuturos.add(e);
-                            montoTotal += Integer.parseInt(e.getAmount());
-                            contadorDeportivos++;
+                            EntreFechas.add(e);
+                            TotalDePago += Integer.parseInt(e.getAmount());
+                            depCont++;
                         }
                     }
                     for (Event e : AlmacenEventos.registrarEventoMusicalseliminados) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                            EventosFuturos.add(e);
-                            montoTotal += Integer.parseInt(e.getAmount());
-                            contadorMusicales++;
+                            EntreFechas.add(e);
+                            TotalDePago += Integer.parseInt(e.getAmount());
+                            musCont++;
                         }
                     }
                     for (Event e : AlmacenEventos.registrarEventoReligiososeliminados) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
-                            EventosFuturos.add(e);
-                            montoTotal += Integer.parseInt(e.getAmount());
-                            contadorReligiosos++;
+                            EntreFechas.add(e);
+                            TotalDePago += Integer.parseInt(e.getAmount());
+                            relCont++;
                         }
                     }
-
-
-
-
-
-
-                    ListAdapter pambisitoAdapter = new CustomAdapter(getApplicationContext(), EventosFuturos);
-                    ListView ListEventosFuturos = (ListView) findViewById(R.id.List_eventos_betwenn);
-                    ListEventosFuturos.setAdapter(pambisitoAdapter);
-
-      //Poner los contadores en los textViews
-                    DeportivosF.setText("Sports events: " + String.valueOf(contadorDeportivos));
-                    ReligiososF.setText("Religious events: " + String.valueOf(contadorReligiosos));
-                    MusicalesF.setText("Musical events: " + String.valueOf(contadorMusicales));
-                    MontoTotalF.setText("Total amount: " + String.valueOf(montoTotal));
+                    ListAdapter ListaDeAdaptador = new AdaptadorDeVistaDeEventos(getApplicationContext(), EntreFechas);
+                    ListView ListaAMostrar = (ListView) findViewById(R.id.List_eventos_betwenn);
+                    ListaAMostrar.setAdapter(ListaDeAdaptador);
+                    depEntreFechas.setText("Sports events: " + String.valueOf(depCont));
+                    relEntreFechas.setText("Religious events: " + String.valueOf(relCont));
+                    musEntreFechas.setText("Musical events: " + String.valueOf(musCont));
+                    TotalAPagar.setText("Total amount: " + String.valueOf(TotalDePago));
                 }catch (Exception e){
                 }
             }
-
-
-
 
     public boolean comparar(int anoa,int mesa, int diaa){
         if(anoa<ano1 || anoa>ano2){
