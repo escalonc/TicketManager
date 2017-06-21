@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Reports extends AppCompatActivity {
-    Button pasado,futuro,more;
+    Button pasado,futuro,cancelado,more,perfil,menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,6 @@ public class Reports extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intenst = new Intent(Reports.this,EventosRealizadosActivity.class);
                 startActivity(intenst);
-                finish();
             }
         });
         futuro = (Button)findViewById(R.id.futuros);
@@ -28,7 +27,6 @@ public class Reports extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intenst = new Intent(Reports.this,EventosFuturosActivity.class);
                     startActivity(intenst);
-                    finish();
             }
         });
 
@@ -38,8 +36,34 @@ public class Reports extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intenst = new Intent(Reports.this,FechaInicial.class);
                 startActivity(intenst);
-                finish();
             }
         });
+
+        menu = (Button) findViewById(R.id.principalMenu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(Reports.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+        cancelado=(Button)findViewById(R.id.cancel);
+        cancelado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(Reports.this,EventosCancelados.class);
+                startActivity(intenst);
+            }
+        });
+/*
+        perfil=(Button)findViewById(R.id.perfilUsuario);
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(Reports.this,"FALTA ESTA PARTE".class);
+                startActivity(intenst);
+            }
+        });*/
     }
 }

@@ -104,7 +104,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                     } else {
                         for (String e : teams1) {
                             if (e.equals(member1.getText().toString())) {
-                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Already exists", Toast.LENGTH_SHORT);
                                 msg.show();
                                 return;
                             }
@@ -118,7 +118,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                     if(registrarEventoDeportivo.comprobarname1(member1.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Already exists", Toast.LENGTH_SHORT);
                         msg.show();
                         return;
                     }else{
@@ -143,7 +143,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                     }else{
                         for (String e : teams2) {
                             if (e.equals(member2.getText().toString())) {
-                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Already exists", Toast.LENGTH_SHORT);
                                 msg.show();
                                 return;
                             }
@@ -158,7 +158,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                     if(registrarEventoDeportivo.comprobarname2(member2.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Already exists", Toast.LENGTH_SHORT);
                         msg.show();
                         return;
                     }else {

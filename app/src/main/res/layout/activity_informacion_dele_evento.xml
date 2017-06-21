@@ -12,14 +12,12 @@
 <ScrollView
     android:layout_width="wrap_content"
     android:textStyle="italic"
-
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="wrap_content"
         tools:layout_centerInParent="true"
         android:textStyle="italic"
-
         android:layout_gravity="center"
         android:orientation="vertical"
         android:layout_height="wrap_content">
@@ -31,7 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
-
         android:layout_marginLeft="25dp"
         android:background="@color/blanco"
         android:orientation="vertical"
@@ -43,7 +40,6 @@
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:textStyle="italic"
-
             app:srcCompat="@drawable/deportivo" />
 
         <TextView
@@ -52,7 +48,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="italic"
-
             android:background="@color/blanco"
             android:layout_gravity="center_horizontal"
             android:text="@string/event"
@@ -60,55 +55,47 @@
             android:layout_alignParentTop="true"
             android:textColor="@color/colorPrimary"
             android:textSize="38dp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="italic"
-
             android:background="@color/blanco"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/mostrarfechas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/blanco"
                 android:textStyle="italic"
-
                 android:layout_marginRight="10dp"
                 android:text="Date:"
-                android:textColor="@color/blanco"
                 android:textSize="18dp"/>
+
             <TextView
                 android:id="@+id/mostrarfecha"
                 android:layout_width="wrap_content"
                 android:textStyle="italic"
-
                 android:layout_height="wrap_content"
                 android:background="@color/blanco"
                 android:layout_marginRight="10dp"
                 android:text="00000"
-                android:textColor="@color/blanco"
                 android:textSize="18dp"/>
+
             <TextView
                 android:id="@+id/mostrarcodigos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
-
-                android:background="@color/blanco"
                 android:text="Code:"
                 android:layout_marginLeft="45dp"
-                android:textColor="@color/blanco"
                 android:textSize="18dp"/>
             <TextView
                 android:id="@+id/mostrarcodigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
-
-                android:background="@color/blanco"
                 android:text="123"
-                android:textColor="@color/blanco"
                 android:textSize="18dp"/>
         </LinearLayout>
 
@@ -119,25 +106,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="italic"
-
-            android:background="@color/blanco"
             android:text="@string/descripcion"
-            android:textColor="@color/blanco"
             android:textSize="22dp" />
+
         <TextView
             android:id="@+id/mostrardescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/blanco"
             android:text="@string/information"
             android:textStyle="italic"
-
-            android:textColor="@color/blanco"
             android:textSize="18dp" />
-
-
-
-
 
 
     </LinearLayout>
@@ -150,7 +128,6 @@
             android:layout_below="@+id/layout1"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:background="@color/blanco"
             android:orientation="vertical"
             tools:layout_centerInParent="true">
 
@@ -161,9 +138,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:background="@color/blanco"
                 android:text="@string/monto"
-                android:textColor="@color/blanco"
                 android:textSize="22dp"
                 android:textStyle="bold" />
 
@@ -174,9 +149,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:background="@color/blanco"
                 android:text="@string/monto"
-                android:textColor="@color/blanco"
                 android:textSize="22dp"
                 android:textStyle="bold" />
 

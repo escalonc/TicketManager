@@ -15,25 +15,29 @@
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
         android:text="Reports"
 
         android:textAlignment="center"
         android:textStyle="italic"
         android:textSize="32dp"
-        android:textColor="@color/colorPrimary"/>
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <LinearLayout
         android:padding="30dp"
         android:id="@+id/linearprincipal"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="11dp"
         android:textStyle="italic"
-
-        android:layout_below="@id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         tools:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignTop="@+id/titulo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
 
 
 
@@ -42,7 +46,6 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
-
             android:textStyle="italic"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
@@ -56,26 +59,58 @@
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
             android:textStyle="italic"
-
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
             android:textSize="20dp"
             android:text="@string/eventoFuturo" />
 
         <Button
-
+            android:id="@+id/cancel"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:textStyle="italic"
-
             android:textSize="20dp"
-
             android:layout_marginTop="18dp"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
-            android:text="@string/muyPronto"
-            android:id="@+id/more"
-            />
+            android:text="Canceled Events" />
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:text="Between two dates
+"
+            android:id="@+id/more" />
+
+        <Button
+            android:id="@+id/perfilUsuario"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:text="View user profile" />
+
+
+        <Button
+            android:id="@+id/principalMenu"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:text="@string/Back_menu" />
+
+
     </LinearLayout>
 
 </RelativeLayout>

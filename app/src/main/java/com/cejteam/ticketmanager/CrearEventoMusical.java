@@ -105,7 +105,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                     } else {
                         for (String e : members) {
                             if (e.equals(peopless.getText().toString())) {
-                                Toast msg = Toast.makeText(CrearEventoMusical.this, "Ya existe", Toast.LENGTH_SHORT);
+                                Toast msg = Toast.makeText(CrearEventoMusical.this, "Already exists", Toast.LENGTH_SHORT);
                                 msg.show();
                                 return;
                             }
@@ -120,7 +120,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
                     if (registrarEventoMusical.comprobar(peopless.getText().toString())) {
-                        Toast msg = Toast.makeText(CrearEventoMusical.this, "Ya existe", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "Already exists", Toast.LENGTH_SHORT);
                         msg.show();
                         return;
                     } else {
@@ -166,7 +166,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
             public void onClick(View v) {
                 if(nuevo==1){
                     if(TextUtils.isEmpty(peopless.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else{
                         for(String  e:members){
@@ -178,12 +178,12 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                                 return;
                             }
                         }
-                        Toast msg = Toast.makeText(CrearEventoMusical.this, "No se encontro el nombre", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "The name was not found", Toast.LENGTH_SHORT);
                         msg.show();
                     }
                 }else if(nuevo==2){
                     if(TextUtils.isEmpty(peopless.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else{
                         codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
@@ -194,7 +194,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             Toast msg = Toast.makeText(CrearEventoMusical.this, "Delete", Toast.LENGTH_SHORT);
                             msg.show();
                         }else{
-                            Toast msg = Toast.makeText(CrearEventoMusical.this, "No se encontro ese nombre", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(CrearEventoMusical.this, "The name was not found", Toast.LENGTH_SHORT);
                             msg.show();
                         }
 
