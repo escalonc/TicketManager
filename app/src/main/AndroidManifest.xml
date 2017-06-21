@@ -47,8 +47,16 @@
         <activity android:name=".EventosRealizadosActivity" />
         <activity android:name=".EventosFuturosActivity" />
         <activity android:name=".Reports" />
-        <activity android:name=".EventosEntreDosFechas" />
-        <activity android:name=".EventosCancelados"></activity>
+        <activity android:name=".EventosEntreDosFechas">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EventosCancelados" />
+        <activity android:name=".FechaInicial" />
+        <activity android:name=".FechaFinal"></activity>
     </application>
 
 </manifest>

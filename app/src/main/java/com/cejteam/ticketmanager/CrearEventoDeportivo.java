@@ -39,17 +39,15 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_create__event_deportivo);
-
-
          event =(EditText)findViewById(R.id.eventcoder);
          tittle =(EditText)findViewById(R.id.eventtittler);
          eventdescription =(EditText)findViewById(R.id.eventdescriptionr);
          eventamount =(EditText)findViewById(R.id.costos);
          saved=(Button)findViewById(R.id.saved);
-        team1=(EditText)findViewById(R.id.team1s);
-        team2=(EditText)findViewById(R.id.team2s);
-        member1=(EditText)findViewById(R.id.nameteam1out);
-        member2=(EditText)findViewById(R.id.nameteam2out);
+         team1=(EditText)findViewById(R.id.team1s);
+         team2=(EditText)findViewById(R.id.team2s);
+         member1=(EditText)findViewById(R.id.nameteam1out);
+         member2=(EditText)findViewById(R.id.nameteam2out);
          people=(EditText)findViewById(R.id.peoples);
          saved.setOnClickListener(this);
          campofecha= (EditText)findViewById(R.id.dateeventr);

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cejteam.ticketmanager.FechaInicial">
+
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Seleccione Fecha Inicial"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="32dp"
+        android:textColor="@color/colorPrimary"/>
+    <LinearLayout
+        android:padding="30dp"
+        android:id="@+id/linearprincipal"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:layout_centerInParent="true"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/fechainicialcalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:ems="10"
+            android:hint="@string/date"
+            android:inputType="date"
+            android:onClick="mostrarCalendar1"/>
+
+
+
+        <Button
+            android:id="@+id/fechainicialcalc"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="55dp"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:text="Next"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
