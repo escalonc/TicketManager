@@ -29,9 +29,6 @@ try {
     anopasado = (Integer) getIntent().getExtras().get("ano1");
     mespasado = (Integer) getIntent().getExtras().get("mes1");
     diapasado = (Integer) getIntent().getExtras().get("dia1");
-    String mostrarrr= anopasado + " " + mespasado + " " + diapasado;
-    Toast msg = Toast.makeText(FechaFinal.this, mostrarrr, Toast.LENGTH_SHORT);
-    msg.show();
 }catch (Exception e){}
 
 /////////////////////////////////////////////////////////////////
