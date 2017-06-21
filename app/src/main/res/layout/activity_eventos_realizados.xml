@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_below="@+id/List_eventos_realizados"
         android:layout_marginTop="31dp"
@@ -32,6 +33,7 @@
         android:id="@+id/textViewReligiososp"
         android:layout_width="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -43,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_marginTop="20dp"
         android:text="TextView"
@@ -53,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
 
         android:layout_below="@+id/textViewMusicalesp"
         android:layout_marginTop="19dp"

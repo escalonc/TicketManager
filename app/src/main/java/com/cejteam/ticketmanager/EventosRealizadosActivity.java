@@ -55,10 +55,10 @@ try {
     ListView ListEventosRealizados = (ListView) findViewById(R.id.List_eventos_realizados);
     ListEventosRealizados.setAdapter(pambisitoAdapter);
 
-    DeportivosR.setText("Eventos deportivos: " + String.valueOf(contadorDeportivos));
-    ReligiososR.setText("Eventos religiosos: " + String.valueOf(contadorReligiosos));
-    MusicalesR.setText("Eventos musicales: " + String.valueOf(contadorMusicales));
-    MontoTotalR.setText("Monto total: " + String.valueOf(montoTotal));
+    DeportivosR.setText("Sports events: " + String.valueOf(contadorDeportivos));
+    ReligiososR.setText("Religious events: " + String.valueOf(contadorReligiosos));
+    MusicalesR.setText("Musical events: " + String.valueOf(contadorMusicales));
+    MontoTotalR.setText("Total amount: " + String.valueOf(montoTotal));
 
 }catch (Exception e){}
 
