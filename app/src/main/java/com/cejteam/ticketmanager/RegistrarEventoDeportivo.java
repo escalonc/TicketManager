@@ -16,6 +16,7 @@ public class RegistrarEventoDeportivo extends Event {
     public  boolean deleteteam1(String name) {
         for (String e : teams1) {
             if (e.equals(name)) {
+                teams1.remove(e);
                 return true;
             }
         }
@@ -24,6 +25,7 @@ public class RegistrarEventoDeportivo extends Event {
     public  boolean deleteteam2(String name) {
         for (String e : teams2) {
             if (e.equals(name)) {
+                teams2.remove(e);
                 return true;
             }
         }
