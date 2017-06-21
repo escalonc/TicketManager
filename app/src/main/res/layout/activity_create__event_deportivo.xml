@@ -176,7 +176,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
-                    android:text="Members:"
+                    android:text="@string/members"
                     android:textColor="@color/negro"
                     android:textSize="18dp" />
 
@@ -186,7 +186,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
-                    android:hint="Name"
+                    android:hint="@string/name"
                     android:inputType="textPersonName"/>
                 <Button
 
@@ -195,7 +195,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Add"
+                    android:text="@string/add"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>
@@ -237,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
-                    android:text="Members:"
+                    android:text="@string/members"
                     android:textColor="@color/negro"
                     android:textSize="18dp" />
 
@@ -247,7 +247,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:ems="10"
-                    android:hint="Name"
+                    android:hint="@string/name"
                     android:inputType="textPersonName"/>
                 <Button
 
@@ -256,7 +256,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Add"
+                    android:text="@string/add"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>

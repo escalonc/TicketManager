@@ -13,7 +13,7 @@
         android:id="@+id/vereventocodigo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Evento"
+        android:text="@string/verEvento"
         android:textAlignment="center"
         android:textStyle="bold"
         android:textSize="45dp"
@@ -34,18 +34,19 @@
             android:layout_width="88dp"
             android:layout_height="25dp"
             android:textStyle="bold"
-            android:text="Codigo:"
+            android:text="@string/codigo"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"/>
+
         <EditText
-            android:layout_marginTop="56dp"
             android:id="@+id/codigodeleventover"
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:textSize="13dp"
-            android:hint="Escriba el codigo"/>
+            android:layout_marginTop="56dp"
+            android:hint="@string/escribaElCodigo"
+            android:inputType="number"
+            android:textSize="13dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,7 +59,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="VER"
+            android:text="@string/ver"
             android:textSize="20dp"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"

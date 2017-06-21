@@ -61,4 +61,36 @@
 
     <string name="eventsmenu">Events</string>
 
+
+    <string name="members">Members</string>
+    <string name="name">Name</string>
+    <string name="add">Add</string>
+    <string name="calculate">Calculate</string>
+    <string name="saved">Saved</string>
+    <string name="eliminarEvento">Delete event</string>
+    <string name="codigo">Code:</string>
+    <string name="escribaElCodigo">Write the code</string>
+    <string name="eliminar">Delete</string>
+    <string name="evento">Event</string>
+    <string name="descripcion">Description</string>
+    <string name="information">Information</string>
+    <string name="monto">Amount</string>
+    <string name="regresar">Back</string>
+    <string name="verEvento">View Event</string>
+    <string name="editarEvento">Edit Event</string>
+    <string name="eliminarEvento.">Delete Event</string>
+    <string name="eventoRealizado">Events held</string>
+    <string name="eventoFuturo">Future events</string>
+    <string name="muyPronto">Coming Soon</string>
+    <string name="seleccion">Select the type of event</string>
+    <string name="deporte">Sport</string>
+    <string name="musica">Musical</string>
+    <string name="religion">Religion</string>
+    <string name="ver">View</string>
+
+
+
+
+
+
 </resources>

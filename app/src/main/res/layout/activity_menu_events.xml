@@ -36,7 +36,7 @@
             android:layout_marginTop="18dp"
             android:textStyle="italic"
             android:textSize="20dp"
-            android:text="Ver Evento"
+            android:text="@string/verEvento"
             />
 
         <Button
@@ -45,7 +45,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
             android:textSize="20dp"
-            android:text="Editar  evento" />
+            android:text="@string/editarEvento" />
 
         <Button
 
@@ -53,7 +53,7 @@
             android:layout_height="60dp"
             android:textSize="20dp"
             android:layout_marginTop="18dp"
-            android:text="Eliminar evento"
+            android:text="@string/eliminarEvento."
             android:id="@+id/eliminar"
              />
     </LinearLayout>

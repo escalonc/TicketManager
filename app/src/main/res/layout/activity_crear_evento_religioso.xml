@@ -217,7 +217,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Calculate"
+                    android:text="@string/calculate"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>
@@ -244,7 +244,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="SAVED"
+            android:text="@string/saved"
             android:layout_margin="15dp"
             tools:layout_centerInParent="true" />
 
