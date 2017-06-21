@@ -104,6 +104,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         msg.show();
                     } else {
                         members.add(peopless.getText().toString());
+                        peopless.setText("");
                         Toast msg = Toast.makeText(CrearEventoMusical.this, "Add", Toast.LENGTH_SHORT);
                         msg.show();
                     }
@@ -111,6 +112,9 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
                     registrarEventoMusical.addpeoplesupport(peopless.getText().toString());
+                    peopless.setText("");
+                    Toast msg = Toast.makeText(CrearEventoMusical.this, "Add", Toast.LENGTH_SHORT);
+                    msg.show();
                 }
 
             }
@@ -154,6 +158,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         for(String  e:members){
                             if(e.equals(peopless.getText().toString())){
                                 members.remove(e);
+                                peopless.setText("");
                                 Toast msg = Toast.makeText(CrearEventoMusical.this, "Delete", Toast.LENGTH_SHORT);
                                 msg.show();
                                 return;
@@ -171,6 +176,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         almacenEventos.verificarexistencia(codigorecibido);
                         RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
                         if(registrarEventoMusical.deletemembers(peopless.getText().toString())){
+                            peopless.setText("");
                             Toast msg = Toast.makeText(CrearEventoMusical.this, "Delete", Toast.LENGTH_SHORT);
                             msg.show();
                         }else{
@@ -224,7 +230,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
                             String costo= String.valueOf(Integer.parseInt(eventamount.getText().toString())+ (Integer.parseInt(eventamount.getText().toString())*30/100)) ;
-                            Event event = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), costo, people.getText().toString(), dia, mes, año);
+                            Event event = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), costo, people.getText().toString(), dia, mes, año,members);
                             almacenEventos.registrarmusical((RegistrarEventoMusical) event);
                             Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
                             fmsg.show();
