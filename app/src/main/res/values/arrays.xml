@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <String-array name ="listado">
+
+        <item> PRIMERO</item>
+        <item> SEGUNDO</item>
+        <item> TERCERO</item>
+        <item> CUARTO</item>
+        <item> QUINTO</item>
+    </String-array>
+
+
+
+
+</resources>

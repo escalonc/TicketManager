@@ -38,6 +38,7 @@ public class InformacionDeleEvento extends AppCompatActivity {
             descripcion.setText(String.valueOf( registrarEventoDeportivo.getDescription()));
              monto.setText(String.valueOf( registrarEventoDeportivo.getAmount()));
             eventotipo.setImageResource(R.drawable.deportivo);
+            registrarEventoDeportivo.getTeam1();
 
 
         }else if(registrarEventoReligioso!=null){
