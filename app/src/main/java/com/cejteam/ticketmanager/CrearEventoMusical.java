@@ -103,18 +103,32 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
                         msg.show();
                     } else {
+                        for (String e : members) {
+                            if (e.equals(peopless.getText().toString())) {
+                                Toast msg = Toast.makeText(CrearEventoMusical.this, "Ya existe", Toast.LENGTH_SHORT);
+                                msg.show();
+                                return;
+                            }
+                        }
                         members.add(peopless.getText().toString());
                         peopless.setText("");
                         Toast msg = Toast.makeText(CrearEventoMusical.this, "Add", Toast.LENGTH_SHORT);
                         msg.show();
                     }
-                }else if(nuevo==2){
+
+                }else if(nuevo==2) {
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
-                    registrarEventoMusical.addpeoplesupport(peopless.getText().toString());
-                    peopless.setText("");
-                    Toast msg = Toast.makeText(CrearEventoMusical.this, "Add", Toast.LENGTH_SHORT);
-                    msg.show();
+                    if (registrarEventoMusical.comprobar(peopless.getText().toString())) {
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "Ya existe", Toast.LENGTH_SHORT);
+                        msg.show();
+                        return;
+                    } else {
+                        registrarEventoMusical.addpeoplesupport(peopless.getText().toString());
+                        peopless.setText("");
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "Add", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }
                 }
 
             }

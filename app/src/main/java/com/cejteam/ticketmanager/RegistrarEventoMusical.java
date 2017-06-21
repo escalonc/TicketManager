@@ -12,6 +12,18 @@ public class RegistrarEventoMusical extends Event{
     private String type;
     private ArrayList<String> peopleOfSupport = new ArrayList<>();
 
+
+    public boolean comprobar(String name){
+        for (String e : peopleOfSupport) {
+            if (e.equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
     public  boolean deletemembers(String name) {
         for (String e : peopleOfSupport) {
             if (e.equals(name)) {
