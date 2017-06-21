@@ -99,7 +99,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
             public void onClick(View v) {
                 if (nuevo == 1) {
                     if (TextUtils.isEmpty(member1.getText().toString())) {
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else {
                         teams1.add(member1.getText().toString());
@@ -122,7 +122,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
             public void onClick(View v) {
                 if(nuevo==1){
                     if(TextUtils.isEmpty(member2.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
 
                     }else{
@@ -164,7 +164,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
 try {
     if (nuevo == 1) {
         if (TextUtils.isEmpty(member1.getText().toString())) {
-            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
             msg.show();
         } else {
             for (String e : teams1) {
@@ -175,13 +175,13 @@ try {
                     return;
                 }
             }
-            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro el nombre", Toast.LENGTH_SHORT);
+            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Name not found", Toast.LENGTH_SHORT);
             msg.show();
 
         }
     } else if (nuevo == 2) {
         if (TextUtils.isEmpty(member1.getText().toString())) {
-            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
             msg.show();
 
         } else {
@@ -192,7 +192,7 @@ try {
                 Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
                 msg.show();
             } else {
-                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro ese nombre", Toast.LENGTH_SHORT);
+                Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Name not found", Toast.LENGTH_SHORT);
                 msg.show();
             }
 
@@ -210,7 +210,7 @@ try {
             public void onClick(View v) {
                 if(nuevo==1){
                     if(TextUtils.isEmpty(member2.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else{
                         for(String  e:teams2){
@@ -221,12 +221,12 @@ try {
                                 return;
                             }
                         }
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro el nombre", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Name not found", Toast.LENGTH_SHORT);
                         msg.show();
                     }
                 }else if(nuevo==2){
                     if(TextUtils.isEmpty(member2.getText().toString())){
-                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else{
                         codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
@@ -236,7 +236,7 @@ try {
                             Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Delete", Toast.LENGTH_SHORT);
                             msg.show();
                         }else{
-                            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "No se encontro ese nombre", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Name not found", Toast.LENGTH_SHORT);
                             msg.show();
                         }
 
@@ -261,31 +261,31 @@ try {
                         mes2 = calendario.get(Calendar.MONTH);
                         dia2 = calendario.get(Calendar.DAY_OF_MONTH);
                         if (TextUtils.isEmpty(spinner.toString()) || TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(team1.getText()) || TextUtils.isEmpty(team2.getText()) || TextUtils.isEmpty(people.getText())) {
-                            Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (!almacenEventos.comparardeportivo(campofecha.getText().toString()) || !almacenEventos.compararreligioso(campofecha.getText().toString()) || !almacenEventos.compararmusical(campofecha.getText().toString())) {
-                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (ano1 < ano2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 < mes2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (Integer.parseInt(people.getText().toString()) > 20000) {
-                            Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THE MAXIMUM AMOUNT IS 20000 PEOPLE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (almacen.verificarexistencia(Integer.parseInt(event.getText().toString()))) {
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
                             Event event = new RegistrarEventoDeportivo(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), eventamount.getText().toString(), team1.getText().toString(), team2.getText().toString(), people.getText().toString(), año, mes, dia,teams1,teams2);
                             almacenEventos.registrardeportivo((RegistrarEventoDeportivo) event);
-                            Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "SUCCESSFUL REGISTRATION", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
                             intent.putExtra("nuevo",nuevo);
@@ -302,37 +302,37 @@ try {
                         RegistrarEventoMusical registrarEventoMusicalam= almacenEventos.buscareventomusical(Integer.parseInt(event.getText().toString()));
                         RegistrarEventoReligioso registrarEventoReligiosoam = almacenEventos.buscareventoreligioso(Integer.parseInt(event.getText().toString()));
                         if (TextUtils.isEmpty(spinner.toString()) || TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(team1.getText()) || TextUtils.isEmpty(team2.getText()) || TextUtils.isEmpty(people.getText())) {
-                            Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (!almacenEventos.compararreligioso(campofecha.getText().toString()) || !almacenEventos.compararmusical(campofecha.getText().toString())) {
-                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (ano1 < ano2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 < mes2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (Integer.parseInt(people.getText().toString()) > 20000) {
-                            Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THE MAXIMUM AMOUNT IS 20000 PEOPLE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         }else if(registrarEventoDeportivosm !=null && registrarEventoDeportivos != registrarEventoDeportivosm  ){
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         }else if(registrarEventoMusicalam !=null && registrarEventoDeportivos.getEvent() == registrarEventoMusicalam.getEvent()   ){
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         }else if(registrarEventoReligiosoam !=null  && registrarEventoDeportivos.getEvent() == registrarEventoReligiosoam.getEvent()  ) {
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if(fecha.buscarfechadep(String.valueOf(campofecha.getText().toString()), registrarEventoDeportivos)){
-                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if(teams1.size()==0 || teams2.size()==0){
-                            Toast msg = Toast.makeText(this, "Registre minimo un miembro por equipo", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Record least one member per team", Toast.LENGTH_SHORT);
                             msg.show();
                         } else{
                             RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
@@ -348,7 +348,7 @@ try {
                             registrarEventoDeportivo.setDia(dia);
                             registrarEventoDeportivo.setMes(mes);
                             registrarEventoDeportivo.setAño(año);
-                            Toast fmsg = Toast.makeText(this, "CAMBIO REALIZADO EXITOSAMENTE", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "EXCHANGE REALIZED SUCCESSFULLY", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
                             intent.putExtra("nuevo",nuevo);

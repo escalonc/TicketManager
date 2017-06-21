@@ -32,7 +32,7 @@ public class EliminarEvento extends AppCompatActivity implements View.OnClickLis
         int mes =hoy.get(Calendar.MONTH);
         int dia=hoy.get(Calendar.DAY_OF_MONTH);
         if(TextUtils.isEmpty(codigo.toString())){
-            Toast fmsgs = Toast.makeText(this, "LLENE EL CAMPO", Toast.LENGTH_SHORT);
+            Toast fmsgs = Toast.makeText(this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
             fmsgs.show();
         }
         else if (!TextUtils.isEmpty(codigo.toString())){
@@ -66,7 +66,7 @@ public class EliminarEvento extends AppCompatActivity implements View.OnClickLis
                 }
             }
         }else{
-            Toast fmsg = Toast.makeText(this, "INGRESE UN EVENTO CORRECTO", Toast.LENGTH_SHORT);
+            Toast fmsg = Toast.makeText(this, "ENTER A CORRECT EVENT", Toast.LENGTH_SHORT);
             fmsg.show();
         }
     }

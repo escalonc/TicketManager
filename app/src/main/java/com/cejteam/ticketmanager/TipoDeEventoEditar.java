@@ -32,7 +32,7 @@ public class TipoDeEventoEditar extends AppCompatActivity implements View.OnClic
             switch (seleccion) {
                 case R.id.botoneditar:
                     if(TextUtils.isEmpty(codigo.getText().toString())){
-                        Toast msg = Toast.makeText(this, "Llene el campo codigo por favor", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(this, "Fill the field code please", Toast.LENGTH_SHORT);
                         msg.show();
                     } else if(!TextUtils.isEmpty(codigo.getText().toString())){
                         int code= Integer.parseInt(codigo.getText().toString());
@@ -65,7 +65,7 @@ public class TipoDeEventoEditar extends AppCompatActivity implements View.OnClic
                              }
 
                          }else{
-                             Toast msg = Toast.makeText(this, "No se encuentra el codigo ingresado", Toast.LENGTH_SHORT);
+                             Toast msg = Toast.makeText(this, "Can not find the code entered", Toast.LENGTH_SHORT);
                              msg.show();
                          }
                     }

@@ -60,7 +60,8 @@ public class EventosFuturosActivity extends AppCompatActivity {
             ListView ListEventosFuturos = (ListView) findViewById(R.id.List_eventos_futuros);
             ListEventosFuturos.setAdapter(pambisitoAdapter);
 
-            //ahora a poner los contadores en los textViews
+
+                //Poner los contadores en los textViews
             DeportivosF.setText("Sports events: " + String.valueOf(contadorDeportivos));
             ReligiososF.setText("Religious events: " + String.valueOf(contadorReligiosos));
             MusicalesF.setText("Musical events: " + String.valueOf(contadorMusicales));

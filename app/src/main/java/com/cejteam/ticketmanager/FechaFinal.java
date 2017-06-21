@@ -70,7 +70,7 @@ try {
                         finish();
 
                     } else{
-                        Toast msg = Toast.makeText(FechaFinal.this, "Ingrese una fecha mayor a la anterior", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(FechaFinal.this, "Enter a date greater than the previous one", Toast.LENGTH_SHORT);
                         msg.show();
                     }
 

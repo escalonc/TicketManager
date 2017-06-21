@@ -100,7 +100,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
             public void onClick(View v) {
                 if (nuevo == 1) {
                     if (TextUtils.isEmpty(peopless.getText().toString())) {
-                        Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
                         msg.show();
                     } else {
                         members.add(peopless.getText().toString());
@@ -121,7 +121,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
             @Override
             public void onClick(View v) {
                 if(TextUtils.isEmpty(eventamount.getText().toString())){
-                    Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
+                    Toast msg = Toast.makeText(CrearEventoMusical.this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
                     msg.show();
                 }else{
                     total= Integer.parseInt(eventamount.getText().toString())+(Integer.parseInt(eventamount.getText().toString()) * 30 / 100);
@@ -157,32 +157,32 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         mes2 = calendario.get(Calendar.MONTH);
                         dia2 = calendario.get(Calendar.DAY_OF_MONTH);
                         if (TextUtils.isEmpty(spinner.toString()) || TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(people.getText())) {
-                            Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (!almacenEventos.comparardeportivo(campofecha.getText().toString()) || !almacenEventos.compararreligioso(campofecha.getText().toString()) || !almacenEventos.compararmusical(campofecha.getText().toString())) {
-                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (ano1 < ano2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 < mes2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (Integer.parseInt(people.getText().toString()) > 20000) {
-                            Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THE MAXIMUM AMOUNT IS 20000 PEOPLE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (almacen.verificarexistencia(Integer.parseInt(event.getText().toString()))) {
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else {
                             codeevent = Integer.parseInt(event.getText().toString());
                             String costo= String.valueOf(Integer.parseInt(eventamount.getText().toString())+ (Integer.parseInt(eventamount.getText().toString())*30/100)) ;
                             Event event = new RegistrarEventoMusical(spinner.toString(), tittle.getText().toString(), codeevent, eventdescription.getText().toString(), campofecha.getText().toString(), costo, people.getText().toString(), dia, mes, año);
                             almacenEventos.registrarmusical((RegistrarEventoMusical) event);
-                            Toast fmsg = Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "SUCCESSFUL REGISTRATION", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
                             intent.putExtra("nuevo",nuevo);
@@ -197,34 +197,34 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                         RegistrarEventoMusical registrarEventoMusicalam= almacenEventos.buscareventomusical(Integer.parseInt(event.getText().toString()));
                         RegistrarEventoReligioso registrarEventoReligiosoam = almacenEventos.buscareventoreligioso(Integer.parseInt(event.getText().toString()));
                         if (TextUtils.isEmpty(spinner.toString()) || TextUtils.isEmpty(event.getText()) || TextUtils.isEmpty(tittle.getText()) || TextUtils.isEmpty(eventdescription.getText()) || TextUtils.isEmpty(eventamount.getText()) || TextUtils.isEmpty(campofecha.getText()) || TextUtils.isEmpty(people.getText())) {
-                            Toast msg = Toast.makeText(this, "POR FAVOR, LLENE LOS CAMPOS QUE ESTAN VACIOS", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (!almacenEventos.compararreligioso(campofecha.getText().toString()) || !almacenEventos.comparardeportivo(campofecha.getText().toString())) {
-                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
                         } else if (ano1 < ano2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 < mes2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (ano1 == ano2 && mes1 == mes2 && dia1 < dia2) {
-                            Toast fmsg = Toast.makeText(this, "ESA FECHA NO ES VALIDA", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THAT DATE IS NOT VALID", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if (Integer.parseInt(people.getText().toString()) > 20000) {
-                            Toast fmsg = Toast.makeText(this, "LA CANTIDAD MAXIMA ES DE 20000 PERSONAS", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THE MAXIMUM AMOUNT IS 20000 PEOPLE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         }else if(registrarEventoMusicals != registrarEventoMusicalam && registrarEventoMusicalam !=null){
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         }else if( registrarEventoDeportivosm !=null && registrarEventoMusicals.getEvent() == registrarEventoDeportivosm.getEvent() ){
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         }else if( registrarEventoReligiosoam !=null && registrarEventoMusicals.getEvent() == registrarEventoReligiosoam.getEvent()  ) {
-                            Toast fmsg = Toast.makeText(this, "YA EXISTE UN EVENTO CON EE CODIGO", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "THERE IS AN EVENT WITH THAT CODE", Toast.LENGTH_SHORT);
                             fmsg.show();
                         } else if(fecha.buscarfechamus(String.valueOf(campofecha.getText().toString()), registrarEventoMusicals)){
-                            Toast msg = Toast.makeText(this, "ya existe esta fecha", Toast.LENGTH_SHORT);
+                            Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
                         }  else{
                             RegistrarEventoMusical  registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
@@ -237,7 +237,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             registrarEventoMusical.setDia(dia);
                             registrarEventoMusical.setMes(mes);
                             registrarEventoMusicals.setAño(año);
-                            Toast fmsg = Toast.makeText(this, "CAMBIO REALIZADO EXITOSAMENTE", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "EXCHANGE REALIZED SUCCESSFULLY", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
                             intent.putExtra("nuevo",nuevo);
@@ -284,7 +284,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
 
     public double total() {
         if (TextUtils.isEmpty(eventamount.getText().toString())) {
-            Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO DEL COSTO", Toast.LENGTH_SHORT);
+            Toast msg = Toast.makeText(CrearEventoMusical.this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
             msg.show();
             return -1;
         } else {

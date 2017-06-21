@@ -106,7 +106,7 @@ public class EventosEntreDosFechas extends AppCompatActivity {
                     ListView ListEventosFuturos = (ListView) findViewById(R.id.List_eventos_betwenn);
                     ListEventosFuturos.setAdapter(pambisitoAdapter);
 
-                    //ahora a poner los contadores en los textViews
+      //Poner los contadores en los textViews
                     DeportivosF.setText("Sports events: " + String.valueOf(contadorDeportivos));
                     ReligiososF.setText("Religious events: " + String.valueOf(contadorReligiosos));
                     MusicalesF.setText("Musical events: " + String.valueOf(contadorMusicales));
