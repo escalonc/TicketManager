@@ -38,7 +38,7 @@ public class EventosCancelados extends AppCompatActivity {
                     relCont++;
             }
             ListAdapter ListaPasada = new AdaptadorDeVistaDeEventos(getApplicationContext(), EventosCancelados);
-            ListView EventosCandeladosList = (ListView) findViewById(R.id.List_eventos_cancelados);
+            ListView EventosCandeladosList = (ListView) findViewById(R.id.eventoCancelado);
             EventosCandeladosList.setAdapter(ListaPasada);
             depCancelados.setText("Sports events: " + String.valueOf(depCont));
             relCancelados.setText("Religious events: " + String.valueOf(relCont));

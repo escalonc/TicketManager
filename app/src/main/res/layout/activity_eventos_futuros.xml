@@ -15,53 +15,75 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:textStyle="italic"
+        android:layout_alignParentTop="true" />
 
-        android:layout_alignParentTop="true"
-         />
 
-    <TextView
-        android:id="@+id/futuroDeporte"
-        android:layout_width="wrap_content"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/eventosFuturo"
-        android:layout_marginTop="31dp"
-        android:text="TextView" />
+    <LinearLayout
+        android:layout_below="@id/eventosFuturo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/futuroReligion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
 
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:layout_below="@+id/futuroDeporte"
-         />
 
-    <TextView
-        android:id="@+id/futuroMusica"
-        android:layout_width="wrap_content"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp">
 
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        android:layout_below="@+id/futuroReligion" />
+            <TextView
+                android:id="@+id/futuroDeporte"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/eventosFuturo"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
 
-    <TextView
-        android:id="@+id/futuroMonto"
-        android:layout_width="wrap_content"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
+            <TextView
+                android:id="@+id/futuroReligion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:layout_below="@+id/futuroDeporte" />
+        </LinearLayout>
 
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/futuroMusica"
-        android:layout_marginTop="19dp"
-        android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/futuroMusica"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:layout_below="@+id/futuroReligion" />
+
+            <TextView
+                android:id="@+id/futuroMonto"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/futuroMusica"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
 
 

@@ -15,49 +15,70 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:textStyle="italic"
-        android:layout_alignParentTop="true"
-        />
+        android:layout_alignParentTop="true" />
 
-    <TextView
-        android:id="@+id/dosFechasDeporte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="italic"
-        android:layout_below="@+id/eventoEntreDosFechas"
-        android:layout_marginTop="31dp"
-        android:text="TextView" />
+    <LinearLayout
+        android:layout_below="@id/eventoEntreDosFechas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/dosFechasReligioso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="italic"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:layout_below="@+id/dosFechasDeporte"
-        />
 
-    <TextView
-        android:id="@+id/dosFechasMusical"
-        android:layout_width="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="italic"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        android:layout_below="@+id/dosFechasReligioso" />
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp">
 
-    <TextView
-        android:id="@+id/dosFechasMonto"
-        android:layout_width="wrap_content"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dosFechasMusical"
-        android:layout_marginTop="19dp"
-        android:text="TextView" />
+            <TextView
+                android:id="@+id/dosFechasDeporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_marginTop="24dp"
+                android:layout_below="@+id/eventoEntreDosFechas"
+                android:text="TextView"/>
+
+            <TextView
+                android:id="@+id/dosFechasReligioso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:layout_below="@+id/dosFechasDeporte"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/dosFechasMusical"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:layout_below="@+id/dosFechasReligioso" />
+
+            <TextView
+                android:id="@+id/dosFechasMonto"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dosFechasMusical"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </RelativeLayout>
 
 
