@@ -348,7 +348,7 @@ try {
                             registrarEventoDeportivo.setDia(dia);
                             registrarEventoDeportivo.setMes(mes);
                             registrarEventoDeportivo.setAño(año);
-                            Toast fmsg = Toast.makeText(this, "EXCHANGE REALIZED SUCCESSFULLY", Toast.LENGTH_SHORT);
+                            Toast fmsg = Toast.makeText(this, "EXCHANGE REALIZED SUCCESSFULLY.", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
                             intent.putExtra("nuevo",nuevo);
