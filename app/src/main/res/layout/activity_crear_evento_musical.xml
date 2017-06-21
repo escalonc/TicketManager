@@ -211,6 +211,16 @@
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <Button
 
                     android:id="@+id/addmembersout"
@@ -222,6 +232,19 @@
                     android:textColor="@color/blanco"
                     android:background="@color/colorPrimaryDark"
                     android:text="@string/add"
+                    tools:layout_centerInParent="true" />
+
+                <Button
+
+                    android:id="@+id/deletememberofsupport"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Delete"
                     tools:layout_centerInParent="true" />
 
             </LinearLayout>

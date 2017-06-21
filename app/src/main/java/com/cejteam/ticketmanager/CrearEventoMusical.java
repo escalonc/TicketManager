@@ -28,7 +28,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
     int dia1,dia2,mes1,mes2,ano1,ano2;
     private Spinner spinner;
     private EditText event,tittle,eventdescription,eventamount,campofecha,people,peopless;
-    private Button saved,addpeople,calculate;
+    private Button saved,addpeople,calculate,eliminarpeople;
     double total=0;
     TextView totalapagar;
     AlmacenEventos almacenEventos=new AlmacenEventos();
@@ -141,6 +141,50 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
             people.setText(String.valueOf(registrarEventoMusical.getPeople()));
 
         }
+
+        eliminarpeople=(Button)findViewById(R.id.deletememberofsupport);
+        eliminarpeople.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(nuevo==1){
+                    if(TextUtils.isEmpty(peopless.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    } else{
+                        for(String  e:members){
+                            if(e.equals(peopless.getText().toString())){
+                                members.remove(e);
+                                Toast msg = Toast.makeText(CrearEventoMusical.this, "Delete", Toast.LENGTH_SHORT);
+                                msg.show();
+                                return;
+                            }
+                        }
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "No se encontro el nombre", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }
+                }else if(nuevo==2){
+                    if(TextUtils.isEmpty(peopless.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "POR FAVOR, LLENE EL CAMPO", Toast.LENGTH_SHORT);
+                        msg.show();
+                    } else{
+                        codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
+                        almacenEventos.verificarexistencia(codigorecibido);
+                        RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
+                        if(registrarEventoMusical.deletemembers(peopless.getText().toString())){
+                            Toast msg = Toast.makeText(CrearEventoMusical.this, "Delete", Toast.LENGTH_SHORT);
+                            msg.show();
+                        }else{
+                            Toast msg = Toast.makeText(CrearEventoMusical.this, "No se encontro ese nombre", Toast.LENGTH_SHORT);
+                            msg.show();
+                        }
+
+                    }
+                }
+            }
+        });
+
+
+
 
     }
 
