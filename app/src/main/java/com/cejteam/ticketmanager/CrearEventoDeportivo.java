@@ -117,10 +117,16 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
+                    if(registrarEventoDeportivo.comprobarname1(member1.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                        msg.show();
+                        return;
+                    }else{
                     registrarEventoDeportivo.registrarteam1(member1.getText().toString());
                     Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
                     msg.show();
                     member1.setText("");
+                    }
                 }
 
             }
@@ -151,10 +157,17 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
-                    registrarEventoDeportivo.registrarteam2(member2.getText().toString());
-                    Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
-                    msg.show();
-                    member2.setText("");
+                    if(registrarEventoDeportivo.comprobarname2(member2.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
+                        msg.show();
+                        return;
+                    }else {
+
+                        registrarEventoDeportivo.registrarteam2(member2.getText().toString());
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Add", Toast.LENGTH_SHORT);
+                        msg.show();
+                        member2.setText("");
+                    }
                 }
             }
         });
