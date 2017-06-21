@@ -14,5 +14,6 @@
     <color name="blanco">#e0f2f1</color>
     <color name="colorAccent">#00bfa5</color>
     <color name="blancom">#00bfa5</color>
+   <color name="negro">#000</color>
 
 </resources>

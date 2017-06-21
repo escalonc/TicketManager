@@ -35,22 +35,22 @@ public class CustomAdapter extends ArrayAdapter<Event> {
         TextView TextViewMonto = (TextView) customView.findViewById(R.id.textViewMonto);
         ImageView ImagenLista = (ImageView) customView.findViewById(R.id.imageViewLista);
         try {
-            TextViewCodigo.setText("Codigo: " + String.valueOf(singleItem.getEvent()));
+            TextViewCodigo.setText("Code: " + String.valueOf(singleItem.getEvent()));
             //para saber el tipo de evento
             if (singleItem instanceof RegistrarEventoDeportivo) {
-                TextViewTipo.setText("Tipo de evento: Deportivo");
+                TextViewTipo.setText("Event Type: Sports");
                 ImagenLista.setImageResource(R.drawable.deportivo);
             } else if (singleItem instanceof RegistrarEventoMusical) {
-                TextViewTipo.setText("Tipo de evento: Musical");
+                TextViewTipo.setText("Event Type: Musical");
                 ImagenLista.setImageResource(R.drawable.musicali);
             } else if (singleItem instanceof RegistrarEventoReligioso) {
-                TextViewTipo.setText("Tipo de evento: Religioso");
+                TextViewTipo.setText("Event Type: Religious");
                 ImagenLista.setImageResource(R.drawable.religiosoi);
             }
 
-            TextViewTitulo.setText("Titulo: " + singleItem.getTittle());
-            TextViewFecha.setText("Fecha: " + singleItem.getDate());
-            TextViewMonto.setText("Monto a pagar: " + String.valueOf(singleItem.getAmount()));
+            TextViewTitulo.setText("Title: " + singleItem.getTittle());
+            TextViewFecha.setText("Date: " + singleItem.getDate());
+            TextViewMonto.setText("Amount payable: " + String.valueOf(singleItem.getAmount()));
 
 
         } catch (Exception e) {
