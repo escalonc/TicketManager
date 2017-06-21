@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/blanco"
                 android:text="@string/event_code"
-                android:textColor="@color/blanco"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18dp" />
 
             <EditText
@@ -78,7 +78,7 @@
                     android:background="@color/blanco"
                     android:textStyle="italic"
                     android:text="@string/title_event"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
                     android:text="@string/event_description"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -134,7 +134,7 @@
                     android:background="@color/blanco"
                     android:textStyle="italic"
                     android:text="@string/date_event"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -166,7 +166,7 @@
                     android:textStyle="italic"
                     android:background="@color/blanco"
                     android:text="@string/people1"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -193,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
                     android:text="@string/event_amount"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="italic"
                     android:textSize="18dp" />
 
@@ -222,7 +222,7 @@
                     android:background="@color/blanco"
                     android:text="@string/costo"
                     android:textStyle="italic"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <TextView

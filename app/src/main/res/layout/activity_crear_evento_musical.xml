@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/blanco"
                 android:text="@string/event_code"
-                android:textColor="@color/blanco"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18dp" />
 
             <EditText
@@ -82,7 +82,7 @@
                     android:textStyle="italic"
                     android:background="@color/blanco"
                     android:text="@string/title_event"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -110,7 +110,7 @@
                     android:background="@color/blanco"
                     android:textStyle="italic"
                     android:text="@string/event_description"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -138,7 +138,7 @@
                     android:background="@color/blanco"
                     android:textStyle="italic"
                     android:text="@string/date_event"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -170,7 +170,7 @@
                     android:background="@color/blanco"
                     android:textStyle="italic"
                     android:text="@string/people1"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -199,7 +199,7 @@
                     android:textStyle="italic"
                     android:background="@color/blanco"
                     android:text="@string/members"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <EditText
@@ -231,15 +231,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/costo"
                     android:layout_width="match_parent"
-                    android:textStyle="italic"
                     android:layout_height="wrap_content"
                     android:background="@color/blanco"
                     android:text="@string/event_amount"
-                    android:textColor="@color/blanco"
-                    android:textSize="18dp" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
 
                 <EditText
                     android:id="@+id/costosmusical"
@@ -266,7 +267,7 @@
                     android:background="@color/blanco"
                     android:text="@string/costo"
                     android:textStyle="italic"
-                    android:textColor="@color/blanco"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
                 <TextView
@@ -318,6 +319,8 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:orientation="vertical"
+            android:textColor="@color/blanco"
+            android:background="@color/colorPrimaryDark"
             android:text="SAVED"
             android:layout_margin="15dp"
             tools:layout_centerInParent="true" />
