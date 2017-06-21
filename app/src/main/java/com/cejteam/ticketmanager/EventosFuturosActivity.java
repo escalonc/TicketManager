@@ -66,8 +66,7 @@ public class EventosFuturosActivity extends AppCompatActivity {
             MusicalesF.setText("Eventos musicales: " + String.valueOf(contadorMusicales));
             MontoTotalF.setText("Monto total: " + String.valueOf(montoTotal));
         }catch (Exception e){
-            Toast fmsg = Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT);
-            fmsg.show();
+
         }
     }
     public boolean comparar(int ano,int mes, int dia){

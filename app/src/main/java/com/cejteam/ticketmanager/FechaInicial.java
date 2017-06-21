@@ -2,6 +2,7 @@ package com.cejteam.ticketmanager;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,20 +49,27 @@ public class FechaInicial extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intenst = new Intent(FechaInicial.this,FechaFinal.class);
+                intenst.putExtra("ano1",ano1);
+                intenst.putExtra("mes1",mes1);
+                intenst.putExtra("dia1",dia1);
+                startActivity(intenst);
+                finish();
             }
         });
     }
 
         /////////////////////////////////////////////////////////////////
 
-    public void mostrarfecha(){
-        dia1=dia;
-        mes1=mes;
-        ano1=año;
+    public void mostrarfecha() {
+        try {
+            dia1 = dia;
+            mes1 = mes;
+            ano1 = año;
 
 
-        fecha.setText(dia+"/"+(mes+1)+"/"+año);
+            fecha.setText(dia + "/" + (mes + 1) + "/" + año);
+        }catch (Exception e){}
     }
     @Override
     protected Dialog onCreateDialog(int id){

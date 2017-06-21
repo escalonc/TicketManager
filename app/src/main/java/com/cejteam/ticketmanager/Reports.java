@@ -22,8 +22,8 @@ public class Reports extends AppCompatActivity {
                 finish();
             }
         });
-        pasado = (Button)findViewById(R.id.futuros);
-        pasado.setOnClickListener(new View.OnClickListener() {
+        futuro = (Button)findViewById(R.id.futuros);
+        futuro.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View v) {
                     Intent intenst = new Intent(Reports.this,EventosFuturosActivity.class);
@@ -32,6 +32,14 @@ public class Reports extends AppCompatActivity {
             }
         });
 
-        
+        more = (Button)findViewById(R.id.more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(Reports.this,FechaInicial.class);
+                startActivity(intenst);
+                finish();
+            }
+        });
     }
 }

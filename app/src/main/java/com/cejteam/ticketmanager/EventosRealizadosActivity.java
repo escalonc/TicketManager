@@ -27,40 +27,40 @@ public class EventosRealizadosActivity extends AppCompatActivity {
         ReligiososR = (TextView) findViewById(R.id.textViewReligiososp);
         MusicalesR = (TextView) findViewById(R.id.textViewMusicalesp);
         MontoTotalR = (TextView) findViewById(R.id.textViewMontoTotalp);
-
-        EventosRealizados = new ArrayList<>();
-        for(Event e : AlmacenEventos.registrarEventoDeportivos) {
-            if(comparar(e.getAño(),e.getMes(),e.getDia())) {
-                EventosRealizados.add(e);
-                montoTotal += Integer.parseInt(e.getAmount());
-                    contadorDeportivos++;
-            }
+try {
+    EventosRealizados = new ArrayList<>();
+    for (Event e : AlmacenEventos.registrarEventoDeportivos) {
+        if (comparar(e.getAño(), e.getMes(), e.getDia())) {
+            EventosRealizados.add(e);
+            montoTotal += Integer.parseInt(e.getAmount());
+            contadorDeportivos++;
         }
-        for(Event e : AlmacenEventos.registrarEventoMusicals) {
-            if(comparar(e.getAño(),e.getMes(),e.getDia())) {
-                EventosRealizados.add(e);
-                montoTotal += Integer.parseInt(e.getAmount());
-                contadorMusicales++;
-            }
+    }
+    for (Event e : AlmacenEventos.registrarEventoMusicals) {
+        if (comparar(e.getAño(), e.getMes(), e.getDia())) {
+            EventosRealizados.add(e);
+            montoTotal += Integer.parseInt(e.getAmount());
+            contadorMusicales++;
         }
-        for(Event e : AlmacenEventos.registrarEventoReligiosos) {
-            if(comparar(e.getAño(),e.getMes(),e.getDia())) {
-                EventosRealizados.add(e);
-                montoTotal += Integer.parseInt(e.getAmount());
-                contadorReligiosos++;
-            }
+    }
+    for (Event e : AlmacenEventos.registrarEventoReligiosos) {
+        if (comparar(e.getAño(), e.getMes(), e.getDia())) {
+            EventosRealizados.add(e);
+            montoTotal += Integer.parseInt(e.getAmount());
+            contadorReligiosos++;
         }
+    }
 
-        ListAdapter pambisitoAdapter = new CustomAdapter(getApplicationContext(), EventosRealizados);
-        ListView ListEventosRealizados = (ListView) findViewById(R.id.List_eventos_realizados);
-        ListEventosRealizados.setAdapter(pambisitoAdapter);
+    ListAdapter pambisitoAdapter = new CustomAdapter(getApplicationContext(), EventosRealizados);
+    ListView ListEventosRealizados = (ListView) findViewById(R.id.List_eventos_realizados);
+    ListEventosRealizados.setAdapter(pambisitoAdapter);
 
-        DeportivosR.setText("Eventos deportivos: "+String.valueOf(contadorDeportivos));
-        ReligiososR.setText("Eventos religiosos: "+String.valueOf(contadorReligiosos));
-        MusicalesR.setText("Eventos musicales: "+String.valueOf(contadorMusicales));
-        MontoTotalR.setText("Monto total: "+String.valueOf(montoTotal));
+    DeportivosR.setText("Eventos deportivos: " + String.valueOf(contadorDeportivos));
+    ReligiososR.setText("Eventos religiosos: " + String.valueOf(contadorReligiosos));
+    MusicalesR.setText("Eventos musicales: " + String.valueOf(contadorMusicales));
+    MontoTotalR.setText("Monto total: " + String.valueOf(montoTotal));
 
-
+}catch (Exception e){}
 
     }
 

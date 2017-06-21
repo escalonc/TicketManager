@@ -26,28 +26,29 @@ public class EventosEntreDosFechas extends AppCompatActivity {
     TextView ReligiososF;
     TextView MusicalesF;
     TextView MontoTotalF;
-    TextView fechainicial;
-    TextView fechafinal;
     Button calcular;
-
+    int ano1=0,ano2=0,mes1=0,mes2=0,dia1=0,dia2=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_entre_dos_fechas);
 
-        fechainicial = (TextView) findViewById(R.id.fechainicial);
-        fechafinal = (TextView) findViewById(R.id.fechafinal);
+        try {
+            ano1 = (Integer) getIntent().getExtras().get("ano1");
+            ano2 = (Integer) getIntent().getExtras().get("ano2");
+            mes1 = (Integer) getIntent().getExtras().get("mes1");
+            mes2 = (Integer) getIntent().getExtras().get("mes2");
+            dia1 = (Integer) getIntent().getExtras().get("dia1");
+            dia2 = (Integer) getIntent().getExtras().get("dia2");
+        }catch (Exception e){}
+
+
         DeportivosF = (TextView) findViewById(R.id.textViewDeportivoscalc);
         ReligiososF = (TextView) findViewById(R.id.textViewReligiososcalc);
         MusicalesF = (TextView) findViewById(R.id.textViewMusicalescalc);
         MontoTotalF = (TextView) findViewById(R.id.textViewMontoTotalcalc);
-        calcular = (Button) findViewById(R.id.calcularfechas);
 
 
-
-        calcular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
                 try {
 
@@ -66,6 +67,7 @@ public class EventosEntreDosFechas extends AppCompatActivity {
                             contadorMusicales++;
                         }
                     }
+
                     for (Event e : AlmacenEventos.registrarEventoReligiosos) {
                         if (comparar(e.getAño(), e.getMes(), e.getDia())) {
                             EventosFuturos.add(e);
@@ -73,8 +75,35 @@ public class EventosEntreDosFechas extends AppCompatActivity {
                             contadorReligiosos++;
                         }
                     }
+                    for (Event e : AlmacenEventos.registrarEventoDeportivoseliminados) {
+                        if (comparar(e.getAño(), e.getMes(), e.getDia())) {
+                            EventosFuturos.add(e);
+                            montoTotal += Integer.parseInt(e.getAmount());
+                            contadorDeportivos++;
+                        }
+                    }
+                    for (Event e : AlmacenEventos.registrarEventoMusicalseliminados) {
+                        if (comparar(e.getAño(), e.getMes(), e.getDia())) {
+                            EventosFuturos.add(e);
+                            montoTotal += Integer.parseInt(e.getAmount());
+                            contadorMusicales++;
+                        }
+                    }
+                    for (Event e : AlmacenEventos.registrarEventoReligiososeliminados) {
+                        if (comparar(e.getAño(), e.getMes(), e.getDia())) {
+                            EventosFuturos.add(e);
+                            montoTotal += Integer.parseInt(e.getAmount());
+                            contadorReligiosos++;
+                        }
+                    }
+
+
+
+
+
+
                     ListAdapter pambisitoAdapter = new CustomAdapter(getApplicationContext(), EventosFuturos);
-                    ListView ListEventosFuturos = (ListView) findViewById(R.id.List_eventos_futuros);
+                    ListView ListEventosFuturos = (ListView) findViewById(R.id.List_eventos_betwenn);
                     ListEventosFuturos.setAdapter(pambisitoAdapter);
 
                     //ahora a poner los contadores en los textViews
@@ -83,26 +112,19 @@ public class EventosEntreDosFechas extends AppCompatActivity {
                     MusicalesF.setText("Eventos musicales: " + String.valueOf(contadorMusicales));
                     MontoTotalF.setText("Monto total: " + String.valueOf(montoTotal));
                 }catch (Exception e){
-                    Toast fmsg = Toast.makeText(EventosEntreDosFechas.this, e.getMessage(), Toast.LENGTH_SHORT);
-                    fmsg.show();
                 }
             }
-        });
-    }
 
 
 
-    public boolean comparar(int ano,int mes, int dia){
-        Calendar calendar=  Calendar.getInstance();
-        int anoa= calendar.get(Calendar.YEAR);
-        int mesa= calendar.get(Calendar.MONTH);
-        int diaa= calendar.get(Calendar.DAY_OF_MONTH);
-        if(anoa>ano){
+
+    public boolean comparar(int anoa,int mesa, int diaa){
+        if(anoa<ano1 || anoa>ano2){
             return false;
-        }else if(anoa==ano && mesa>mes){
+        }else if(mesa<mes1 || mesa>mes2){
             return false;
-        }else if(anoa==ano && mesa == mes && diaa>dia){
-            return false;
+        }else if( diaa<dia1 || diaa>dia2){
+            return  false;
         }
 
         return true;

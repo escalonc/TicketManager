@@ -37,6 +37,7 @@
             android:layout_marginTop="15dp"
             android:ems="10"
             android:inputType="date"
+            android:onClick="mostrarCalendar2"
             android:hint="Final Date" />
 
         <Button
