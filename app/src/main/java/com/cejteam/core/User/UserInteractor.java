@@ -1,6 +1,7 @@
 package com.cejteam.core.User;
 
 import com.cejteam.data.entities.User;
+import com.cejteam.data.entities.User.UserType;
 import com.cejteam.data.repositories.BaseRepository;
 
 /**
@@ -17,5 +18,18 @@ public class UserInteractor {
 
     public void create(User user){
         this.userRepository.add(user);
+    }
+
+    public void createDefaultUsers(){
+        userRepository.add(new User("Christopher", "chris", "123", UserType.ADMIN));
+        userRepository.add(new User("Inge", "admin", "supersecreto", UserType.ADMIN));
+
+        for (int i = 0; i<50 ;i++){
+            if (i % 2 == 0){
+                userRepository.add(new User("User " + i, "user" + i, "1", UserType.ADMIN));
+            }else {
+                userRepository.add(new User("User " + i, "user" + i, "1", UserType.LIMITATED));
+            }
+        }
     }
 }

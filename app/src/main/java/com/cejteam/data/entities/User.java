@@ -1,5 +1,9 @@
 package com.cejteam.data.entities;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 /**
  * Created by Christopher Escalon on 5/21/2017.
  */
@@ -9,15 +13,25 @@ public class User {
     protected String username;
     protected String password;
     protected int age;
-    protected int id;
+    protected String id;
     private UserType userType;
 
+    public User(String name, String username, String password, UserType userType) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.userType = userType;
+        this.id = UUID.randomUUID().toString();
+    }
 
-    public int getId() {
+    public User() {
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -62,8 +76,29 @@ public class User {
     }
 
     public enum UserType {
-        LIMITATED,
-        ADMIN
+        LIMITATED(0),
+        ADMIN(1);
+
+        private int value;
+        private static Map map = new HashMap<>();
+
+        private UserType (int value){
+            this.value = value;
+        }
+
+        static {
+            for (UserType userType : UserType.values()) {
+                map.put(userType.getValue(), userType);
+            }
+        }
+
+        public static UserType valueOf(int type) {
+            return (UserType) map.get(type);
+        }
+
+        public int getValue() {
+            return value;
+        }
     }
 
 

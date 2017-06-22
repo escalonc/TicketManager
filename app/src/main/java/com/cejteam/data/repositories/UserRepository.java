@@ -11,15 +11,6 @@ import java.util.ArrayList;
 public class UserRepository implements BaseRepository<User> {
     private static ArrayList<User> users = new ArrayList<>();
 
-    public UserRepository()
-    {
-        User user = new User();
-        user.setUsername("admin");
-        user.setPassword("supersecreto");
-
-        this.users.add(user);
-    }
-
     @Override
     public ArrayList<User> getAll(){
         return this.users;

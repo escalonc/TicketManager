@@ -12,12 +12,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.cejteam.core.LoginInteractor;
+import com.cejteam.core.User.UserInteractor;
+import com.cejteam.data.entities.User;
 import com.cejteam.data.repositories.UserRepository;
 import com.cejteam.presenters.LoginPresenter;
+import com.cejteam.presenters.User.UserPresenter;
 
 public class LoginActivity extends AppCompatActivity {
 
-    LoginPresenter loginPresenter = new LoginPresenter(new LoginInteractor(new UserRepository()));
+    LoginPresenter loginPresenter;
+    UserInteractor userInteractor = new UserInteractor(new UserRepository());
 
     private UserLoginTask mAuthTask = null;
 
@@ -30,6 +34,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        loginPresenter = new LoginPresenter(new LoginInteractor(new UserRepository(), getApplicationContext()));
+
+        userInteractor.createDefaultUsers();
 
         mUsernameView = (EditText) findViewById(R.id.username);
 
@@ -95,7 +103,6 @@ public class LoginActivity extends AppCompatActivity {
 
             mAuthTask = new UserLoginTask(username, password);
             mAuthTask.execute((Void) null);
-
         }
     }
 
