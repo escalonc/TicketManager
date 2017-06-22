@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:textStyle="italic"
+
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+
+    tools:context="com.cejteam.ticketmanager.MenuEvents">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/eventsmenu"
+
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textSize="32dp"
+        android:textColor="@color/colorPrimary"/>
+    <LinearLayout
+        android:padding="30dp"
+        android:id="@+id/linearprincipal"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/titulo"
+        android:textStyle="italic"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:layout_centerInParent="true"
+        android:orientation="vertical">
+
+
+
+        <Button
+            android:id="@+id/ver"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="italic"
+
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:textSize="20dp"
+            android:text="@string/verEvento"
+            />
+
+        <Button
+            android:id="@+id/editar"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textStyle="italic"
+
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:textSize="20dp"
+            android:text="@string/editarEvento" />
+
+        <Button
+
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textSize="20dp"
+            android:textStyle="italic"
+
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:text="@string/eliminarEvento."
+            android:id="@+id/eliminar" />
+        <Button
+
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:text="Report menu"
+            android:id="@+id/menuReport"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addeventsmain"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:textStyle="italic"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearprincipal"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="0dp"
+        android:src="@drawable/add_event">
+    </android.support.design.widget.FloatingActionButton>
+      <!--  app:backgroundTint="@color/blancospinner" />  -->
+</RelativeLayout>

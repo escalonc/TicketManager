@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:textStyle="italic"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:textStyle="italic"
+        android:textColor="@color/negro"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/ImagenDeEvento"
+        android:layout_width="101dp"
+        android:layout_height="150dp"
+        android:textStyle="italic"
+        app:srcCompat="@drawable/deportivo"
+        android:layout_weight="0.11" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:textStyle="italic"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/CodigoDeEventoMostrar"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="@color/negro"
+        android:layout_weight="0.11"
+        android:text="TextView"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/TipoDeEventoMostrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="@color/negro"
+        android:text="TextView"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/CodigoDeEventoMostrar"/>
+
+    <TextView
+        android:id="@+id/TituloDeEventoMostrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="@color/negro"
+        android:layout_below="@+id/TipoDeEventoMostrar"
+        android:layout_marginTop="10dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/FechaDeEventoMostrado"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+        android:textColor="@color/negro"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/TituloDeEventoMostrado"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/MontoDeEventoMostrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textStyle="italic"
+        android:textColor="@color/negro"
+        android:layout_alignBottom="@+id/ImagenDeEvento"
+        android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

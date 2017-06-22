@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
+
+    tools:context="com.cejteam.ticketmanager.EventosEntreDosFechas">
+
+
+    <ListView
+        android:id="@+id/eventoEntreDosFechas"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:textStyle="italic"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:layout_below="@id/eventoEntreDosFechas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/dosFechasDeporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_marginTop="24dp"
+                android:layout_below="@+id/eventoEntreDosFechas"
+                android:text="TextView"/>
+
+            <TextView
+                android:id="@+id/dosFechasReligioso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:layout_below="@+id/dosFechasDeporte"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/dosFechasMusical"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:layout_below="@+id/dosFechasReligioso" />
+
+            <TextView
+                android:id="@+id/dosFechasMonto"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dosFechasMusical"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/menu56565"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="70dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
+            android:textColor="@color/blanco"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+

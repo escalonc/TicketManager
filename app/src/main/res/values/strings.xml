@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Ticket Manager</string>
 
+
     <!-- Strings related to login -->
     <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
@@ -23,4 +24,83 @@
     <string name="nav_events">Events</string>
     <string name="nav_reports">Reports</string>
     <string name="nav_log_out">Log out</string>
+    <string name="activity_event">Go to activity event</string>
+
+    <string name="event_code">Event code:</string>
+    <string name="event">Event</string>
+
+    <string name="title_event">Event tittle:</string>
+    <string name="title">Title</string>
+
+    <string name="event_description">Event description:</string>
+    <string name="description">Description</string>
+
+    <string name="date_event">Date event:</string>
+    <string name="date">Date</string>
+
+    <string name="team1">Team 1</string>
+    <string name="team2">Team 2</string>
+    <string name="team1t">Name Team 1</string>
+    <string name="team2t">Name Team 2</string>
+    <string name="people">Cuantity</string>
+    <string name="people1">Number of people</string>
+
+    <string name="costo">Total to pay</string>
+    <string name="costototal">Total</string>
+
+
+    <string name="event_amount">Amount of the event:</string>
+    <string name="hola">Amount of the event:</string>
+    <string name="amount">Amount</string>
+
+    <string name="Save">Save</string>
+
+
+    <string name="spinner">Spinner</string>
+    <string name="title_activity_event_list">EventListActivity</string>
+    <string name="title_activity_manage_events">ManageEvents</string>
+
+
+    <string name="New_event">New</string>
+    <string name="Delete_event">Delete</string>
+    <string name="Edit_event">Edit</string>
+    <string name="View_event">View</string>
+    <string name="Back_menu">Main</string>
+    <string name="List_event">List_event</string>
+    <string name="title_activity_events">EventsActivity</string>
+
+    <string name="eventsmenu">Events</string>
+
+
+    <string name="members">Members</string>
+    <string name="name">Name</string>
+    <string name="add">Add</string>
+    <string name="calculate">Calculate</string>
+    <string name="saved">Saved</string>
+    <string name="eliminarEvento">Delete event</string>
+    <string name="codigo">Code:</string>
+    <string name="escribaElCodigo">Write the code</string>
+    <string name="eliminar">Delete</string>
+    <string name="evento">Event</string>
+    <string name="descripcion">Description</string>
+    <string name="information">Information</string>
+    <string name="monto">Amount</string>
+    <string name="regresar">Back</string>
+    <string name="verEvento">View Event</string>
+    <string name="editarEvento">Edit Event</string>
+    <string name="eliminarEvento.">Delete Event</string>
+    <string name="eventoRealizado">Events held</string>
+    <string name="eventoFuturo">Future events</string>
+    <string name="muyPronto">Coming Soon</string>
+    <string name="seleccion">Select the type of event</string>
+    <string name="deporte">Sport</string>
+    <string name="musica">Musical</string>
+    <string name="religion">Religion</string>
+    <string name="ver">View</string>
+
+
+    <string name="finalfecha">Select end date</string>
+    <string name="inciciofecha">Select start date</string>
+
+
 </resources>
