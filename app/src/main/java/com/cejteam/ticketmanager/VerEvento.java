@@ -28,10 +28,8 @@ public class VerEvento extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }
-
             }
         });
-
         menu=(Button)findViewById(R.id.menu1);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override

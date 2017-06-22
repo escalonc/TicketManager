@@ -27,8 +27,6 @@ public class EventosRealizadosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_realizados);
-
-
         menu=(Button)findViewById(R.id.menu8765);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,16 +35,6 @@ public class EventosRealizadosActivity extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-
-
-
-
-
-
-
-
-
-
         depRea = (TextView) findViewById(R.id.realizadoDeporte);
         relRea = (TextView) findViewById(R.id.realizadoReligion);
         musRea = (TextView) findViewById(R.id.realizadoMusical);

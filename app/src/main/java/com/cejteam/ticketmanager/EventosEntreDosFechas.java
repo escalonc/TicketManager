@@ -32,11 +32,6 @@ public class EventosEntreDosFechas extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-
-
-
-
-
         try {
             ano1 = (Integer) getIntent().getExtras().get("ano1");
             ano2 = (Integer) getIntent().getExtras().get("ano2");

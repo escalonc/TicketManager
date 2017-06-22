@@ -30,9 +30,6 @@ public class InformacionDeleEvento extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-
-
-
         codigo = getIntent().getExtras().getInt("codigoenviado");
         fecha=(TextView)findViewById(R.id.mostrarfecha);
         codigocam=(TextView)findViewById(R.id.mostrarcodigo);

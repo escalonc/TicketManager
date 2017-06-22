@@ -17,13 +17,6 @@ public class ListaJugadoresPorEquipo extends AppCompatActivity {
         ListView listajugadores;
         ArrayList<String> teams1 = new ArrayList<>();
 
-
-
-
-
-
-
-
         @Override
         protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -38,13 +31,6 @@ public class ListaJugadoresPorEquipo extends AppCompatActivity {
                     startActivity(intenst);
                 }
             });
-
-
-
-
-
-
-
         try {
             listajugadores = (ListView) findViewById(R.id.ListadeEquipos);
             teams1 = (ArrayList<String>) getIntent().getSerializableExtra("teams1");

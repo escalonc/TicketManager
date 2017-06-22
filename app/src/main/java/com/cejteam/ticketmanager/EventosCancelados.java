@@ -32,16 +32,6 @@ public class EventosCancelados extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
-
-
         depCancelados = (TextView) findViewById(R.id.deportivosCancelados);
         relCancelados = (TextView) findViewById(R.id.religiosoCancelado);
         musCancelados = (TextView) findViewById(R.id.musicalCancelado);

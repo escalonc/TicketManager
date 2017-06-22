@@ -35,17 +35,6 @@ public class FechaFinal extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-
-
-
-
-
-
-
-
-
-
-
 try {
     anopasado = (Integer) getIntent().getExtras().get("ano1");
     mespasado = (Integer) getIntent().getExtras().get("mes1");
@@ -131,10 +120,6 @@ try {
     public void mostrarCalendar2(View control){
         showDialog(tipo_dialogo);
     }
-
-
-
-
 
 
     public boolean comparar(int anopasado,int mespasado, int diapasado, int anoactual,int mesactual,int diaactual ){

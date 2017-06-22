@@ -21,9 +21,6 @@ public class TipodeEvento extends AppCompatActivity implements View.OnClickListe
         musical.setOnClickListener(this);
         religioso = (Button)findViewById(R.id.religioso);
         religioso.setOnClickListener(this);
-
-
-
         menu=(Button)findViewById(R.id.menu2);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override

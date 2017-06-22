@@ -23,9 +23,6 @@ public class FechaInicial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fecha_inicial);
-
-
-
         menu=(Button)findViewById(R.id.menu343);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,14 +31,6 @@ public class FechaInicial extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-
-
-
-
-
-
-
-
       /////////////////////////////////////////////////////////////////
         Calendar calendar= Calendar.getInstance();
         año= calendar.get(Calendar.YEAR);

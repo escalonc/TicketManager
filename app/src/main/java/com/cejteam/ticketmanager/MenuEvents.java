@@ -37,12 +37,6 @@ public class MenuEvents extends AppCompatActivity implements View.OnClickListene
                 startActivity(intenst);
             }
         });
-
-
-
-
-
-
     }
 
 
@@ -60,9 +54,6 @@ public class MenuEvents extends AppCompatActivity implements View.OnClickListene
                     Intent intent = new Intent(this,EliminarEvento.class);
                     startActivity(intent);
                     finish();
-                    /*Intent intensst = new Intent(MenuEvents.this,Reports.class);
-                    startActivity(intensst);
-                    finish();*/
                     break;
                 case R.id.editar:
                     Intent intents = new Intent(this,TipoDeEventoEditar.class);

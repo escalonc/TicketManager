@@ -21,9 +21,6 @@ public class TipoDeEventoEditar extends AppCompatActivity implements View.OnClic
         editar.setOnClickListener(this);
         codigo = (EditText)findViewById(R.id.codigoeditar);
         codigo.setOnClickListener(this);
-
-
-
         menu=(Button)findViewById(R.id.menu3);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override

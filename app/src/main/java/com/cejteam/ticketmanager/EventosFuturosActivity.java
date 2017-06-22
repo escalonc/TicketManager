@@ -32,15 +32,6 @@ public class EventosFuturosActivity extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-
-
-
-
-
-
-
-
-
         depFut = (TextView) findViewById(R.id.futuroDeporte);
         relFut = (TextView) findViewById(R.id.futuroReligion);
         musFut = (TextView) findViewById(R.id.futuroMusica);
