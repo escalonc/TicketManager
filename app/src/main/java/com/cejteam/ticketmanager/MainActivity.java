@@ -5,6 +5,7 @@ import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.view.menu.MenuPresenter;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+
+import com.cejteam.presenters.Menu.MenuModel;
+import com.cejteam.presenters.Menu.MenuPresentator;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        MenuPresentator menuPresentator = new MenuPresentator(getApplicationContext());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +54,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        final Menu menu = navigationView.getMenu();
+        for (int i = 0; i <= menuPresentator.getItems().size() - 1; i++) {
+            MenuModel item = menuPresentator.getItems().get(i);
 
+            menu.add(1, item.getId(), i, item.getName());
+        }
 
     }
 
@@ -90,17 +101,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_users) {
+        if (id == 1) {
             startActivity(new Intent(getApplicationContext(), UserListActivity.class));
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == 2) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == 3) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_logout) {
+        } else if (id == 4) {
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
 

@@ -21,8 +21,8 @@ public class UserInteractor {
     }
 
     public void createDefaultUsers(){
-        userRepository.add(new User("Christopher", "chris", "123", UserType.ADMIN));
-        userRepository.add(new User("Inge", "admin", "supersecreto", UserType.ADMIN));
+        userRepository.add(new User("Christopher", "chris", "123", UserType.LIMITATED));
+        userRepository.add(new User("Inge", "admin", "123", UserType.ADMIN));
 
         for (int i = 0; i<50 ;i++){
             if (i % 2 == 0){

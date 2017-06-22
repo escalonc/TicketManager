@@ -43,6 +43,7 @@ public class LoginInteractor implements LoginInteractorContract {
         editor.putString("user_id", user.getId());
         editor.putString("username", user.getUsername());
         editor.putString("display_name", user.getName());
+        editor.putInt("user_type", user.getUserType().getValue());
         editor.commit();
     }
 
