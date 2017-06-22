@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class TipoDeEventoEditar extends AppCompatActivity implements View.OnClickListener{
-    Button editar;
+    Button editar,menu;
     EditText codigo;
     int nuevo=2;
     @Override
@@ -21,6 +21,17 @@ public class TipoDeEventoEditar extends AppCompatActivity implements View.OnClic
         editar.setOnClickListener(this);
         codigo = (EditText)findViewById(R.id.codigoeditar);
         codigo.setOnClickListener(this);
+
+
+
+        menu=(Button)findViewById(R.id.menu3);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(TipoDeEventoEditar.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
 
     }
 

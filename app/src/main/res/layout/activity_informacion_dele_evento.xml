@@ -12,7 +12,8 @@
 <ScrollView
     android:layout_width="wrap_content"
     android:textStyle="italic"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView2">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -182,12 +183,36 @@
                     android:background="@color/colorPrimaryDark"
                     android:textColor="@color/blanco"
                     android:text="Ver listado" />
+
+
             </LinearLayout>
 
         </LinearLayout>
 
 
     </LinearLayout>
+
+
+
+
+
 </ScrollView>
+
+
+    <Button
+        android:id="@+id/menu34343"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/Back_menu"
+        android:textColor="@color/blanco"
+        android:textSize="20dp" />
+
+
+
+
 </RelativeLayout>
 

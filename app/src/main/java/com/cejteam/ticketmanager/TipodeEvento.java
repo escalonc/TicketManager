@@ -9,7 +9,7 @@ import android.widget.Button;
 
 
 public class TipodeEvento extends AppCompatActivity implements View.OnClickListener{
-    Button deportivo,musical,religioso;
+    Button deportivo,musical,religioso,menu;
     int nuevo=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,17 @@ public class TipodeEvento extends AppCompatActivity implements View.OnClickListe
         musical.setOnClickListener(this);
         religioso = (Button)findViewById(R.id.religioso);
         religioso.setOnClickListener(this);
+
+
+
+        menu=(Button)findViewById(R.id.menu2);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(TipodeEvento.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
 
 
     }
@@ -53,4 +64,8 @@ public class TipodeEvento extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+
+
+
+
 }

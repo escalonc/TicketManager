@@ -441,24 +441,34 @@
         android:text="SAVED"
         android:textStyle="italic"
         android:gravity="center"
-        android:orientation="vertical"
-
+        android:orientation="horizontal"
         tools:layout_centerInParent="true"
         android:layout_height="match_parent">
 
         <Button
-
             android:id="@+id/saved"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="50dp"
             android:gravity="center"
             android:orientation="vertical"
             android:textStyle="italic"
+            android:layout_marginTop="35dp"
             android:text="SAVED"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
             android:layout_margin="15dp"
             tools:layout_centerInParent="true" />
+
+        <Button
+            android:id="@+id/menu112"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:layout_marginTop="35dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
+            android:textColor="@color/blanco"
+            android:textSize="20dp" />
 
     </LinearLayout>
         </LinearLayout>

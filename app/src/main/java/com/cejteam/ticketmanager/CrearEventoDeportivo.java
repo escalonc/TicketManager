@@ -2,7 +2,6 @@ package com.cejteam.ticketmanager;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.usage.UsageEvents;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +20,7 @@ import java.util.List;
 
 public class CrearEventoDeportivo extends AppCompatActivity implements View.OnClickListener {
     private int año,mes,dia;
+    Button menu;
     private static  final int tipo_dialogo=0;
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     int dia1,dia2,mes1,mes2,ano1,ano2;
@@ -38,8 +38,30 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
-
          setContentView(R.layout.activity_create__event_deportivo);
+
+
+        menu=(Button)findViewById(R.id.menu112);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(CrearEventoDeportivo.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
          event =(EditText)findViewById(R.id.eventcoder);
          tittle =(EditText)findViewById(R.id.eventtittler);
          eventdescription =(EditText)findViewById(R.id.eventdescriptionr);

@@ -52,8 +52,20 @@
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
             android:textSize="20dp"
-            android:text="Next"
-            />
+            android:text="Next" />
+
+        <Button
+            android:id="@+id/menu343"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="22dp"
+            android:layout_marginTop="70dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
+            android:textColor="@color/blanco"
+            android:textSize="20dp" />
 
     </LinearLayout>
 

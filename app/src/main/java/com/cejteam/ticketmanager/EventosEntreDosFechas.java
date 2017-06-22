@@ -1,7 +1,10 @@
 package com.cejteam.ticketmanager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,12 +15,27 @@ public class EventosEntreDosFechas extends AppCompatActivity {
     ArrayList<Event> EntreFechas;
     int depCont = 0,relCont = 0,musCont = 0;
     double TotalDePago = 0;
+    Button menu;
     TextView depEntreFechas, relEntreFechas, musEntreFechas, TotalAPagar;
     int ano1=0,ano2=0,mes1=0,mes2=0,dia1=0,dia2=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_entre_dos_fechas);
+
+
+        menu=(Button)findViewById(R.id.menu56565);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(EventosEntreDosFechas.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
 
         try {
             ano1 = (Integer) getIntent().getExtras().get("ano1");

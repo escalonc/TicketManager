@@ -13,13 +13,25 @@ import java.util.ArrayList;
 public class InformacionDeleEvento extends AppCompatActivity {
     int codigo=0;
     TextView fecha,codigocam,titulo,descripcion,acercade,monto;
-    Button regresar,listado;
+    Button regresar,listado,menu;
     ImageView eventotipo;
     AlmacenEventos almacenEventos=new AlmacenEventos();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_informacion_dele_evento);
+
+        menu=(Button)findViewById(R.id.menu34343);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(InformacionDeleEvento.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
         codigo = getIntent().getExtras().getInt("codigoenviado");
         fecha=(TextView)findViewById(R.id.mostrarfecha);
         codigocam=(TextView)findViewById(R.id.mostrarcodigo);

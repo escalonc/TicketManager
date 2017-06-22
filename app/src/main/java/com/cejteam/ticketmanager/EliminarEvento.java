@@ -1,5 +1,6 @@
 package com.cejteam.ticketmanager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class EliminarEvento extends AppCompatActivity implements View.OnClickListener {
-    Button eliminar;
+    Button eliminar,menu;
     EditText codigo;
     String codigoelim;
     AlmacenEventos almacenEventos= new AlmacenEventos();
@@ -20,6 +21,28 @@ public class EliminarEvento extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminar_evento);
+
+
+
+        menu=(Button)findViewById(R.id.menu1234);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(EliminarEvento.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
         eliminar = (Button) findViewById(R.id.cancelarevento);
         codigo = (EditText) findViewById(R.id.codigodelevento);
         eliminar.setOnClickListener(this);

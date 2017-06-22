@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class VerEvento extends AppCompatActivity {
-    Button verevento;
+    Button verevento, menu;
     EditText codigoevento;
     AlmacenEventos almacenEventos= new AlmacenEventos();
     @Override
@@ -32,5 +32,13 @@ public class VerEvento extends AppCompatActivity {
             }
         });
 
+        menu=(Button)findViewById(R.id.menu1);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(VerEvento.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
     }
 }

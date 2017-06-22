@@ -7,21 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class CrearEventoReligioso extends AppCompatActivity implements View.OnClickListener{
     private int año,mes,dia;
+    Button menu;
     private static  final int tipo_dialogo=0;
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     int dia1,dia2,mes1,mes2,ano1,ano2;
@@ -36,6 +32,18 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_evento_religioso);
+
+
+        menu=(Button)findViewById(R.id.menu113);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(CrearEventoReligioso.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
         event =(EditText)findViewById(R.id.eventcoderreligioso);
         totalapagar= (TextView)findViewById(R.id.costostotalreligioso);
         tittle =(EditText)findViewById(R.id.eventdescriptionrreligioso);

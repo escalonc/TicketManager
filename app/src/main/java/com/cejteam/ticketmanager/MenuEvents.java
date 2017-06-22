@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuEvents extends AppCompatActivity implements View.OnClickListener{
     FloatingActionButton addevent;
-    Button eliminar,ver,editar;
+    Button eliminar,ver,editar,reporte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -27,6 +27,22 @@ public class MenuEvents extends AppCompatActivity implements View.OnClickListene
         editar.setOnClickListener(this);
         ver = (Button) findViewById(R.id.ver);
         ver.setOnClickListener(this);
+
+
+        reporte=(Button)findViewById(R.id.menuReport);
+        reporte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(MenuEvents.this,Reports.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
     }
 
 

@@ -1,7 +1,10 @@
 package com.cejteam.ticketmanager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -10,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class EventosRealizadosActivity extends AppCompatActivity {
+    Button menu;
     ArrayList<Event> eventReal;
     int depCont = 0;
     int relCont = 0;
@@ -23,6 +27,26 @@ public class EventosRealizadosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_realizados);
+
+
+        menu=(Button)findViewById(R.id.menu8765);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(EventosRealizadosActivity.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
         depRea = (TextView) findViewById(R.id.realizadoDeporte);
         relRea = (TextView) findViewById(R.id.realizadoReligion);
         musRea = (TextView) findViewById(R.id.realizadoMusical);

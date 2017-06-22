@@ -56,9 +56,11 @@
             android:textSize="13dp"
             android:hint="@string/escribaElCodigo"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_below="@id/linear"
+        android:orientation="vertical"
         android:textStyle="italic"
 
         android:gravity="center"
@@ -68,14 +70,24 @@
             android:id="@+id/cancelarevento"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="1dp"
             android:text="@string/eliminar"
             android:textStyle="italic"
 
             android:textSize="20dp"
             android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco" />
+
+
+        <Button
+            android:id="@+id/menu1234"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
             android:textColor="@color/blanco"
-            />
+            android:textSize="20dp" />
     </LinearLayout>
 
 

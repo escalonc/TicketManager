@@ -1,7 +1,10 @@
 package com.cejteam.ticketmanager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -11,6 +14,7 @@ import java.util.Calendar;
 
 public class EventosFuturosActivity extends AppCompatActivity {
     ArrayList<Event> EventosAPasar;
+    Button menu;
     int depCont = 0, relCont = 0, musCont = 0;
     double TotalAPagar = 0;
     TextView depFut, relFut, musFut, MontoAPagar;
@@ -18,6 +22,25 @@ public class EventosFuturosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_futuros);
+
+
+        menu=(Button)findViewById(R.id.menu87);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(EventosFuturosActivity.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
+
+
+
         depFut = (TextView) findViewById(R.id.futuroDeporte);
         relFut = (TextView) findViewById(R.id.futuroReligion);
         musFut = (TextView) findViewById(R.id.futuroMusica);

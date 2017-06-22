@@ -18,12 +18,33 @@ public class FechaFinal extends AppCompatActivity {
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     EditText fecha;
     int año,mes,dia,dia1,mes1,ano1,anopasado=0,mespasado=0,diapasado=0;
-    Button next;
+    Button next,menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fecha_final);
+
+
+
+        menu=(Button)findViewById(R.id.menu67898);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(FechaFinal.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
 
 try {
     anopasado = (Integer) getIntent().getExtras().get("ano1");

@@ -17,12 +17,30 @@ public class FechaInicial extends AppCompatActivity {
     private static DatePickerDialog.OnDateSetListener oyenteSelectorFecha;
     EditText fecha;
     int año,mes,dia,dia1,mes1,ano1;
-    Button next;
+    Button menu,next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fecha_inicial);
+
+
+
+        menu=(Button)findViewById(R.id.menu343);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenst = new Intent(FechaInicial.this,MenuEvents.class);
+                startActivity(intenst);
+            }
+        });
+
+
+
+
+
+
+
 
       /////////////////////////////////////////////////////////////////
         Calendar calendar= Calendar.getInstance();
