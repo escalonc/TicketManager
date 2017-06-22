@@ -119,7 +119,11 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                 }else if(nuevo==2) {
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoMusical registrarEventoMusical = almacenEventos.buscareventomusical(codigorecibido);
-                    if (registrarEventoMusical.comprobar(peopless.getText().toString())) {
+
+                    if (TextUtils.isEmpty(peopless.getText().toString())) {
+                        Toast msg = Toast.makeText(CrearEventoMusical.this, "PLEASE, FILL THE FIELD", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }else if (registrarEventoMusical.comprobar(peopless.getText().toString())) {
                         Toast msg = Toast.makeText(CrearEventoMusical.this, "Ya existe", Toast.LENGTH_SHORT);
                         msg.show();
                         return;
@@ -249,7 +253,6 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             Toast fmsg = Toast.makeText(this, "SUCCESSFUL REGISTRATION", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
-                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
                         }
@@ -304,7 +307,6 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
                             Toast fmsg = Toast.makeText(this, "EXCHANGE REALIZED SUCCESSFULLY", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
-                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
                         }

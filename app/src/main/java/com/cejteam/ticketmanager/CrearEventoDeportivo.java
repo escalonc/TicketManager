@@ -117,7 +117,10 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
-                    if(registrarEventoDeportivo.comprobarname1(member1.getText().toString())){
+                    if (TextUtils.isEmpty(member1.getText().toString())) {
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }else if(registrarEventoDeportivo.comprobarname1(member1.getText().toString())){
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
                         msg.show();
                         return;
@@ -157,7 +160,10 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
                 }else if(nuevo==2){
                     almacenEventos.verificarexistencia(codigorecibido);
                     RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
-                    if(registrarEventoDeportivo.comprobarname2(member2.getText().toString())){
+                    if(TextUtils.isEmpty(member2.getText().toString())){
+                        Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
+                        msg.show();
+                    }else if(registrarEventoDeportivo.comprobarname2(member2.getText().toString())){
                         Toast msg = Toast.makeText(CrearEventoDeportivo.this, "Ya existe", Toast.LENGTH_SHORT);
                         msg.show();
                         return;
@@ -216,7 +222,6 @@ try {
         if (TextUtils.isEmpty(member1.getText().toString())) {
             Toast msg = Toast.makeText(CrearEventoDeportivo.this, "PLEASE FILL IN THE FIELD", Toast.LENGTH_SHORT);
             msg.show();
-
         } else {
             codigorecibido = (Integer) getIntent().getExtras().get("enviarcodigo");
             almacenEventos.verificarexistencia(codigorecibido);
@@ -324,7 +329,6 @@ try {
                             Toast fmsg = Toast.makeText(this, "SUCCESSFUL REGISTRATION", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
-                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
                         }
@@ -384,7 +388,6 @@ try {
                             Toast fmsg = Toast.makeText(this, "EXCHANGE REALIZED SUCCESSFULLY", Toast.LENGTH_SHORT);
                             fmsg.show();
                             Intent intent = new Intent(this, MenuEvents.class);
-                            intent.putExtra("nuevo",nuevo);
                             startActivity(intent);
                             finish();
 
