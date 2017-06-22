@@ -62,6 +62,9 @@ public class TipoDeEventoEditar extends AppCompatActivity implements View.OnClic
                                  startActivity(intents);
                                  finish();
                                  break;
+                             }else{
+                                 Toast msg = Toast.makeText(this, "Can not find the code entered", Toast.LENGTH_SHORT);
+                                 msg.show();
                              }
 
                          }else{
