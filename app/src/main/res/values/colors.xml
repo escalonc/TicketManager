@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
- <!--   <color name="colorPrimary">#1e8597</color>
-    <color name="colorPrimaryDark">#055c6a</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#4CAF50</color>
+
+    <color name="primary_light">#B2DFDB</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
     <color name="blancospinner">#ECE8E7</color>
     <color name="blanco">#ffffff</color>
     <color name="negro">#000000</color>
 
-    -->
-
-    <color name="colorPrimary">#00796b</color>
+    <!--<color name="colorPrimary">#00796b</color>
     <color name="colorPrimaryDark">#004d40</color>
     <color name="blanco">#e0f2f1</color>
     <color name="colorAccent">#00bfa5</color>
     <color name="blancom">#00bfa5</color>
-   <color name="negro">#000</color>
+   <color name="negro">#000</color>-->
 
 </resources>
