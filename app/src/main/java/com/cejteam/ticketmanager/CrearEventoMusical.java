@@ -47,7 +47,7 @@ public class CrearEventoMusical extends AppCompatActivity implements View.OnClic
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(CrearEventoMusical.this,MenuEvents.class);
+                Intent intenst = new Intent(CrearEventoMusical.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

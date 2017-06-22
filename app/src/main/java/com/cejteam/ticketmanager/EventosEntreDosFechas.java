@@ -28,7 +28,7 @@ public class EventosEntreDosFechas extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(EventosEntreDosFechas.this,MenuEvents.class);
+                Intent intenst = new Intent(EventosEntreDosFechas.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

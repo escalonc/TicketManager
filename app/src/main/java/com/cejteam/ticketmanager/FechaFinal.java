@@ -31,7 +31,7 @@ public class FechaFinal extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(FechaFinal.this,MenuEvents.class);
+                Intent intenst = new Intent(FechaFinal.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

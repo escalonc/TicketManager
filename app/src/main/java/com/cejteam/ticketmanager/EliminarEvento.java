@@ -26,7 +26,7 @@ public class EliminarEvento extends AppCompatActivity implements View.OnClickLis
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(EliminarEvento.this, MenuEvents.class);
+                Intent intenst = new Intent(EliminarEvento.this, MainActivity.class);
                 startActivity(intenst);
             }
         });

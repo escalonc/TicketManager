@@ -38,7 +38,7 @@ public class CrearEventoReligioso extends AppCompatActivity implements View.OnCl
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(CrearEventoReligioso.this,MenuEvents.class);
+                Intent intenst = new Intent(CrearEventoReligioso.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

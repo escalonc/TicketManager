@@ -144,7 +144,11 @@ public class LoginActivity extends AppCompatActivity {
             progressDialog.dismiss();
 
             if (success) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                UserRepository userRepository = new UserRepository();
+                User user = userRepository.get(mUsername);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("user_type", user.getUserType().getValue());
+                startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();

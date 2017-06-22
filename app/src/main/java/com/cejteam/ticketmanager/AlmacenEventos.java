@@ -39,6 +39,7 @@ public class AlmacenEventos {
         return true;
     }
 
+
     public boolean compararreligioso(String campofecha) {
         for (RegistrarEventoReligioso j : registrarEventoReligiosos) {
             if (j.getDate().equals( String.valueOf(campofecha.toString())) ){

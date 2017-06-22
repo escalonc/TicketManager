@@ -28,7 +28,7 @@ public class EventosFuturosActivity extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(EventosFuturosActivity.this,MenuEvents.class);
+                Intent intenst = new Intent(EventosFuturosActivity.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

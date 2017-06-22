@@ -27,7 +27,7 @@ public class EventosCancelados extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(EventosCancelados.this,MenuEvents.class);
+                Intent intenst = new Intent(EventosCancelados.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

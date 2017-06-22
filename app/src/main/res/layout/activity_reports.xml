@@ -87,17 +87,6 @@
 "
             android:id="@+id/more" />
 
-        <Button
-            android:id="@+id/perfilUsuario"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:textStyle="italic"
-            android:textSize="20dp"
-            android:layout_marginTop="18dp"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/blanco"
-            android:text="View user profile" />
-
 
         <Button
             android:id="@+id/principalMenu"

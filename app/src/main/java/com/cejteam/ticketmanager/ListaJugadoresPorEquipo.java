@@ -27,7 +27,7 @@ public class ListaJugadoresPorEquipo extends AppCompatActivity {
             menu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intenst = new Intent(ListaJugadoresPorEquipo.this,MenuEvents.class);
+                    Intent intenst = new Intent(ListaJugadoresPorEquipo.this,MainActivity.class);
                     startActivity(intenst);
                 }
             });

@@ -31,7 +31,7 @@ public class EventosRealizadosActivity extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(EventosRealizadosActivity.this,MenuEvents.class);
+                Intent intenst = new Intent(EventosRealizadosActivity.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

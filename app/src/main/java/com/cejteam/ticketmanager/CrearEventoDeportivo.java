@@ -45,7 +45,7 @@ private int codeevent=0, nuevo=0, codigorecibido=0;
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(CrearEventoDeportivo.this,MenuEvents.class);
+                Intent intenst = new Intent(CrearEventoDeportivo.this,MainActivity.class);
                 startActivity(intenst);
             }
         });

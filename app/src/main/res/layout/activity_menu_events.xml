@@ -73,19 +73,6 @@
             android:textColor="@color/blanco"
             android:text="@string/eliminarEvento."
             android:id="@+id/eliminar" />
-        <Button
-
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:textSize="20dp"
-            android:textStyle="italic"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/blanco"
-            android:text="Report menu"
-            android:id="@+id/menuReport"
-            />
-
 
 
 

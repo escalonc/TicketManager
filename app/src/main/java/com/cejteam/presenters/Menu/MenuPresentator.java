@@ -30,9 +30,11 @@ public class MenuPresentator {
             )
     );
 
-    public ArrayList<MenuModel> getItems(){
+    public ArrayList<MenuModel> getItems(User.UserType userType){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        User.UserType userType = User.UserType.valueOf(prefs.getInt("user_type", 0));
+//        User.UserType userType = User.UserType.valueOf(prefs.getInt("user_type", 0));
+
+
 
         ArrayList<MenuModel> items = new ArrayList<>();
         for(MenuModel item : this.menuItems){

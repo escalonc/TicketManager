@@ -43,7 +43,7 @@ public class Reports extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(Reports.this,MenuEvents.class);
+                Intent intenst = new Intent(Reports.this,MainActivity.class);
                 startActivity(intenst);
             }
         });
@@ -56,14 +56,5 @@ public class Reports extends AppCompatActivity {
                 startActivity(intenst);
             }
         });
-/*
-        perfil=(Button)findViewById(R.id.perfilUsuario);
-        perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intenst = new Intent(Reports.this,"FALTA ESTA PARTE".class);
-                startActivity(intenst);
-            }
-        });*/
     }
 }

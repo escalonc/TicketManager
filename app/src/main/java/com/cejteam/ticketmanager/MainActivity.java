@@ -1,6 +1,8 @@
 package com.cejteam.ticketmanager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,10 +19,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.cejteam.data.entities.User;
 import com.cejteam.presenters.Menu.MenuModel;
 import com.cejteam.presenters.Menu.MenuPresentator;
 
 import org.xmlpull.v1.XmlPullParser;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,14 +39,17 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+//        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+//        String userId = sharedPref.getString("user_id", "");
+
         MenuPresentator menuPresentator = new MenuPresentator(getApplicationContext());
+        User.UserType userType = User.UserType.valueOf(getIntent().getIntExtra("user_type", 0));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(getApplicationContext(), MenuEvents.class));
             }
         });
 
@@ -55,8 +63,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         final Menu menu = navigationView.getMenu();
-        for (int i = 0; i <= menuPresentator.getItems().size() - 1; i++) {
-            MenuModel item = menuPresentator.getItems().get(i);
+        ArrayList<MenuModel> options = menuPresentator.getItems(userType);
+        for (int i = 0; i <= options.size() - 1; i++) {
+            MenuModel item = options.get(i);
 
             menu.add(1, item.getId(), i, item.getName());
         }
@@ -104,9 +113,9 @@ public class MainActivity extends AppCompatActivity
         if (id == 1) {
             startActivity(new Intent(getApplicationContext(), UserListActivity.class));
         } else if (id == 2) {
-
+            startActivity(new Intent(getApplicationContext(), MenuEvents.class));
         } else if (id == 3) {
-
+            startActivity(new Intent(getApplicationContext(), Reports.class));
         } else if (id == 4) {
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }

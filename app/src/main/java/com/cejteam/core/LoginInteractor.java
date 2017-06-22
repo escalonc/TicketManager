@@ -38,7 +38,7 @@ public class LoginInteractor implements LoginInteractorContract {
 
     @Override
     public void initSession(User user) {
-        SharedPreferences preferences = context.getSharedPreferences("Session", 0);
+        SharedPreferences preferences = context.getSharedPreferences("Session", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("user_id", user.getId());
         editor.putString("username", user.getUsername());

@@ -27,7 +27,7 @@ public class FechaInicial extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenst = new Intent(FechaInicial.this,MenuEvents.class);
+                Intent intenst = new Intent(FechaInicial.this,MainActivity.class);
                 startActivity(intenst);
             }
         });
