@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -66,15 +67,26 @@ public class InformacionDeleEvento extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RegistrarEventoDeportivo registrarEventoDeportivos = almacenEventos.buscarEventodeportivo(codigo);
+                RegistrarEventoReligioso registrarEventoReligiosos = almacenEventos.buscareventoreligioso(codigo);
+                RegistrarEventoMusical registrarEventoMusicals = almacenEventos.buscareventomusical(codigo);
+
                 if(registrarEventoDeportivos!=null){
 
                     ArrayList<String> array= registrarEventoDeportivos.getTeams1();
                     ArrayList<String> array2= registrarEventoDeportivos.getTeams2();
-                    Intent intenst = new Intent(InformacionDeleEvento.this , ListaJugadoresPorEquipo.class);
+                    Intent intenst = new Intent(InformacionDeleEvento.this , SeleccionarTeam.class);
                     intenst.putExtra("teams1",array);
                     intenst.putExtra("teams2",array2);
                     startActivity(intenst);
                     finish();
+                }else if(registrarEventoMusicals!=null){
+                    ArrayList<String> array2= registrarEventoMusicals.getPeopleOfSupport();
+                    Intent intenst = new Intent(InformacionDeleEvento.this , ListaJugadoresPorEquipo.class);
+                    intenst.putExtra("teams1",array2);
+                    startActivity(intenst);
+                }else if(registrarEventoReligiosos!=null){
+                    Toast msg = Toast.makeText(InformacionDeleEvento.this, "No contiene lista", Toast.LENGTH_SHORT);
+                    msg.show();
                 }
             }
         });

@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textStyle="italic"
-    android:background="@color/blanco"
-    tools:context="com.cejteam.ticketmanager.TipodeEvento">
+    tools:context="com.cejteam.ticketmanager.SeleccionarTeam">
 
     <TextView
         android:id="@+id/titulo"
@@ -35,20 +33,19 @@
 
 
         <Button
-            android:id="@+id/deportivo"
+            android:id="@+id/team1team1"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
-
             android:textStyle="italic"
             android:textSize="20dp"
-            android:text="@string/deporte"
+            android:text="Team 1"
             />
 
         <Button
-            android:id="@+id/musical"
+            android:id="@+id/team2team2"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:textStyle="italic"
@@ -57,21 +54,9 @@
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blanco"
             android:textSize="20dp"
-            android:text="@string/musica" />
+            android:text="Team 2" />
 
-        <Button
 
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:textSize="20dp"
-            android:textStyle="italic"
-
-            android:layout_marginTop="18dp"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/blanco"
-            android:text="@string/religion"
-            android:id="@+id/religioso"
-            />
     </LinearLayout>
 
 </RelativeLayout>

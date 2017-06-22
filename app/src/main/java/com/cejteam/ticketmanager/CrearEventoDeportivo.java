@@ -367,9 +367,6 @@ try {
                         } else if(fecha.buscarfechadep(String.valueOf(campofecha.getText().toString()), registrarEventoDeportivos)){
                             Toast msg = Toast.makeText(this, "Already exists this date", Toast.LENGTH_SHORT);
                             msg.show();
-                        } else if(teams1.size()==0 || teams2.size()==0){
-                            Toast msg = Toast.makeText(this, "Record least one member per team", Toast.LENGTH_SHORT);
-                            msg.show();
                         } else{
                             RegistrarEventoDeportivo registrarEventoDeportivo = almacenEventos.buscarEventodeportivo(codigorecibido);
                             registrarEventoDeportivo.setEvent((Integer.parseInt(event.getText().toString())));

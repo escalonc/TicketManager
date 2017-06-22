@@ -57,7 +57,8 @@
         <activity android:name=".EventosCancelados" />
         <activity android:name=".FechaInicial" />
         <activity android:name=".FechaFinal" />
-        <activity android:name=".ListaJugadoresPorEquipo"></activity>
+        <activity android:name=".ListaJugadoresPorEquipo" />
+        <activity android:name=".SeleccionarTeam"></activity>
     </application>
 
 </manifest>
