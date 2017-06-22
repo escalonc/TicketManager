@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
+    tools:context="com.cejteam.ticketmanager.TipoDeEventoEditar">
+
+
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:id="@+id/vereventocodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/editarEvento"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textSize="45dp"
+
+        android:textColor="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_marginTop="65dp"
+        android:layout_below="@id/vereventocodigo"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_margin="25dp"
+            android:layout_width="88dp"
+            android:layout_height="25dp"
+            android:textStyle="italic"
+
+            android:text="@string/codigo"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"/>
+        <EditText
+            android:layout_marginTop="56dp"
+            android:id="@+id/codigoeditar"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+
+            android:layout_marginRight="20dp"
+            android:textSize="13dp"
+            android:hint="@string/escribaElCodigo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/linear"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_centerInParent="true"
+        android:textStyle="italic"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/botoneditar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:layout_marginTop="15dp"
+            android:layout_margin="15dp"
+            android:text="@string/Edit_event"
+            android:textSize="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco" />
+
+        <Button
+            android:id="@+id/menu3"
+            android:layout_width="300dp"
+            android:layout_margin="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
+            android:textColor="@color/blanco"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

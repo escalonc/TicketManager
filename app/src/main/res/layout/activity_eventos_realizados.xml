@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
+
+    tools:context="com.cejteam.ticketmanager.EventosRealizadosActivity">
+
+
+    <ListView
+        android:id="@+id/eventoRealizado"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:textStyle="italic"
+        android:layout_alignParentTop="true" />
+
+
+    <LinearLayout
+        android:layout_below="@+id/eventoRealizado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/realizadoDeporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/realizadoReligion"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="TextView"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/realizadoMusical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="24dp"
+                android:text="TextView"/>
+
+            <TextView
+                android:id="@+id/realizadoMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/menu8765"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="70dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
+            android:textColor="@color/blanco"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:textStyle="italic"
+
+    tools:context="com.cejteam.ticketmanager.VerEvento">
+
+
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:id="@+id/vereventocodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/verEvento"
+        android:textAlignment="center"
+        android:textStyle="italic"
+
+        android:textSize="45dp"
+
+        android:textColor="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_marginTop="65dp"
+        android:layout_below="@id/vereventocodigo"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_margin="25dp"
+            android:layout_width="88dp"
+            android:layout_height="25dp"
+            android:textStyle="italic"
+            android:text="@string/codigo"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/codigodeleventover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="56dp"
+            android:textStyle="italic"
+
+            android:hint="@string/escribaElCodigo"
+            android:inputType="number"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/linear"
+        android:gravity="center"
+        tools:layout_centerInParent="true"
+        android:textStyle="italic"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/vereventocodigos"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/ver"
+            android:textColor="@color/blanco"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/menu1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/Back_menu"
+            android:textColor="@color/blanco"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

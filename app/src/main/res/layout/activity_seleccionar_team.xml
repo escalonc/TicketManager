@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cejteam.ticketmanager.SeleccionarTeam">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/seleccion"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textSize="32dp"
+        android:textColor="@color/colorPrimary"
+        />
+    <LinearLayout
+        android:padding="30dp"
+        android:id="@+id/linearprincipal"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="italic"
+
+        tools:layout_centerInParent="true"
+        android:orientation="vertical">
+
+
+
+        <Button
+            android:id="@+id/team1team1"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:text="Team 1"
+            />
+
+        <Button
+            android:id="@+id/team2team2"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textStyle="italic"
+
+            android:layout_marginTop="18dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blanco"
+            android:textSize="20dp"
+            android:text="Team 2" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
